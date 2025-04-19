@@ -1,1 +1,53 @@
-# This is the map of Mathematics
+# Map of Mathematics
+
+When I study I build a map like this in my mind and as I my knowledge develops
+the map gets more and more detailed.
+Deal with it...
+
+## How to use this map?
+
+This map tries to show how things are coming together in calculus, in final form
+it will be Applied Mathematics.
+I had issues to see the connections between the details and this graph shows my
+understanding of things in Calculus especially how things are connected.
+The other aspect of connections are the rigour in mathematics: everything has to
+be proven.
+I have some interest in understanding these proofs and which one is
+pre-requisite to which detail and why.
+As a consequence these details are shown.
+The subsequent pages are going to discuss every single detail.
+
+The method you see here is an [information retrieval thesaurus](<https://en.wikipedia.org/wiki/Thesaurus_(information_retrieval)>).
+In free style...
+
+```mermaid
+
+---
+title: Map of Mathematics
+---
+
+flowchart TD
+
+    algebra((Algebra))
+    geometry((Geometry))
+    proof_of_rational_numbers((Proof of Rational Numbers))
+    limit_operations((Operations with Limits))
+    limits((Limits))
+    calculus((Calculus))
+    integration((Integration))
+    derivation((Derivation))
+
+    algebra-- applied -->calculus
+    geometry-- applied -->calculus
+    proof_of_rational_numbers-- proofs -->limits
+    limit_operations-- belongs to -->limits
+    limits-- belongs to -->calculus
+    integration-- belongs to -->calculus
+    derivation-- belongs to -->calculus
+
+```
+
+## Sources
+
+- **Calculus, Metric Edition, Early Transcendentals, 9th Edition** - James Stewart,
+  Daniel Clegg, Saleem Watson
