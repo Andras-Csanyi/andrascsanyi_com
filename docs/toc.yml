@@ -1,6 +1,12 @@
-- name: Blog
-  href: blog/
-- name: Book
-  href: software_engineering_book/
-- name: Data Structures and Algs Api
-  href: dsaapi/
+- name: Mathematics
+  href: mathematics/
+- name: Aerospace Engineering
+  href: aerospace_engineering/
+- name: Computer Science
+  href: computer_science/
+# - name: Blog
+#   href: blog/
+# - name: Book
+#   href: software_engineering_book/
+# - name: Data Structures and Algs Api
+#   href: dsaapi/
