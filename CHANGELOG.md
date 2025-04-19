@@ -1,3 +1,10 @@
+## [0.18.1](https://github.com/Andras-Csanyi/andrascsanyi.com/compare/0.18.0...0.18.1) (2025-04-19)
+
+
+### Bug Fixes
+
+* rework ([#61](https://github.com/Andras-Csanyi/andrascsanyi.com/issues/61)) ([062d8ac](https://github.com/Andras-Csanyi/andrascsanyi.com/commit/062d8ac54c5d0b7318e8e180607aa60016f2194d))
+
 # [0.18.0](https://github.com/Andras-Csanyi/software_engineering/compare/0.17.2...0.18.0) (2025-01-19)
 
 
