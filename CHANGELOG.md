@@ -1,3 +1,10 @@
+## [0.18.3](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.2...0.18.3) (2025-04-20)
+
+
+### Bug Fixes
+
+* gh pages ([#63](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/63)) ([1678146](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/16781462d6f8f02d39ed98d08b8df300ba35a743))
+
 ## [0.18.2](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.1...0.18.2) (2025-04-20)
 
 
