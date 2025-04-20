@@ -7,7 +7,6 @@ on:
       - main
 
 jobs:
-  
   debug:
     name: Debug
     runs-on: ubuntu-latest
@@ -19,7 +18,7 @@ jobs:
           echo "github ref: " ${{ vars.GITHUB_REF }}
           echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
           echo "event name: " ${{ github.event_name }}
-          
+
   main_branch:
     name: Main Branch Build
     runs-on: ubuntu-latest
@@ -27,34 +26,33 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    permissions: 
+    permissions:
       contents: write
       issues: write
       pull-requests: write
       pages: write
       id-token: write
-    
+
     steps:
-      - uses: actions/checkout@v3
-        
+      - uses: actions/checkout@v4
+
       - run: dotnet tool update -g docfx
-      
+
       - run: docfx docs/docfx.json --output docs/_site
-      
+
       - name: Setup pages
-        uses: actions/configure-pages@v3
-      
+        uses: actions/configure-pages@v5
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
         with:
-          path: 'docs/_site'
-      
+          path: "docs/_site"
+
       - name: Deploy to Github Pages
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
         id: deployment
-        uses: actions/deploy-pages@v2
-          
-      
+        uses: actions/deploy-pages@v4
+
