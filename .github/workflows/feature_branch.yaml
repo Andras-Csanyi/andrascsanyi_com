@@ -7,18 +7,6 @@ on:
       - main
 
 jobs:
-  debug:
-    name: Debug
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "============="
-          echo "=== Debug ==="
-          echo "============="
-          echo "github ref: " ${{ vars.GITHUB_REF }}
-          echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
-          echo "event name: " ${{ github.event_name }}
-
   feature_branch:
     name: Feature Branch Build
     runs-on: ubuntu-latest
@@ -29,4 +17,3 @@ jobs:
       - run: dotnet tool update -g docfx
 
       - run: docfx docs/docfx.json --output docs/_site
-

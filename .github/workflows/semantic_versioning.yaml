@@ -7,7 +7,6 @@ on:
       - main
 
 jobs:
-  
   debug:
     name: Debug
     runs-on: ubuntu-latest
@@ -19,7 +18,7 @@ jobs:
           echo "github ref: " ${{ vars.GITHUB_REF }}
           echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
           echo "event name: " ${{ github.event_name }}
-  
+
   main_branch:
     name: Main Branch Build
     runs-on: ubuntu-latest
@@ -33,9 +32,9 @@ jobs:
       pull-requests: write
       pages: write
       id-token: write
-    
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -55,7 +54,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          cache: 'pip'
+          cache: "pip"
 
       - name: Debug Info Python tools
         run: |
