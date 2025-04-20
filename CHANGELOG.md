@@ -1,3 +1,10 @@
+## [0.18.2](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.1...0.18.2) (2025-04-20)
+
+
+### Bug Fixes
+
+* github pages deploy ([#62](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/62)) ([6cf4056](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/6cf40567a1e39bfa18d090c74ad9822936d6ced1))
+
 ## [0.18.1](https://github.com/Andras-Csanyi/andrascsanyi.com/compare/0.18.0...0.18.1) (2025-04-19)
 
 
