@@ -1,3 +1,10 @@
+## [0.18.4](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.3...0.18.4) (2025-04-20)
+
+
+### Bug Fixes
+
+* changes ([#64](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/64)) ([8dc0f17](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/8dc0f17305ac0c615289673f55043ea6bc7acfd8))
+
 ## [0.18.3](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.2...0.18.3) (2025-04-20)
 
 
