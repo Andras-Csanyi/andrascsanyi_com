@@ -1,0 +1,116 @@
+{
+  "sitemap": {
+    "baseUrl": "https://andrascsanyi.com/",
+    "changefreq": "daily",
+    "priority": 0.5
+  },
+  "source_base_path": "/home/runner/work/andrascsanyi_com/andrascsanyi_com/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "aerospace_engineering/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "aerospace_engineering/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "aerospace_engineering/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "aerospace_engineering/toc.json"
+        },
+        ".html": {
+          "relative_path": "aerospace_engineering/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "computer_science/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "computer_science/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "computer_science/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "computer_science/toc.json"
+        },
+        ".html": {
+          "relative_path": "computer_science/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mathematics/map.md",
+      "output": {
+        ".html": {
+          "relative_path": "mathematics/map.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "mathematics/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "mathematics/toc.json"
+        },
+        ".html": {
+          "relative_path": "mathematics/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
