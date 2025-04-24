@@ -29,11 +29,44 @@
       "type": "Toc",
       "source_relative_path": "aerospace_engineering/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "aerospace_engineering/toc.json"
-        },
         ".html": {
           "relative_path": "aerospace_engineering/toc.html"
+        },
+        ".json": {
+          "relative_path": "aerospace_engineering/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "blog/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "blog/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "blog/study_strategy.md",
+      "output": {
+        ".html": {
+          "relative_path": "blog/study_strategy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "blog/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "blog/toc.html"
+        },
+        ".json": {
+          "relative_path": "blog/toc.json"
         }
       },
       "version": ""
@@ -52,17 +85,17 @@
       "type": "Toc",
       "source_relative_path": "computer_science/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "computer_science/toc.json"
-        },
         ".html": {
           "relative_path": "computer_science/toc.html"
+        },
+        ".json": {
+          "relative_path": "computer_science/toc.json"
         }
       },
       "version": ""
     },
     {
-      "type": "Conceptual",
+      "type": "Redirection",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
@@ -85,11 +118,11 @@
       "type": "Toc",
       "source_relative_path": "mathematics/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "mathematics/toc.json"
-        },
         ".html": {
           "relative_path": "mathematics/toc.html"
+        },
+        ".json": {
+          "relative_path": "mathematics/toc.json"
         }
       },
       "version": ""
@@ -98,11 +131,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""
