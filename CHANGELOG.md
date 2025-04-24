@@ -1,3 +1,10 @@
+## [0.18.5](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.4...0.18.5) (2025-04-24)
+
+
+### Bug Fixes
+
+* main page changes ([#65](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/65)) ([c9fde09](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/c9fde09295b461a5d789947bf998d0f710e8b422))
+
 ## [0.18.4](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.3...0.18.4) (2025-04-20)
 
 
