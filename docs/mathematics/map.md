@@ -28,6 +28,7 @@ title: Map of Mathematics
 
 flowchart TD
 
+    real_numbers((Real numbers))
     algebra((Algebra))
     geometry((Geometry))
     functions((Functions))
@@ -38,6 +39,7 @@ flowchart TD
     integration((Integration))
     differentiation((Differentiation))
 
+    real_numbers-- pre-requisite -->algebra
     algebra-- applied -->calculus
     geometry-- applied -->calculus
     proof_of_rational_numbers-- proofs -->limits
