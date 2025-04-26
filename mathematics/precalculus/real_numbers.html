@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Map of Mathematics | Andras Csanyi </title>
+      <title>Real numbers | Andras Csanyi </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Map of Mathematics | Andras Csanyi ">
+      <meta name="title" content="Real numbers | Andras Csanyi ">
       
       
-      <link rel="icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
       
-      <meta name="docfx:rel" content="../">
+      <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Andras-Csanyi/andrascsanyi_com/blob/main/docs/mathematics/map.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/Andras-Csanyi/andrascsanyi_com/blob/main/docs/mathematics/precalculus/real_numbers.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js"></script>
+      <script type="module" src="./../../public/docfx.min.js"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -43,8 +43,8 @@
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="Andras Csanyi">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Andras Csanyi">
             Andras Csanyi
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,58 +85,39 @@
         </div>
 
         <article data-uid="">
-<h1 id="map-of-mathematics">Map of Mathematics</h1>
+<h1 id="real-numbers">Real numbers</h1>
 
-<p>When I study I build a map like this in my mind and as I my knowledge develops
-the map gets more and more detailed.
-Deal with it...</p>
-<h2 id="how-to-use-this-map">How to use this map?</h2>
-<p>This map tries to show how things are coming together in calculus, in final form
-it will be Applied Mathematics.
-I had issues to see the connections between the details and this graph shows my
-understanding of things in Calculus especially how things are connected.
-The other aspect of connections are the rigour in mathematics: everything has to
-be proven.
-I have some interest in understanding these proofs and which one is
-pre-requisite to which detail and why.
-As a consequence these details are shown.
-The subsequent pages are going to discuss every single detail.</p>
-<p>The method you see here is an <a href="https://en.wikipedia.org/wiki/Thesaurus_(information_retrieval)">information retrieval thesaurus</a>.
-In free style...</p>
-<pre><code class="lang-mermaid">
----
-title: Map of Mathematics
----
-
-flowchart TD
-
-    real_numbers((Real numbers))
-    algebra((Algebra))
-    geometry((Geometry))
-    functions((Functions))
-    proof_of_rational_numbers((Proof of Rational Numbers))
-    limit_operations((Operations with Limits))
-    limits((Limits))
-    calculus((Calculus))
-    integration((Integration))
-    differentiation((Differentiation))
-
-    real_numbers-- pre-requisite --&gt;algebra
-    algebra-- applied --&gt;calculus
-    geometry-- applied --&gt;calculus
-    proof_of_rational_numbers-- proofs --&gt;limits
-    limit_operations-- belongs to --&gt;limits
-    limits-- belongs to --&gt;calculus
-    integration-- belongs to --&gt;calculus
-    differentiation-- belongs to --&gt;calculus
-    functions-- applies --&gt;calculus
-
-</code></pre>
-<h2 id="sources">Sources</h2>
-<ul>
-<li><strong>Calculus, Metric Edition, Early Transcendentals, 9th Edition</strong> - James Stewart,
-Daniel Clegg, Saleem Watson</li>
-</ul>
+<h2 id="natural-numbers">Natural numbers</h2>
+<p>Positive numbers like <span class="math">\(1, 2, 3, 4,...\)</span>.</p>
+<h2 id="integers">Integers</h2>
+<p>Can be both positive and negative like <span class="math">\(-2, -1, 0, 1, 2, 3\)</span>.</p>
+<h2 id="rational-numbers">Rational numbers</h2>
+<p>Rational numbers are constructed by taking ratios of integers as below.</p>
+<div class="math">
+\[
+r = \frac{m}{n}
+\]</div>
+<p>where <span class="math">\(m\)</span> and <span class="math">\(n\)</span> are integers and <span class="math">\(n \neq 0\)</span>.</p>
+<h2 id="properties-of-real-numbers">Properties of real numbers</h2>
+<p><strong>Commutative properties</strong></p>
+<p><span class="math">\(a + b = b + a\)</span>, meaning when two numbers are added, the order doesn't matter.</p>
+<p><span class="math">\(a \cdot b = b \cdot a\)</span>, meaning when two numbers are multiplied, the order
+doesn't matter.</p>
+<p><strong>Associative properties</strong></p>
+<p><span class="math">\((a + b) + c = a + (b + c)\)</span>, meaning when three numbers are added it doesn't
+matter which two are added first.</p>
+<p><span class="math">\((a \cdot b) \cdot c = a \cdot (b \cdot c)\)</span>, meaning when three numbers are
+multiplied doesn't matter which two is multiplied first.</p>
+<p><strong>Distributive property</strong></p>
+<div class="math">
+\[
+a \cdot (b + c) = a \cdot b + a \cdot c \\
+\qquad \\
+(b + c) \cdot a = a \cdot b + a \cdot c
+\]</div>
+<p>meaning when a number is multiplied by a sum of two numbers, the result will be
+the same when we start the adding the numbers and multiplying, or multiply both
+first and adding them.</p>
 
 </article>
 

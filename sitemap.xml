@@ -2,37 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://andrascsanyi.com/aerospace_engineering/introduction.html</loc>
-    <lastmod>2025-04-26T03:46:17+00:00</lastmod>
+    <lastmod>2025-04-26T05:47:02+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://andrascsanyi.com/blog/introduction.html</loc>
-    <lastmod>2025-04-26T03:46:17+00:00</lastmod>
+    <lastmod>2025-04-26T05:47:02+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://andrascsanyi.com/blog/study_strategy.html</loc>
-    <lastmod>2025-04-26T03:46:17+00:00</lastmod>
+    <lastmod>2025-04-26T05:47:02+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://andrascsanyi.com/computer_science/introduction.html</loc>
-    <lastmod>2025-04-26T03:46:17+00:00</lastmod>
+    <lastmod>2025-04-26T05:47:02+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://andrascsanyi.com/mathematics/calculus/functions.html</loc>
+    <lastmod>2025-04-26T05:47:02+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://andrascsanyi.com/mathematics/map.html</loc>
-    <lastmod>2025-04-26T03:46:17+00:00</lastmod>
+    <lastmod>2025-04-26T05:47:02+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://andrascsanyi.com/mathematics/precalculus/functions.html</loc>
-    <lastmod>2025-04-26T03:46:17+00:00</lastmod>
+    <loc>https://andrascsanyi.com/mathematics/precalculus/real_numbers.html</loc>
+    <lastmod>2025-04-26T05:47:02+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
