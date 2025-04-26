@@ -1,3 +1,10 @@
+# [0.20.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.19.0...0.20.0) (2025-04-26)
+
+
+### Features
+
+* real numbers ([#67](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/67)) ([808f762](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/808f762799c0a0b5c4b9c767836ce032a6636e24))
+
 # [0.19.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.5...0.19.0) (2025-04-26)
 
 
