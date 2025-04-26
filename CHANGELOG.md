@@ -1,3 +1,10 @@
+# [0.19.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.5...0.19.0) (2025-04-26)
+
+
+### Features
+
+* first page about the math function ([#66](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/66)) ([addf0bf](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/addf0bf4f11b202e2b282fb0bd6c344b7e404e33))
+
 ## [0.18.5](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.4...0.18.5) (2025-04-24)
 
 
