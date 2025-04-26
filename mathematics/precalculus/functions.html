@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Functions | Andras Csanyi </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Functions | Andras Csanyi ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Andras-Csanyi/andrascsanyi_com/blob/main/docs/mathematics/precalculus/functions.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Andras Csanyi">
+            Andras Csanyi
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="functions">Functions</h1>
+
+<p>Function describes a situation when one quantity depends on another.</p>
+<p>A good example is the circle (<span class="math">\(A=\pi \cdot r^2\)</span>) where <span class="math">\(A\)</span> depends on the
+radius, <span class="math">\(r\)</span>, of the circle.
+The area of the circle in function form is: <span class="math">\(A=f(r)\)</span></p>
+<h2 id="definitions">Definitions</h2>
+<div class="TIP alert alert-info">
+<h5>DEFINITION</h5>
+<p><strong>The Function</strong></p>
+<p>A function <span class="math">\(f\)</span> is a rule that assigns to each element <span class="math">\(x\)</span> in a set <span class="math">\(D\)</span> exactly one
+element, called <span class="math">\(f(x)\)</span>, in a set <span class="math">\(E\)</span>.
+Sets <span class="math">\(E\)</span> and <span class="math">\(D\)</span> are sets of real numbers.</p>
+</div>
+<ul>
+<li><strong>Domain</strong>: in the above definition the set <span class="math">\(D\)</span> is the domain of the function.
+The number <span class="math">\(f(x)\)</span> is the value of <span class="math">\(f\)</span> at x and it is read &quot;<span class="math">\(f\)</span> of <span class="math">\(x\)</span>&quot;.</li>
+<li><strong>Range</strong>: in the above definition <span class="math">\(E\)</span> is the range which represents all
+possible values of <span class="math">\(f(x)\)</span> as <span class="math">\(x\)</span> varies throughut the domain.</li>
+<li><strong>Independent variable</strong>: the symbol that represents an arbitrary number in
+the <span class="math">\(domain\)</span> of function <span class="math">\(f\)</span> is called independent variable. In the circle example
+the independent variable is <span class="math">\(r\)</span>.</li>
+<li><strong>Dependent variable</strong>: The symbol that represents a number in the <span class="math">\(range\)</span> of
+<span class="math">\(f\)</span>. In the circle example the dependent variable is <span class="math">\(A\)</span>.</li>
+</ul>
+<h2 id="representation-of-functions">Representation of functions</h2>
+<ul>
+<li>verbally</li>
+<li>numerically</li>
+<li>visually</li>
+<li>algebraically</li>
+</ul>
+<h2 id="the-vertical-line-test">The Vertical Line Test</h2>
+<p>To test whether the equation is a function, meaning exactly one element of the
+domain is assigned to exactly one element of the range, we have The Vertical
+Line Test.</p>
+<div class="TIP alert alert-info">
+<h5>DEFINITION</h5>
+<p><strong>The Vertical Line Test</strong></p>
+<p>A curve in the <span class="math">\(xy\)</span>-plane is the graph of a function of <span class="math">\(x\)</span> if and only if no
+vertical line intersects the curve more than once.</p>
+</div>
+<h2 id="properties-of-functions">Properties of functions</h2>
+<h3 id="piecewise-defined-functions">Piecewise defined functions</h3>
+<p>There are cases when a function have different formulas in different part of
+their domain. These are the piecewise defined functions.</p>
+<div class="math">
+\[
+f(x) = \begin{cases}
+x^2 &amp; \text{if } x &lt; 0 \\
+0 &amp; \text{if } x = 0 \\
+x + 1 &amp; \text{if } x &gt; 0
+\end{cases}
+\]</div>
+<h3 id="even-or-odd-functions">Even or odd functions</h3>
+<p>If function <span class="math">\(f\)</span> satisfies</p>
+<div class="math">
+\[
+f(-x) = f(x)
+\]</div>
+<p>for every number in its domain, then
+<span class="math">\(f\)</span> is an even function. It also means that the graph is symmetric to the
+<span class="math">\(y\)</span>-axis.</p>
+<p>If function <span class="math">\(f\)</span> satisfies</p>
+<div class="math">
+\[
+f(-x) = -f(x)
+\]</div>
+<p>for every number in its domain, then
+<span class="math">\(f\)</span> is an odd function. It also means that the graph is about the origin.</p>
+<h3 id="increasing-and-decreasing-functions">Increasing and Decreasing functions</h3>
+<div class="TIP alert alert-info">
+<h5>DEFINITION</h5>
+<p><strong>Increasing and Decreasing functions</strong></p>
+<p>A function is called increasing on interval <span class="math">\(I\)</span> if</p>
+<div class="math">
+\[
+
+f(x_1)&lt;f(x_2) \text{ whenever } x_1 &lt; x_2 \text{ in } I
+
+
+\]</div>
+<p>A function is called decreasing on interval <span class="math">\(I\)</span> if</p>
+<div class="math">
+\[
+
+f(x_1)&gt;f(x_2) \text{ whenever } x_1 &lt; x_2 \text{ in } I
+\]</div>
+</div>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
