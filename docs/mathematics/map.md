@@ -30,12 +30,13 @@ flowchart TD
 
     algebra((Algebra))
     geometry((Geometry))
+    functions((Functions))
     proof_of_rational_numbers((Proof of Rational Numbers))
     limit_operations((Operations with Limits))
     limits((Limits))
     calculus((Calculus))
     integration((Integration))
-    derivation((Derivation))
+    differentiation((Differentiation))
 
     algebra-- applied -->calculus
     geometry-- applied -->calculus
@@ -43,7 +44,8 @@ flowchart TD
     limit_operations-- belongs to -->limits
     limits-- belongs to -->calculus
     integration-- belongs to -->calculus
-    derivation-- belongs to -->calculus
+    differentiation-- belongs to -->calculus
+    functions-- applies -->calculus
 
 ```
 
