@@ -262,12 +262,15 @@ explain and I learn more.
 
 This book should be a website. The content is way more than a book ever
 discusses. But, at this point there is no tool to display information on the web
-with ease and beauty as \latex can do. \latex is perfection. Web is
+with ease and beauty as latex can do. Latex  is perfection. Web is
 imperfection. I am not going to waste my time on imperfection.
 
 %%
 % Start the main matter (normal chapters)
 \mainmatter
+
+\chapter{Mathematics}
+\input{mathematics/mathematics}
 
 
 \chapter{The Design of Tufte's Books}
@@ -379,30 +382,30 @@ Publisher & & & & \\
 \end{tabular}
 \end{center}
 
-\begin{figure*}[p]
-\fbox{\includegraphics[width=0.45\linewidth]{vdqi-title.pdf}}
-\hfill
-\fbox{\includegraphics[width=0.45\linewidth]{ei-title.pdf}}
-\\\vspace{\baselineskip}
-\fbox{\includegraphics[width=0.45\linewidth]{ve-title.pdf}}
-\hfill
-\fbox{\includegraphics[width=0.45\linewidth]{be-title.pdf}}
-\end{figure*}
+% \begin{figure*}[p]
+% \fbox{\includegraphics[width=0.45\linewidth]{vdqi-title.pdf}}
+% \hfill
+% \fbox{\includegraphics[width=0.45\linewidth]{ei-title.pdf}}
+% \\\vspace{\baselineskip}
+% \fbox{\includegraphics[width=0.45\linewidth]{ve-title.pdf}}
+% \hfill
+% \fbox{\includegraphics[width=0.45\linewidth]{be-title.pdf}}
+% \end{figure*}
 
 \newthought{The tables of contents} in Tufte's books give us our first
 glimpse of the structure of the main matter.  \VDQI is split into two
 parts, each containing some number of chapters.  His other three books only
 contain chapters---they're not broken into parts.
 
-\begin{figure*}[p]\index{table of contents}
-\fbox{\includegraphics[width=0.45\linewidth]{vdqi-contents.pdf}}
-\hfill
-\fbox{\includegraphics[width=0.45\linewidth]{ei-contents.pdf}}
-\\\vspace{\baselineskip}
-\fbox{\includegraphics[width=0.45\linewidth]{ve-contents.pdf}}
-\hfill
-\fbox{\includegraphics[width=0.45\linewidth]{be-contents.pdf}}
-\end{figure*}
+% \begin{figure*}[p]\index{table of contents}
+% \fbox{\includegraphics[width=0.45\linewidth]{vdqi-contents.pdf}}
+% \hfill
+% \fbox{\includegraphics[width=0.45\linewidth]{ei-contents.pdf}}
+% \\\vspace{\baselineskip}
+% \fbox{\includegraphics[width=0.45\linewidth]{ve-contents.pdf}}
+% \hfill
+% \fbox{\includegraphics[width=0.45\linewidth]{be-contents.pdf}}
+% \end{figure*}
 
 
 \section{Typefaces}\label{sec:typefaces1}\index{typefaces}
@@ -609,13 +612,13 @@ Full page--width figures and tables may be placed in \docenvdef{figure*} or
 use the \docenvdef{marginfigure} or \docenvdef{margintable} environments as follows
 (see figure~\ref{fig:marginfig}):
 
-\begin{marginfigure}%
-  \includegraphics[width=\linewidth]{helix}
-  \caption{This is a margin figure.  The helix is defined by 
-    $x = \cos(2\pi z)$, $y = \sin(2\pi z)$, and $z = [0, 2.7]$.  The figure was
-    drawn using Asymptote (\url{http://asymptote.sf.net/}).}
-  \label{fig:marginfig}
-\end{marginfigure}
+% \begin{marginfigure}%
+%   \includegraphics[width=\linewidth]{helix}
+%   \caption{This is a margin figure.  The helix is defined by 
+%     $x = \cos(2\pi z)$, $y = \sin(2\pi z)$, and $z = [0, 2.7]$.  The figure was
+%     drawn using Asymptote (\url{http://asymptote.sf.net/}).}
+%   \label{fig:marginfig}
+% \end{marginfigure}
 
 \begin{docspec}
 \textbackslash begin\{marginfigure\}\\
@@ -640,20 +643,20 @@ Figure~\ref{fig:fullfig} is an example of the \docenv{figure*}
 environment and figure~\ref{fig:textfig} is an example of the normal
 \docenv{figure} environment.
 
-\begin{figure*}[h]
-  \includegraphics[width=\linewidth]{sine.pdf}%
-  \caption{This graph shows $y = \sin x$ from about $x = [-10, 10]$.
-  \emph{Notice that this figure takes up the full page width.}}%
-  \label{fig:fullfig}%
-\end{figure*}
+% \begin{figure*}[h]
+%   \includegraphics[width=\linewidth]{sine.pdf}%
+%   \caption{This graph shows $y = \sin x$ from about $x = [-10, 10]$.
+%   \emph{Notice that this figure takes up the full page width.}}%
+%   \label{fig:fullfig}%
+% \end{figure*}
 
-\begin{figure}
-  \includegraphics{hilbertcurves.pdf}
-%  \checkparity This is an \pageparity\ page.%
-  \caption[Hilbert curves of various degrees $n$.][6pt]{Hilbert curves of various degrees $n$. \emph{Notice that this figure only takes up the main textblock width.}}
-  \label{fig:textfig}
-  %\zsavepos{pos:textfig}
-\end{figure}
+% \begin{figure}
+%   \includegraphics{hilbertcurves.pdf}
+% %  \checkparity This is an \pageparity\ page.%
+%   \caption[Hilbert curves of various degrees $n$.][6pt]{Hilbert curves of various degrees $n$. \emph{Notice that this figure only takes up the main textblock width.}}
+%   \label{fig:textfig}
+%   %\zsavepos{pos:textfig}
+% \end{figure}
 
 As with sidenotes and marginnotes, a caption may sometimes require vertical
 adjustment. The \doccmddef{caption} command now takes a second optional
