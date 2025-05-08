@@ -43,6 +43,9 @@
 % For nicely typeset tabular material
 \usepackage{booktabs}
 
+% amsmath package for \lvert and \rvert bars for absolute value
+\usepackage{amsmath}
+
 %%
 % For graphics / images
 \usepackage{graphicx}
@@ -250,9 +253,8 @@ and \mbox{Donald E.~Knuth}.
 
 % r.9 introduction
 \cleardoublepage
-\chapter*{Introduction}
 
-Despite the title this book is rather about my understanding about Guidance,
+\newthought{Despite} the title this book is rather about my understanding about Guidance,
 Navigation and Control rather than the actual scientific field. I felt the need
 to 1, pull all the knowledge related to the field together with a single
 document and displaying the connections, and 2, explain it. The latter is the
@@ -260,16 +262,33 @@ most cruical part of my learning process. If I can't explain it, I don't
 understand it. Yes, this idea was put into words by Feinmann. So as I learn, I
 explain and I learn more.
 
-This book should be a website. The content is way more than a book ever
+\newthought{This book} should be a website. The content is way more than a book ever
 discusses. But, at this point there is no tool to display information on the web
 with ease and beauty as latex can do. Latex  is perfection. Web is
 imperfection. I am not going to waste my time on imperfection.
+
+\newthought{Mathematics}, especially applied mathematics is the bottom line in
+GNC. As a result it will be discussed accordingly. I am going to go deep in
+Dynamic and Control theory as these are the two fields ruling the professional
+life of an GNC Engineer. The mathematics matter is split to Precalculus,
+Calculus, Dynamic theory, Control theory and GNC topics. The latter will be just
+examples and their solutions.
+
+\newthought{\LaTeX} is the other tool you are going to use frequently.
+
+\newthought{Physics} will be discussed.
+
+\newthought{Programming} is like breathing for a GNC engineer. This book won't
+teach you a particular language, rather will go through the foundations like
+algorhitms and data structures, and all the computation related details needed
+for scientific computing. The scientific calculations will be done by
+Python, Rust and MathPotato. The latter is my creation.
 
 %%
 % Start the main matter (normal chapters)
 \mainmatter
 
-\chapter{Mathematics}
+\part{Mathematics}
 \input{mathematics/mathematics}
 
 
