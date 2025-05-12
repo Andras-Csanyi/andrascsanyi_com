@@ -17,29 +17,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "aerospace_engineering/introduction.md",
-      "output": {
-        ".html": {
-          "relative_path": "aerospace_engineering/introduction.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "aerospace_engineering/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "aerospace_engineering/toc.html"
-        },
-        ".json": {
-          "relative_path": "aerospace_engineering/toc.json"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "blog/introduction.md",
       "output": {
         ".html": {
@@ -59,37 +36,34 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "blog/the_gnc_book.md",
+      "output": {
+        ".html": {
+          "relative_path": "blog/the_gnc_book.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "blog/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "blog/toc.html"
-        },
         ".json": {
           "relative_path": "blog/toc.json"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "computer_science/introduction.md",
-      "output": {
-        ".html": {
-          "relative_path": "computer_science/introduction.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "computer_science/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "computer_science/toc.html"
         },
-        ".json": {
-          "relative_path": "computer_science/toc.json"
+        ".html": {
+          "relative_path": "blog/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "book/gnc-book.pdf",
+      "output": {
+        "resource": {
+          "relative_path": "book/gnc-book.pdf"
         }
       },
       "version": ""
@@ -105,83 +79,14 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "mathematics/calculus/functions.md",
-      "output": {
-        ".html": {
-          "relative_path": "mathematics/calculus/functions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "mathematics/calculus/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "mathematics/calculus/toc.html"
-        },
-        ".json": {
-          "relative_path": "mathematics/calculus/toc.json"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mathematics/map.md",
-      "output": {
-        ".html": {
-          "relative_path": "mathematics/map.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mathematics/precalculus/real_numbers.md",
-      "output": {
-        ".html": {
-          "relative_path": "mathematics/precalculus/real_numbers.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "mathematics/precalculus/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "mathematics/precalculus/toc.html"
-        },
-        ".json": {
-          "relative_path": "mathematics/precalculus/toc.json"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "mathematics/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "mathematics/toc.html"
-        },
-        ".json": {
-          "relative_path": "mathematics/toc.json"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
