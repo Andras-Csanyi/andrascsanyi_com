@@ -411,6 +411,5 @@ docs/_site
 *.lof
 *.lot
 *.out
-*.pdf
 *.synctex.gz
 *.toc
