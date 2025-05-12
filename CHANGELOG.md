@@ -1,3 +1,10 @@
+# [0.21.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.20.0...0.21.0) (2025-05-12)
+
+
+### Features
+
+* introducing the book and removing sections ([#68](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/68)) ([226dc52](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/226dc52d8e83b89a7394b2a547a7b121b246add2))
+
 # [0.20.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.19.0...0.20.0) (2025-04-26)
 
 
