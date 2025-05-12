@@ -1,50 +1,51 @@
 {
-    "metadata": [],
-    "build": {
-        "content": [
-            {
-                "files": [
-                    "**/*.{md,yml}"
-                ],
-                "exclude": [
-                    "_site/**",
-                    "obj/**"
-                ]
-            }
+  "metadata": [],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
         ],
-        "markdownEngineProperties": {
-            "alerts": {
-                "DEFINITION": "TIP alert alert-info"
-            }
-        },
-        "resource": [
-            {
-                "files": [
-                    "**/images/**"
-                ]
-            }
-        ],
-        "template": [
-            "default",
-            "modern"
-        ],
-        "globalMetadata": {
-            "_appName": "Andras Csanyi",
-            "_appTitle": "Andras Csanyi",
-            "_enableSearch": true,
-            "_disableContribution": true,
-            "_appFooter": ""
-        },
-        "sitemap": {
-            "baseUrl": "https://andrascsanyi.com",
-            "priority": 0.5,
-            "changefreq": "daily"
-        },
-        "fileMetadata": {
-            "_appTitle": {
-                "blog/**/*.md": "blog",
-                "software_engineering/**/*.md": "book"
-            }
-        }
+        "exclude": [
+          "_site/**",
+          "obj/**"
+        ]
+      }
+    ],
+    "markdownEngineProperties": {
+      "alerts": {
+        "DEFINITION": "TIP alert alert-info"
+      }
+    },
+    "resource": [
+      {
+        "files": [
+          "**/images/**",
+          "book/gnc-book.pdf"
+        ]
+      }
+    ],
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "Andras Csanyi",
+      "_appTitle": "Andras Csanyi",
+      "_enableSearch": true,
+      "_disableContribution": true,
+      "_appFooter": ""
+    },
+    "sitemap": {
+      "baseUrl": "https://andrascsanyi.com",
+      "priority": 0.5,
+      "changefreq": "daily"
+    },
+    "fileMetadata": {
+      "_appTitle": {
+        "blog/**/*.md": "blog",
+        "software_engineering/**/*.md": "book"
+      }
     }
+  }
 }

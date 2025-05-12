@@ -402,6 +402,14 @@ docs/_site
 *.bkp
 *.DS_Store
 
-# java related files
-target/
-.settings/
+*.aux
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.out
+*.synctex.gz
+*.toc
