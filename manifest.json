@@ -27,6 +27,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "blog/study_plan.md",
+      "output": {
+        ".html": {
+          "relative_path": "blog/study_plan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "blog/study_strategy.md",
       "output": {
         ".html": {
