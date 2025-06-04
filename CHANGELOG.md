@@ -1,3 +1,10 @@
+# [0.22.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.21.0...0.22.0) (2025-06-04)
+
+
+### Features
+
+* study plan ([#70](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/70)) ([9a5ecc2](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/9a5ecc2b8635bfbb5a97b928482f19eaa9ed6828))
+
 # [0.21.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.20.0...0.21.0) (2025-05-12)
 
 
