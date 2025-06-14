@@ -1,3 +1,10 @@
+# [0.23.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.22.0...0.23.0) (2025-06-14)
+
+
+### Features
+
+* real numbers related content of the book ([#71](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/71)) ([28700a2](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/28700a2735b7dc8335f8affbe6756e94c2824d91))
+
 # [0.22.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.21.0...0.22.0) (2025-06-04)
 
 
