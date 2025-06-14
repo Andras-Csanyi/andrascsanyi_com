@@ -413,3 +413,5 @@ docs/_site
 *.out
 *.synctex.gz
 *.toc
+docs/book/gnc-book.bbl
+docs/book/gnc-book.blg
