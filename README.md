@@ -1,3 +1,3 @@
-# Version: 0.22.0
+# Version: 0.23.0
 
 [andrascsanyi.com](https://andrascsanyi.com)
