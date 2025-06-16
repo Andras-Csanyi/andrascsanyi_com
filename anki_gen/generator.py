@@ -29,8 +29,7 @@ def create_deck():
     collection.models.update_dict(gnc_note)
     assert gnc_note is not None, "Note is None after name change"
 
-    latex_pre = """
-    \\documentclass[12pt]{article}
+    latex_pre = """\\documentclass[12pt]{article}
     \\special{papersize=3in,5in}
     \\usepackage[utf8]{inputenc}
     \\usepackage{amssymb}
@@ -38,11 +37,12 @@ def create_deck():
     \\usepackage{booktabs}
     \\usepackage{makecell}
     \\usepackage{tabularx}
+    \\usepackage{tikz}
     \\usepackage[english]{babel}
     \\pagestyle{empty}
     \\setlength{\\parindent}{0in}
-    \\begin{document}\n
-    """
+    \\begin{document}"""
+
     gnc_note["latexPre"] = latex_pre
     collection.models.update_dict(gnc_note)
     gnc_note = collection.models.by_name("mathematics-generated")
@@ -69,8 +69,8 @@ def create_deck():
                 if len(back_content) != 0:
                     for front, back in back_content:
                         new_card = collection.new_note(gnc_note)
-                        new_card["Front"] = front
-                        new_card["Back"] = back
+                        new_card["Front"] = front.replace("\\\\", "\\")
+                        new_card["Back"] = "[latex]" + back + "[/latex]"
                         # adding to the collection
                         collection.add_note(note=new_card, deck_id=deck_id)
 
