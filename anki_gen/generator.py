@@ -4,6 +4,7 @@ import random
 import copy
 
 from pathlib import Path
+from typing import List
 from pprint import pprint
 from anki.collection import Collection, DeckIdLimit
 from anki.decks import DeckId
@@ -26,10 +27,12 @@ def create_deck():
     assert gnc_note is not None, "Note is None"
 
     gnc_note["name"] = "mathematics-generated"
+    # enables svg generation, needed for tikz
+    gnc_note["latexsvg"] = True
     collection.models.update_dict(gnc_note)
     assert gnc_note is not None, "Note is None after name change"
 
-    latex_pre = """\\documentclass[12pt]{article}
+    latex_pre = """\\documentclass[dvisvgm]{standalone}
     \\special{papersize=3in,5in}
     \\usepackage[utf8]{inputenc}
     \\usepackage{amssymb}
@@ -54,6 +57,7 @@ def create_deck():
     back_content_pattern = (
         r"\\subsection(?:\[[^\]]*\])?{([^}]*)}([\s\S]*?)%ankicard end"
     )
+    tags_pattern = r"^%ankitags(?:\s+([^\n]*))?$"
 
     try:
         for tex_file in latex_root_path.rglob("*.tex"):
@@ -71,6 +75,23 @@ def create_deck():
                         new_card = collection.new_note(gnc_note)
                         new_card["Front"] = front.replace("\\\\", "\\")
                         new_card["Back"] = "[latex]" + back + "[/latex]"
+                        tag_matches = re.findall(tags_pattern, content, re.MULTILINE)
+                        tags: List[str] = []
+                        for tag_match in tag_matches:
+                            if not tag_match:
+                                print(
+                                    f"skipped adding tags for {tex_file} because no tags found"
+                                )
+                            else:
+                                tags = [
+                                    tag.strip()
+                                    for tag in tag_match.split()
+                                    if tag.strip()
+                                ]
+                                for t in tags:
+                                    new_card.add_tag(t)
+                                print(f"Tags: {tags}")
+
                         # adding to the collection
                         collection.add_note(note=new_card, deck_id=deck_id)
 
