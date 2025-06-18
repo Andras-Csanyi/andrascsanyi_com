@@ -54,9 +54,12 @@ def create_deck():
     print(currdir)
     latex_root_path = Path("./docs/book")
     ankicard_flag = "%ankicard"
-    back_content_pattern = (
-        r"\\subsection(?:\[[^\]]*\])?{([^}]*)}([\s\S]*?)%ankicard end"
-    )
+    front_pattern = r"%ankifront\n(.*?)\n%ankifront end"
+    back_pattern = r"%ankiback\n(.*?)\n%ankiback end"
+
+    # back_content_pattern = (
+    #     r"\\subsection(?:\[[^\]]*\])?{([^}]*)}([\s\S]*?)%ankicard end"
+    # )
     tags_pattern = r"^%ankitags(?:\s+([^\n]*))?$"
 
     try:
@@ -68,41 +71,36 @@ def create_deck():
                     print(f"{tex_file} is skipped.")
                     continue
 
-                back_content = re.findall(back_content_pattern, content)
+                front_content = re.findall(front_pattern, content, re.DOTALL)
+                back_content = re.findall(back_pattern, content, re.DOTALL)
 
-                if len(back_content) != 0:
-                    for front, back in back_content:
-                        new_card = collection.new_note(gnc_note)
-                        new_card["Front"] = front.replace("\\\\", "\\")
-                        new_card["Back"] = "[latex]" + back + "[/latex]"
-                        tag_matches = re.findall(tags_pattern, content, re.MULTILINE)
-                        tags: List[str] = []
-                        for tag_match in tag_matches:
-                            if not tag_match:
-                                print(
-                                    f"skipped adding tags for {tex_file} because no tags found"
-                                )
-                            else:
-                                tags = [
-                                    tag.strip()
-                                    for tag in tag_match.split()
-                                    if tag.strip()
-                                ]
-                                for t in tags:
-                                    new_card.add_tag(t)
-                                print(f"Tags: {tags}")
+                if len(front_content) == 0 and len(back_content) == 0:
+                    print(f"{tex_file} has no front and or back content. Skipped.")
+                    continue
 
-                        # adding to the collection
-                        collection.add_note(note=new_card, deck_id=deck_id)
+                new_card = collection.new_note(gnc_note)
+                new_card["Front"] = "[latex]" + front_content[0] + "[/latex]"
+                new_card["Back"] = "[latex]" + back_content[0] + "[/latex]"
+
+                tag_matches = re.findall(tags_pattern, content, re.MULTILINE)
+                tags: List[str] = []
+                for tag_match in tag_matches:
+                    if not tag_match:
+                        print(
+                            f"skipped adding tags for {tex_file} because no tags found"
+                        )
+                    else:
+                        tags = [tag.strip() for tag in tag_match.split() if tag.strip()]
+                        for t in tags:
+                            new_card.add_tag(t)
+                        print(f"Tags: {tags}")
+
+                collection.add_note(note=new_card, deck_id=deck_id)
 
                 print("processing finished \n")
 
     except Exception as e:
         print(f" Error happened: {e}")
-
-    # new_card.add_tag("Mathematics")
-    # new_card.add_tag("Calculus")
-    # new_card.add_tag("Custom")
 
     export_options = ExportAnkiPackageOptions()
     export_options.with_deck_configs = True
