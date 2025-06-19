@@ -415,3 +415,7 @@ docs/_site
 *.toc
 docs/book/gnc-book.bbl
 docs/book/gnc-book.blg
+*.media
+*.anki2
+*.apkg
+*venv
