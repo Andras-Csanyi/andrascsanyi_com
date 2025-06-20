@@ -1,3 +1,10 @@
+# [0.25.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.24.0...0.25.0) (2025-06-20)
+
+
+### Features
+
+* anki cards - complex numbers ([#73](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/73)) ([9c3c192](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/9c3c192cefd43cc473fca1ec99f00b9adbe6d1d2))
+
 # [0.24.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.23.0...0.24.0) (2025-06-19)
 
 
