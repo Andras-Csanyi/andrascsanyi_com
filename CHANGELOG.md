@@ -1,3 +1,10 @@
+# [0.26.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.25.0...0.26.0) (2025-06-21)
+
+
+### Features
+
+* anki cards ([#74](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/74)) ([fe629a4](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/fe629a4475698acf2221092f780a803bfd39e85b))
+
 # [0.25.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.24.0...0.25.0) (2025-06-20)
 
 
