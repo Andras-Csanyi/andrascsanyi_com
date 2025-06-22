@@ -1,0 +1,22 @@
+[[items]]
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "Complex numbers"
+chapter = 1.6
+
+page_start = 59
+page_exercises_start = 63
+
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 6
+
+skills_questions_interval_start = 7
+skills_questions_interval_end = 84
+
+applications_questions_interval_start = 0
+applications_questions_interval_end = 0
+
+discussion_questions_interval_start = 85
+discussion_questions_interval_end = 86
+
+page_end = 64

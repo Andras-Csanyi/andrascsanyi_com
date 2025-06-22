@@ -1,0 +1,22 @@
+[[items]]
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "Rational expressions"
+chapter = 1.4
+
+page_start = 36
+page_exercises_start = 42
+
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 6
+
+skills_questions_interval_start = 7
+skills_questions_interval_end = 98
+
+applications_questions_interval_start = 99
+applications_questions_interval_end = 100
+
+discussion_questions_interval_start = 101
+discussion_questions_interval_end = 105
+
+page_end = 45

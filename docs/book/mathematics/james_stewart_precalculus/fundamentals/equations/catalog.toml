@@ -1,0 +1,22 @@
+[[items]]
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "Equations"
+chapter = 1.5
+
+page_start = 45
+page_exercises_start = 56
+
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 8
+
+skills_questions_interval_start = 9
+skills_questions_interval_end = 128
+
+applications_questions_interval_start = 129
+applications_questions_interval_end = 138
+
+discussion_questions_interval_start = 139
+discussion_questions_interval_end = 143
+
+page_end = 59
