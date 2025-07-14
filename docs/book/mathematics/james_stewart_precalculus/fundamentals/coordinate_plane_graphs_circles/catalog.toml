@@ -1,0 +1,22 @@
+[[items]]
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "The coordinate plane, Graphs of equations; Circles"
+chapter = 1.9
+
+page_start = 92
+page_exercises_start = 101
+
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 10
+
+skills_questions_interval_start = 11
+skills_questions_interval_end = 113
+
+applications_questions_interval_start = 114
+applications_questions_interval_end = 115
+
+discussion_questions_interval_start = 116
+discussion_questions_interval_end = 118
+
+page_end = 106

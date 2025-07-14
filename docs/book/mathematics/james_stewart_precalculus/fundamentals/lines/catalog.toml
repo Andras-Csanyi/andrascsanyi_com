@@ -1,0 +1,22 @@
+[[items]]
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "Lines"
+chapter = 1.10
+
+page_start = 106
+page_exercises_start = 113
+
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 8
+
+skills_questions_interval_start = 9
+skills_questions_interval_end = 87
+
+applications_questions_interval_start = 88
+applications_questions_interval_end = 95
+
+discussion_questions_interval_start = 96
+discussion_questions_interval_end = 97
+
+page_end = 117

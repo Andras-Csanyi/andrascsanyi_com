@@ -1,22 +1,22 @@
 [[items]]
 author = "James Stewart"
 book = "Precalculus"
-chapter_title = "Modeling with equations"
-chapter = 1.7
+chapter_title = "Inequalities"
+chapter = 1.8
 
-page_start = 65
-page_exercises_start = 75
+page_start = 81
+page_exercises_start = 89
 
 concepts_questions_interval_start = 1
 concepts_questions_interval_end = 6
 
 skills_questions_interval_start = 7
-skills_questions_interval_end = 20
+skills_questions_interval_end = 116
 
-applications_questions_interval_start = 21
-applications_questions_interval_end = 91
+applications_questions_interval_start = 117
+applications_questions_interval_end = 133
 
-discussion_questions_interval_start = 92
-discussion_questions_interval_end = 93
+discussion_questions_interval_start = 134
+discussion_questions_interval_end = 139
 
-page_end = 81
+page_end = 91

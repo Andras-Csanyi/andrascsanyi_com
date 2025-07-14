@@ -1,0 +1,22 @@
+[[items]]
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "Chapter review"
+chapter = 1.13
+
+page_start = 131
+page_exercises_start = 131
+
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 40
+
+skills_questions_interval_start = 1
+skills_questions_interval_end = 160
+
+applications_questions_interval_start = 0
+applications_questions_interval_end = 0
+
+discussion_questions_interval_start = 0
+discussion_questions_interval_end = 0
+
+page_end = 138

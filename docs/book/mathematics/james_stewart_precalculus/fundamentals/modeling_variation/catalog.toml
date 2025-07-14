@@ -1,0 +1,22 @@
+[[items]]
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "Modeling variation"
+chapter = 1.12
+
+page_start = 124
+page_exercises_start = 128
+
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 6
+
+skills_questions_interval_start = 7
+skills_questions_interval_end = 34
+
+applications_questions_interval_start = 35
+applications_questions_interval_end = 56
+
+discussion_questions_interval_start = 57
+discussion_questions_interval_end = 57
+
+page_end = 131
