@@ -19,7 +19,7 @@ pub fn parse_books(books_path: Vec<PathBuf>) -> Result<Vec<Book>, Error> {
                     books.push(parsed);
                 }
                 Err(e) => {
-                    panic!("Cannot parse file: {}", &r)
+                    panic!("Cannot parse file: {}. Error: {}", &r, e)
                 }
             }
         }

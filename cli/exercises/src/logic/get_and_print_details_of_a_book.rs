@@ -29,9 +29,10 @@ pub fn execute(book_reference: &str, root_path: &Path) {
         collectors::collector::collect_recursively(Path::new(target_book.path()), "chapter.toml")
             .unwrap_or_else(|e| {
                 panic!(
-                    "Failed to collect {} files under {} directory",
+                    "Failed to collect {} files under {} directory. Error: {}",
                     "chapter.toml",
-                    target_book.path()
+                    target_book.path(),
+                    e
                 )
             });
     let target_book_chapters = parsers::chapter::parse(chapters).unwrap_or_else(|e| {

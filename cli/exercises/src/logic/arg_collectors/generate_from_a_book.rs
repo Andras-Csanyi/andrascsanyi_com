@@ -19,33 +19,29 @@ pub fn generate_from_a_book(arg_matches: ArgMatches) -> Result<HashMap<String, S
             .expect("No chapter references were provided.")
             .clone(),
     );
-    // args.insert(
-    //     "concept".to_string(),
-    //     arg_matches
-    //         .get_one::<String>("concept")
-    //         .expect("No concept questions volume was provided.")
-    //         .clone(),
-    // );
-    // args.insert(
-    //     "skills".to_string(),
-    //     arg_matches
-    //         .get_one::<String>("skills")
-    //         .expect("No skill questions volume was provided.")
-    //         .clone(),
-    // );
-    // args.insert(
-    //     "applications".to_string(),
-    //     arg_matches
-    //         .get_one::<String>("applications")
-    //         .expect("No applications questions volume was provided.")
-    //         .clone(),
-    // );
-    // args.insert(
-    //     "theories".to_string(),
-    //     arg_matches
-    //         .get_one::<String>("theories")
-    //         .expect("No theories questions volume was provided.")
-    //         .clone(),
-    // );
+    match arg_matches.get_one::<usize>("concept") {
+        Some(c) => {
+            args.insert("concept".to_string(), c.to_string());
+        }
+        None => (),
+    }
+    match arg_matches.get_one::<usize>("skill") {
+        Some(c) => {
+            args.insert("skill".to_string(), c.to_string());
+        }
+        None => (),
+    }
+    match arg_matches.get_one::<usize>("application") {
+        Some(c) => {
+            args.insert("application".to_string(), c.to_string());
+        }
+        None => (),
+    }
+    match arg_matches.get_one::<usize>("discussion") {
+        Some(c) => {
+            args.insert("discussion".to_string(), c.to_string());
+        }
+        None => (),
+    }
     Ok(args)
 }

@@ -1,5 +1,3 @@
-use std::path::PathBuf;
-
 use clap::arg;
 use clap::value_parser;
 use clap::Command;
@@ -49,15 +47,15 @@ pub fn generate_book_command(commands: Command) -> Command {
                     )
                     .arg(
                         arg!(
-                            --applications <VOLUME> 
+                            --application <VOLUME> 
                             "The volume of application checking questions to be generated")
                         .required(false)
                         .value_parser(value_parser!(usize)),
                     )
                     .arg(
                         arg!(
-                            --theories <VOLUME> 
-                            "The volume of theory and their proves checking questions to be generated")
+                            --discussion <VOLUME> 
+                            "The volume of questions where the question subject should be discussed")
                         .required(false)
                         .value_parser(value_parser!(usize)),
                     )

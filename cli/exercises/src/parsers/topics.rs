@@ -18,7 +18,7 @@ pub fn parse_topics(topics_path: Vec<PathBuf>) -> Result<Vec<Topic>, Error> {
                     topics.push(parsed);
                 }
                 Err(e) => {
-                    panic!("Cannot parse file: {}", &r)
+                    panic!("Cannot parse file: {}. Error: {}", &r, e)
                 }
             }
         }

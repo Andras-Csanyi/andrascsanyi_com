@@ -3,7 +3,6 @@ use std::path::Path;
 use self::cli::commands::build_cli;
 use self::cli::matchers::find_matches;
 
-pub mod chapter_catalog;
 pub mod cli;
 pub mod collectors;
 pub mod logic;
