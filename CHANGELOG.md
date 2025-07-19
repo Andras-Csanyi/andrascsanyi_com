@@ -1,3 +1,10 @@
+# [0.27.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.26.0...0.27.0) (2025-07-19)
+
+
+### Features
+
+* adding basic exercises cli ([#75](https://github.com/Andras-Csanyi/andrascsanyi_com/issues/75)) ([64dd174](https://github.com/Andras-Csanyi/andrascsanyi_com/commit/64dd1743734de34efff17e2289c31368a7d72483))
+
 # [0.26.0](https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.25.0...0.26.0) (2025-06-21)
 
 
