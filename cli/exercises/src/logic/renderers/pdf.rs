@@ -1,6 +1,6 @@
 use std::process::Command;
 
-use crate::structs::question_tmpl::QuestionTmpl;
+use crate::logic::structs::question_tmpl::QuestionTmpl;
 
 pub fn execute(questions: Vec<QuestionTmpl>, filename_partial: String) {
     let mut items: String = String::from("");

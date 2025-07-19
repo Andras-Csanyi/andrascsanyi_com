@@ -2,7 +2,9 @@ use serde::Deserialize;
 use serde::Serialize;
 use tabled::Tabled;
 
-#[derive(Debug, Serialize, Deserialize, Tabled)]
+use super::chapter::Chapter;
+
+#[derive(Clone, Debug, Serialize, Deserialize, Tabled)]
 pub struct Book {
     #[tabled(rename = "Title")]
     title: String,
@@ -20,28 +22,15 @@ pub struct Book {
     reference: String,
 
     #[serde(skip_deserializing)]
+    #[tabled(skip)]
     path: String,
+
+    #[serde(skip_deserializing)]
+    #[tabled(skip)]
+    chapters: Vec<Chapter>,
 }
 
 impl Book {
-    pub fn new(
-        title: String,
-        authors: String,
-        page_start: u32,
-        page_end: u32,
-        reference: String,
-        path: String,
-    ) -> Self {
-        Self {
-            title,
-            authors,
-            page_start,
-            page_end,
-            reference,
-            path,
-        }
-    }
-
     pub fn title(&self) -> &str {
         &self.title
     }
@@ -88,5 +77,17 @@ impl Book {
 
     pub fn path(&self) -> &str {
         &self.path
+    }
+
+    pub fn chapters(&self) -> &[Chapter] {
+        &self.chapters
+    }
+
+    pub fn chapters_mut(&mut self) -> &mut Vec<Chapter> {
+        &mut self.chapters
+    }
+
+    pub fn set_chapters(&mut self, chapters: Vec<Chapter>) {
+        self.chapters = chapters;
     }
 }

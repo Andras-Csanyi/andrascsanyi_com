@@ -4,6 +4,7 @@ use clap::ArgMatches;
 
 use crate::logic;
 use crate::logic::arg_collectors;
+use crate::logic::controllers;
 
 pub fn generate_matchers(arg_matches: ArgMatches, base_path: &Path) {
     match arg_matches.subcommand() {
@@ -14,7 +15,8 @@ pub fn generate_matchers(arg_matches: ArgMatches, base_path: &Path) {
                         book_match.clone(),
                     )
                     .unwrap_or_else(|e| panic!("Failed parsing the arguments. Error: {}", e));
-                    logic::generate_from_a_book::execute(args, base_path)
+                    // logic::generate_from_a_book::execute(args, base_path)
+                    controllers::generate_from_a_book::execute(base_path);
                 }
                 None => {}
             }

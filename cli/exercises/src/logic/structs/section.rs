@@ -2,7 +2,7 @@ use serde::Deserialize;
 use serde::Serialize;
 use tabled::Tabled;
 
-#[derive(Debug, Serialize, Deserialize, Tabled)]
+#[derive(Clone, Debug, Serialize, Deserialize, Tabled)]
 pub struct Section {
     chapter_title: String,
     chapter: f64,
@@ -32,47 +32,12 @@ pub struct Section {
 
     #[serde(skip_deserializing)]
     book_reference: String,
+
+    #[serde(skip_deserializing)]
+    path: String,
 }
 
 impl Section {
-    pub fn new(
-        chapter_title: String,
-        chapter: f64,
-        page_start: usize,
-        page_exercises_start: usize,
-        concepts_questions_interval_start: usize,
-        concepts_questions_interval_end: usize,
-        skills_questions_interval_start: usize,
-        skills_questions_interval_end: usize,
-        applications_questions_interval_start: usize,
-        applications_questions_interval_end: usize,
-        discussion_questions_interval_start: usize,
-        discussion_questions_interval_end: usize,
-        page_end: usize,
-        book_title: String,
-        book_author: String,
-        book_reference: String,
-    ) -> Self {
-        Self {
-            chapter_title,
-            chapter,
-            page_start,
-            page_exercises_start,
-            concepts_questions_interval_start,
-            concepts_questions_interval_end,
-            skills_questions_interval_start,
-            skills_questions_interval_end,
-            applications_questions_interval_start,
-            applications_questions_interval_end,
-            discussion_questions_interval_start,
-            discussion_questions_interval_end,
-            page_end,
-            book_title,
-            book_author,
-            book_reference,
-        }
-    }
-
     pub fn set_chapter_title(&mut self, chapter_title: String) {
         self.chapter_title = chapter_title;
     }
@@ -214,5 +179,13 @@ impl Section {
 
     pub fn set_book_reference(&mut self, book_reference: String) {
         self.book_reference = book_reference;
+    }
+
+    pub fn set_path(&mut self, path: String) {
+        self.path = path;
+    }
+
+    pub fn path(&self) -> &str {
+        &self.path
     }
 }
