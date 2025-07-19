@@ -1,0 +1,21 @@
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "Modeling with equations"
+chapter = 1.7
+
+page_start = 65
+page_exercises_start = 75
+
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 6
+
+skills_questions_interval_start = 7
+skills_questions_interval_end = 20
+
+applications_questions_interval_start = 21
+applications_questions_interval_end = 91
+
+discussion_questions_interval_start = 92
+discussion_questions_interval_end = 93
+
+page_end = 81

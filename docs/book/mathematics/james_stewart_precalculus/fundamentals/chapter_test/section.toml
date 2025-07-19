@@ -1,0 +1,21 @@
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "Chapter test"
+chapter = 1.14
+
+page_start = 139
+page_exercises_start = 139
+
+concepts_questions_interval_start = 0
+concepts_questions_interval_end = 0
+
+skills_questions_interval_start = 1
+skills_questions_interval_end = 25
+
+applications_questions_interval_start = 0
+applications_questions_interval_end = 0
+
+discussion_questions_interval_start = 0
+discussion_questions_interval_end = 0
+
+page_end = 138

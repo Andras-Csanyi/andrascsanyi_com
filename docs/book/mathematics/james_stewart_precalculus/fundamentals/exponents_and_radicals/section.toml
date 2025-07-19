@@ -1,0 +1,15 @@
+author = "James Stewart"
+book = "Precalculus"
+chapter = 1.2
+chapter_title = "Exponents and radicals"
+page_start = 13
+page_exercises_start = 21
+page_end = 25
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 8
+skills_questions_interval_start = 9
+skills_questions_interval_end = 102
+applications_questions_interval_start = 0
+applications_questions_interval_end = 0
+discussion_questions_interval_start = 103
+discussion_questions_interval_end = 107

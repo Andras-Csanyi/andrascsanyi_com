@@ -1,0 +1,21 @@
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "Solving equations and inequalities graphically"
+chapter = 1.11
+
+page_start = 117
+page_exercises_start = 122
+
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 4
+
+skills_questions_interval_start = 5
+skills_questions_interval_end = 54
+
+applications_questions_interval_start = 55
+applications_questions_interval_end = 56
+
+discussion_questions_interval_start = 57
+discussion_questions_interval_end = 58
+
+page_end = 123

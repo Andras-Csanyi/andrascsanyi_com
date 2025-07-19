@@ -1,0 +1,15 @@
+author = "James Stewart"
+book = "Precalculus"
+chapter_title = "Real numbers"
+chapter = 1.1
+page_start = 2
+page_end = 12
+page_exercises_start = 10
+concepts_questions_interval_start = 1
+concepts_questions_interval_end = 8
+skills_questions_interval_start = 9
+skills_questions_interval_end = 84
+applications_questions_interval_start = 85
+applications_questions_interval_end = 86
+discussion_questions_interval_start = 87
+discussion_questions_interval_end = 94
