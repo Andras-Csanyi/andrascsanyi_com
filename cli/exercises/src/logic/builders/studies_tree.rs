@@ -56,6 +56,5 @@ pub fn build(path: &Path) -> Result<Vec<Topic>, Error> {
         });
     });
 
-    println!("topics tree: {:#?}", topics);
     Ok(topics)
 }

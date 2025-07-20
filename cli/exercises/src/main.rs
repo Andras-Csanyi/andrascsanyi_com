@@ -6,11 +6,12 @@ use self::cli::matchers::find_matches;
 pub mod cli;
 pub mod logic;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let root_path = "../../docs/book/";
     let path = Path::new(root_path);
     let matches = build_cli();
-    find_matches(matches, path);
+    find_matches(matches, path).await;
 
     // let matches = command!()
     //     .propagate_version(true)

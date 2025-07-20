@@ -2,6 +2,7 @@ pub mod arg_collectors;
 pub mod builders;
 pub mod collectors;
 pub mod controllers;
+pub mod orm;
 pub mod parsers;
 pub mod providers;
 pub mod renderers;
