@@ -419,3 +419,4 @@ docs/book/gnc-book.blg
 *.anki2
 *.apkg
 *venv
+exercises.config.toml
