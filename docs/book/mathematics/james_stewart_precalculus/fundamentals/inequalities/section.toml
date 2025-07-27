@@ -1,7 +1,7 @@
 author = "James Stewart"
 book = "Precalculus"
-chapter_title = "Inequalities"
-chapter = 1.8
+section_title = "Inequalities"
+section_number = 1.8
 
 page_start = 81
 page_exercises_start = 89

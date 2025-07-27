@@ -2,7 +2,7 @@ use welds::WeldsModel;
 
 #[derive(Debug, WeldsModel)]
 #[welds(table = "topics")]
-pub struct Topic {
+pub struct TopicEntity {
     #[welds(primary_key)]
     pub id: i32,
     pub topic: String,

@@ -49,4 +49,8 @@ impl Topic {
     pub fn books_mut(&mut self) -> &mut Vec<Book> {
         &mut self.books
     }
+
+    pub fn books(&self) -> &[Book] {
+        &self.books
+    }
 }

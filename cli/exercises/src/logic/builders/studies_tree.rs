@@ -48,7 +48,7 @@ pub fn build(path: &Path) -> Result<Vec<Topic>, Error> {
                     .map(|p| p.to_path_buf())
                     .unwrap_or_else(|| panic!("Couldn't create parent based on chapter path."));
                 sections.clone().into_iter().for_each(|section| {
-                    if PathBuf::from(section.clone().path()).starts_with(chapter_path.clone()) {
+                    if PathBuf::from(section.clone().path).starts_with(chapter_path.clone()) {
                         chapter.sections_mut().push(section.clone());
                     }
                 });

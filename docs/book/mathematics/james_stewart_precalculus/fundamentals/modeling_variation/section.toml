@@ -1,7 +1,7 @@
 author = "James Stewart"
 book = "Precalculus"
-chapter_title = "Modeling variation"
-chapter = 1.12
+section_title = "Modeling variation"
+section_number = 1.12
 
 page_start = 124
 page_exercises_start = 128

@@ -1,7 +1,7 @@
 author = "James Stewart"
 book = "Precalculus"
-chapter_title = "Chapter review"
-chapter = 1.13
+section_title = "Chapter review"
+section_number = 1.13
 
 page_start = 131
 page_exercises_start = 131

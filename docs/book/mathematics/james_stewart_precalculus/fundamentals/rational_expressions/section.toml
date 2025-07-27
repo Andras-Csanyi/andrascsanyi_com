@@ -1,7 +1,7 @@
 author = "James Stewart"
 book = "Precalculus"
-chapter_title = "Rational expressions"
-chapter = 1.4
+section_title = "Rational expressions"
+section_number = 1.4
 
 page_start = 36
 page_exercises_start = 42

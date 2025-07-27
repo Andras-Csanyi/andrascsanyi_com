@@ -13,10 +13,10 @@ pub struct Book {
     authors: String,
 
     #[tabled(rename = "Page starts")]
-    page_start: u32,
+    page_start: i32,
 
     #[tabled(rename = "Page ends")]
-    page_end: u32,
+    page_end: i32,
 
     #[tabled(rename = "Ref")]
     reference: String,
@@ -47,19 +47,19 @@ impl Book {
         self.authors = authors;
     }
 
-    pub fn page_start(&self) -> u32 {
+    pub fn page_start(&self) -> i32 {
         self.page_start
     }
 
-    pub fn set_page_start(&mut self, page_start: u32) {
+    pub fn set_page_start(&mut self, page_start: i32) {
         self.page_start = page_start;
     }
 
-    pub fn page_end(&self) -> u32 {
+    pub fn page_end(&self) -> i32 {
         self.page_end
     }
 
-    pub fn set_page_end(&mut self, page_end: u32) {
+    pub fn set_page_end(&mut self, page_end: i32) {
         self.page_end = page_end;
     }
 

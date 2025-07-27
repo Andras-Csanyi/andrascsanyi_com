@@ -19,7 +19,7 @@ pub fn parse(files: HashMap<String, Vec<PathBuf>>) -> Result<Vec<Section>, Error
             let r: String = read_to_string::<_>(files.clone())?;
             match from_str::<Section>(&r) {
                 Ok(mut parsed) => {
-                    parsed.set_path(files.clone().into_os_string().into_string().unwrap());
+                    parsed.path = files.clone().into_os_string().into_string().unwrap();
                     sections.push(parsed);
                 }
                 Err(e) => {

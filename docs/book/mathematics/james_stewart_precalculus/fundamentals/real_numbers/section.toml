@@ -1,7 +1,7 @@
 author = "James Stewart"
 book = "Precalculus"
-chapter_title = "Real numbers"
-chapter = 1.1
+section_title = "Real numbers"
+section_number = 1.1
 page_start = 2
 page_end = 12
 page_exercises_start = 10

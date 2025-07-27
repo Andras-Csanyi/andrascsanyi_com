@@ -1,7 +1,7 @@
 author = "James Stewart"
 book = "Precalculus"
-chapter_title = "The coordinate plane, Graphs of equations; Circles"
-chapter = 1.9
+section_title = "The coordinate plane, Graphs of equations; Circles"
+section_number = 1.9
 
 page_start = 92
 page_exercises_start = 101

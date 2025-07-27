@@ -1,9 +1,10 @@
-use serde::Deserialize;
-use serde::Serialize;
-use tabled::Tabled;
+use welds::WeldsModel;
 
-#[derive(Clone, Debug, Serialize, Deserialize, Tabled)]
-pub struct Section {
+#[derive(Debug, WeldsModel)]
+#[welds(table = "sections")]
+pub struct SectionEntity {
+    #[welds(primary_key)]
+    pub id: i32,
     pub section_title: String,
     pub section_number: f64,
     pub page_start: i32,
@@ -17,12 +18,5 @@ pub struct Section {
     pub discussion_questions_interval_start: i32,
     pub discussion_questions_interval_end: i32,
     pub page_end: i32,
-    #[serde(skip_deserializing)]
-    pub book_title: String,
-    #[serde(skip_deserializing)]
-    pub book_author: String,
-    #[serde(skip_deserializing)]
-    pub book_reference: String,
-    #[serde(skip_deserializing)]
-    pub path: String,
+    pub chapter_id: i32,
 }

@@ -1,7 +1,7 @@
 author = "James Stewart"
 book = "Precalculus"
-chapter = 1.2
-chapter_title = "Exponents and radicals"
+section_number = 1.2
+section_title = "Exponents and radicals"
 page_start = 13
 page_exercises_start = 21
 page_end = 25
