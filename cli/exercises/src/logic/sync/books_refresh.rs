@@ -1,57 +1,99 @@
-use welds::Client;
-use welds::WeldsError;
-use welds::errors::Result;
+use anyhow::Error;
+use sqlx::Transaction;
+use sqlx::query;
+use sqlx::query_as;
+
+use crate::logic::database::entities::book_entity::BookEntity;
+use crate::logic::database::entities::topic_entity::TopicEntity;
 
 pub async fn topic_books_refresh(
     actual_topic: &crate::logic::structs::topic::Topic,
-    transaction: &impl Client,
-) -> Result<()> {
+    transaction: &mut Transaction<'_, sqlx::Postgres>,
+) -> Result<(), Error> {
     for topic_book in actual_topic.books() {
         // get the id of the topic from the db
         // here we iterate through what we have on the FS which doesn't have the ids the db knows
-        let topic_id = crate::logic::orm::topic::TopicEntity::all()
-            .limit(1)
-            .where_col(|i| i.topic.like(actual_topic.topic()))
-            .run(transaction)
-            .await?;
+        let topic_id = query_as!(
+            TopicEntity,
+            r#"
+            SELECT
+                id, topic_name, topic_cli_reference
+            FROM 
+                topics
+            WHERE
+                topic_name = $1
+        "#,
+            actual_topic.topic_name()
+        )
+        .fetch_one(&mut **transaction)
+        .await?;
         // we are looking for the data in the database
-        let mut book = crate::logic::orm::book::BookEntity::all()
-            .limit(1)
-            .where_col(|i| i.reference.like(topic_book.reference()))
-            .where_col(|i| i.topic_id.equal(topic_id.first().unwrap().id))
-            .run(transaction)
-            .await?;
-        if book.is_empty() {
-            // adding the new book if it is not in the db
-            let mut new_book_for_topic = crate::logic::orm::book::BookEntity::new();
-            new_book_for_topic.title = topic_book.title().to_string();
-            new_book_for_topic.authors = topic_book.authors().to_string();
-            new_book_for_topic.page_start = topic_book.page_start();
-            new_book_for_topic.page_end = topic_book.page_end();
-            new_book_for_topic.reference = topic_book.reference().to_string();
-            new_book_for_topic.topic_id = topic_id.first().unwrap().id;
-            new_book_for_topic.save(transaction).await?;
-            continue;
-        }
-        if book.iter().count() > 1 {
-            return Err(WeldsError::Other(anyhow::anyhow!(
-                "More than one book has been found with title: {} and topic_id: {}",
+
+        let books_in_topic = query_as!(
+            BookEntity,
+            r#"
+                SELECT 
+                    *
+                FROM 
+                    books
+                WHERE 
+                    topic_id = $1
+                    AND  reference = $2
+            "#,
+            topic_id.id,
+            topic_book.reference()
+        )
+        .fetch_all(&mut **transaction)
+        .await?;
+
+        if books_in_topic.is_empty() {
+            query!(
+                r#"
+                INSERT INTO 
+                    books (title, authors, reference, page_start, page_end, topic_id)
+                VALUES 
+                    ($1, $2, $3, $4, $5, $6)
+            "#,
                 topic_book.title(),
-                topic_id.first().unwrap().id
-            )));
+                topic_book.authors(),
+                topic_book.reference(),
+                topic_book.page_start(),
+                topic_book.page_end(),
+                topic_id.id
+            )
+            .execute(&mut **transaction)
+            .await?;
         }
-        if let Some(b) = book.first_mut() {
-            b.title = topic_book.title().to_string();
-            b.authors = topic_book.authors().to_string();
-            b.page_start = topic_book.page_start();
-            b.page_end = topic_book.page_end();
-            b.save(transaction).await?;
-            continue;
-        } else {
-            return Err(WeldsError::Other(anyhow::anyhow!(
-                "There is no first element in the topic list"
-            )));
+
+        if books_in_topic.iter().count() > 1 {
+            return Err(anyhow::anyhow!(
+                "There are more than one Books in the database with topic_id={} and reference={}",
+                topic_id.id,
+                topic_book.reference()
+            ));
         }
+
+        query!(
+            r#"
+            UPDATE 
+                books
+            SET 
+                title = $1, 
+                authors = $2, 
+                reference = $3, 
+                page_start = $4, 
+                page_end = $5
+            WHERE id = $6
+        "#,
+            topic_book.title(),
+            topic_book.authors(),
+            topic_book.reference(),
+            topic_book.page_start(),
+            topic_book.page_end(),
+            topic_id.id
+        )
+        .execute(&mut **transaction)
+        .await?;
     }
     Ok(())
 }

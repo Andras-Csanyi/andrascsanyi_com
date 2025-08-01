@@ -1,2 +1,2 @@
-topic = "GNC"
-topic_id = "gnc"
+topic_name = "GNC"
+topic_cli_reference = "gnc"

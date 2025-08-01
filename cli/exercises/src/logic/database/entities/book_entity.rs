@@ -1,11 +1,11 @@
-use welds::WeldsModel;
+use sqlx::FromRow;
 
-#[derive(Debug, WeldsModel)]
-#[welds(table = "books")]
+#[derive(Debug, FromRow)]
 pub struct BookEntity {
-    #[welds(primary_key)]
     pub id: i32,
+    #[sqlx(default)]
     pub title: String,
+    #[sqlx(default)]
     pub authors: String,
     pub page_start: i32,
     pub page_end: i32,

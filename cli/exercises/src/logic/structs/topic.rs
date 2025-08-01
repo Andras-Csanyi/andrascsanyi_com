@@ -6,11 +6,11 @@ use super::book::Book;
 
 #[derive(Clone, Debug, Serialize, Deserialize, Tabled)]
 pub struct Topic {
-    #[tabled(rename = "Topic")]
-    topic: String,
+    #[tabled(rename = "Topic name")]
+    topic_name: String,
 
-    #[tabled(rename = "Topic Id")]
-    topic_id: String,
+    #[tabled(rename = "Topic CLI Reference")]
+    topic_cli_reference: String,
 
     #[tabled(rename = "Path")]
     #[serde(skip)]
@@ -22,20 +22,20 @@ pub struct Topic {
 }
 
 impl Topic {
-    pub fn topic(&self) -> &str {
-        &self.topic
+    pub fn topic_name(&self) -> &str {
+        &self.topic_name
     }
 
-    pub fn set_topic(&mut self, topic: String) {
-        self.topic = topic;
+    pub fn set_topic_name(&mut self, topic_name: String) {
+        self.topic_name = topic_name;
     }
 
-    pub fn topic_id(&self) -> &str {
-        &self.topic_id
+    pub fn topic_cli_reference(&self) -> &str {
+        &self.topic_cli_reference
     }
 
-    pub fn set_topic_id(&mut self, topic_id: String) {
-        self.topic_id = topic_id;
+    pub fn set_topic_cli_reference(&mut self, topic_cli_reference: String) {
+        self.topic_cli_reference = topic_cli_reference;
     }
 
     pub fn set_path(&mut self, path: String) {

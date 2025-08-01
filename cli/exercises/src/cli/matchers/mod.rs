@@ -1,10 +1,9 @@
 use std::path::Path;
 
-use clap::ArgMatches;
-
 use self::book::book_matchers;
 use self::generate::generate_matchers;
 use self::list::list_matchers;
+use clap::ArgMatches;
 
 pub mod book;
 pub mod generate;

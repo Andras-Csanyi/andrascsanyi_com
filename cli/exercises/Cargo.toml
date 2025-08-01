@@ -5,7 +5,14 @@ edition = "2024"
 
 [dependencies]
 tokio = { version = "1.46.1", features = ["full"] }
-sqlx = { version = "0.8.6", features = ["runtime-tokio", "tls-rustls"] }
+sqlx = { version = "0.8.6", features = [
+  "runtime-tokio",
+  "tls-rustls",
+  "postgres",
+  "macros",
+] }
+dotenvy = "0.15.7"
+dotenvy_macro = "0.15.7"
 config = "0.15.13"
 clap = { version = "4.5.40", features = ["derive", "cargo"] }
 serde = { version = "1.0.219", features = ["derive"] }
@@ -14,6 +21,5 @@ walkdir = "2.5.0"
 tabled = "0.20.0"
 rand = "0.9.1"
 chrono = "0.4.39"
-welds = { version = "0.4.16", features = ["postgres"] }
 anyhow = "1.0.98"
 derive_more = { version = "2.0.1", features = ["display", "from", "add"] }

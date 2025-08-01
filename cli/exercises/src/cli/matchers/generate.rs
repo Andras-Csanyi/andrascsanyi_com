@@ -16,7 +16,7 @@ pub async fn generate_matchers(arg_matches: ArgMatches, base_path: &Path) {
                     .unwrap_or_else(|e| panic!("Failed parsing the arguments. Error: {}", e));
                     // logic::generate_from_a_book::execute(args, base_path)
                     println!("book generation");
-                    match controllers::generate_from_a_book::execute(base_path).await {
+                    match controllers::generate_from_a_book::execute(base_path, args).await {
                         Ok(_) => {
                             println!("Book was generated successfully.");
                         }

@@ -1,2 +1,2 @@
-topic = "LaTeX"
-topic_id = "latex"
+topic_name = "LaTeX"
+topic_cli_reference = "latex"

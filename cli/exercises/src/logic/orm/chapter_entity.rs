@@ -1,7 +1,12 @@
 use welds::WeldsModel;
 
+use super::book::BookEntity;
+use super::section_entity::SectionEntity;
+
 #[derive(Debug, WeldsModel)]
 #[welds(table = "chapters")]
+#[welds(BelongsTo(book, BookEntity, "book_id"))]
+#[welds(HasMany(sections, SectionEntity, "chapter_id"))]
 pub struct ChapterEntity {
     #[welds(primary_key)]
     pub id: i32,

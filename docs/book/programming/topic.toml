@@ -1,2 +1,2 @@
-topic = "Programming"
-topic_id = "programming"
+topic_name = "Programming"
+topic_cli_reference = "programming"

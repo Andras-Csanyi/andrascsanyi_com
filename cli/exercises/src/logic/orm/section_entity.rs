@@ -1,7 +1,10 @@
 use welds::WeldsModel;
 
+use super::chapter_entity::ChapterEntity;
+
 #[derive(Debug, WeldsModel)]
 #[welds(table = "sections")]
+#[welds(BelongsTo(chapter, ChapterEntity, "chapter_id"))]
 pub struct SectionEntity {
     #[welds(primary_key)]
     pub id: i32,

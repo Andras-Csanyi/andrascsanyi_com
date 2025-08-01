@@ -1,2 +1,2 @@
-topic = "Physics"
-topic_id = "physics"
+topic_name = "Physics"
+topic_cli_reference = "physics"

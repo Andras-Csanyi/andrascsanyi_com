@@ -1,39 +1,70 @@
-use welds::Client;
-use welds::WeldsError;
-use welds::errors::Result;
+use anyhow::Error;
+use sqlx::Transaction;
+use sqlx::query;
+use sqlx::query_as;
 
-use crate::logic::orm::topic::TopicEntity;
+use crate::logic::database::entities::topic_entity::TopicEntity;
 
 pub async fn topic_refresh(
     topic: &crate::logic::structs::topic::Topic,
-    transaction: &impl Client,
-) -> Result<()> {
-    let mut topic_hits = crate::logic::orm::topic::TopicEntity::all()
-        .limit(1)
-        .where_col(|i| i.topic.like(topic.topic()))
-        .run(transaction)
+    transaction: &mut Transaction<'_, sqlx::Postgres>,
+) -> Result<(), Error> {
+    let topics_in_db = query_as!(
+        TopicEntity,
+        r#"
+        SELECT
+            *
+        FROM topics
+        WHERE
+            topic_name = $1
+        "#,
+        topic.topic_name()
+    )
+    .fetch_all(&mut **transaction)
+    .await?;
+    if topics_in_db.is_empty() {
+        query!(
+            r#"
+        INSERT INTO 
+            topics (topic_name, topic_cli_reference)
+        VALUES 
+            ($1, $2)
+        "#,
+            topic.topic_name(),
+            topic.topic_cli_reference()
+        )
+        .execute(&mut **transaction)
         .await?;
-    if topic_hits.is_empty() {
-        let mut new_topic = TopicEntity::new();
-        new_topic.topic = topic.topic().to_string();
-        new_topic.topic_id = topic.topic_id().to_string();
-        new_topic.save(transaction).await?;
+
         return Ok(());
     }
 
-    if topic_hits.iter().count() > 1 {
-        return Err(WeldsError::Other(anyhow::anyhow!(
-            "More than one topic found. This should not happen."
-        )));
+    if topics_in_db.iter().count() > 1 {
+        return Err(anyhow::anyhow!(
+            "More than one hit for {} entity.",
+            topic.topic_name()
+        ));
     }
 
-    if let Some(t) = topic_hits.first_mut() {
-        t.topic = topic.topic().to_string();
-        t.save(transaction).await?;
-        Ok(())
-    } else {
-        return Err(WeldsError::Other(anyhow::anyhow!(
-            "There is no first element in the topic list"
-        )));
-    }
+    let target_topic = topics_in_db.first().unwrap_or_else(|| {
+        panic!("Couldn't take out the first, supposedly, single Topic element.")
+    });
+
+    query!(
+        r#"
+        UPDATE topics
+        SET
+            topic_name = $1,
+            topic_cli_reference = $2
+        WHERE
+            id = $3
+    "#,
+        target_topic.topic_name,
+        target_topic.topic_cli_reference,
+        target_topic.id
+    )
+    .execute(&mut **transaction)
+    .await?;
+
+    Ok(())
 }
