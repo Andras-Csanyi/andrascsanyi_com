@@ -1,6 +1,7 @@
-namespace Logic.CatalogParser;
+namespace Exercises.Logic.CatalogParser;
 
 using System.Text.RegularExpressions;
+using global::Logic.CatalogParser.Model;
 using Model;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;

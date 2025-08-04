@@ -1,3 +1,5 @@
+using Exercises.Logic.CatalogParser.Model;
+
 namespace Logic.CatalogParser.Model;
 
 public class Topic

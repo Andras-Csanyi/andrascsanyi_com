@@ -1,4 +1,4 @@
-namespace Logic.Controllers.Generate;
+namespace Exercises.Logic.Controllers.Generate;
 
 public class GenerateFromBooks
 {

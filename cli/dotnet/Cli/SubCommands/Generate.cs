@@ -1,7 +1,7 @@
-using System.CommandLine;
-using Logic.Controllers.Generate;
+namespace Exercises.Cli.SubCommands;
 
-namespace Cli.SubCommands;
+using System.CommandLine;
+using Exercises.Logic.Controllers.Generate;
 
 public static class Generate
 {

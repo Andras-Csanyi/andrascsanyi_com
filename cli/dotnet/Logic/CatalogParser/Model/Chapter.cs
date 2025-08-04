@@ -1,4 +1,4 @@
-namespace Logic.CatalogParser.Model;
+namespace Exercises.Logic.CatalogParser.Model;
 
 using YamlDotNet.Serialization;
 
