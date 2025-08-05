@@ -29,4 +29,5 @@ public class SectionEntity
 
     public int PageEnd { get; set; }
     public int ChapterId { get; set; }
+    public ChapterEntity Chapter { get; set; }
 }

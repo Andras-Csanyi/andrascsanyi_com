@@ -1,8 +1,8 @@
 namespace Exercises.Logic.Repository.Configuration;
 
-using Exercises.Logic.Repository.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Models;
 
 public class BookConfiguration : IEntityTypeConfiguration<BookEntity>
 {
@@ -18,5 +18,10 @@ public class BookConfiguration : IEntityTypeConfiguration<BookEntity>
         builder.Property(p => p.PageStart).HasColumnName("page_start");
         builder.Property(p => p.PageEnd).HasColumnName("page_end");
         builder.Property(p => p.Reference).HasColumnName("reference");
+
+        builder
+            .HasMany(m => m.Chapters)
+            .WithOne(one => one.Book)
+            .HasForeignKey(key => key.BookId);
     }
 }

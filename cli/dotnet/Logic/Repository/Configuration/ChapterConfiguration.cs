@@ -1,8 +1,8 @@
 namespace Exercises.Logic.Repository.Configuration;
 
-using Exercises.Logic.Repository.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Models;
 
 public class ChapterConfiguration : IEntityTypeConfiguration<ChapterEntity>
 {
@@ -17,5 +17,10 @@ public class ChapterConfiguration : IEntityTypeConfiguration<ChapterEntity>
         builder.Property(p => p.Reference).HasColumnName("reference");
         builder.Property(p => p.PageStart).HasColumnName("page_start");
         builder.Property(p => p.PageEnd).HasColumnName("page_end");
+
+        builder
+            .HasMany(many => many.Sections)
+            .WithOne(one => one.Chapter)
+            .HasForeignKey(key => key.ChapterId);
     }
 }

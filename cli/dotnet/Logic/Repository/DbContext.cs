@@ -18,6 +18,7 @@ public class ExercisesContext : DbContext
     public DbSet<BookEntity> Books { get; set; }
     public DbSet<ChapterEntity> Chapters { get; set; }
     public DbSet<SectionEntity> Sections { get; set; }
+    public DbSet<ExerciseEntity> Exercises { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
