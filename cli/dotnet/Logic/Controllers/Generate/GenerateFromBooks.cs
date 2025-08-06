@@ -1,10 +1,22 @@
 namespace Exercises.Logic.Controllers.Generate;
 
-public class GenerateFromBooks
+using Exercises.Common;
+using Exercises.Logic.CatalogParser.Model;
+using Exercises.Logic.Repository.Models;
+using Exercises.Logic.Repository.Topic;
+using Exercises.Logic.Sync;
+
+public class GenerateFromBooks(
+        SyncFsWithDb syncFsWithDb,
+        TopicRepository topicRepository
+        )
 {
-    public void Execute()
+    public async Task Execute(GenerateBooksCommandParameters generateFromBooksParams)
     {
         CatalogParser.CatalogParser catalogParser = new();
-        catalogParser.ParseStudyTree();
+        StudyTree parsedStudyTree = catalogParser.ParseStudyTree();
+        Console.WriteLine($"size: {parsedStudyTree.Topics.Count}");
+        await syncFsWithDb.Execute(parsedStudyTree);
+        // List<TopicEntity> topics = await topicRepository.GetEverything();
     }
 }

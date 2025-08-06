@@ -26,5 +26,6 @@ public class ExercisesContext : DbContext
         modelBuilder.ApplyConfiguration(new BookConfiguration());
         modelBuilder.ApplyConfiguration(new ChapterConfiguration());
         modelBuilder.ApplyConfiguration(new SectionConfiguration());
+        modelBuilder.ApplyConfiguration(new ExerciseConfiguration());
     }
 }

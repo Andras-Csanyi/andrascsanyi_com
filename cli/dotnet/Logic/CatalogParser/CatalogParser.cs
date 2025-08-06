@@ -1,8 +1,7 @@
 namespace Exercises.Logic.CatalogParser;
 
 using System.Text.RegularExpressions;
-using global::Logic.CatalogParser.Model;
-using Model;
+using Logic.CatalogParser.Model;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -19,49 +18,7 @@ public class CatalogParser
         StudyTree addedBooks = ParseBooks(catalogFiles, studyTreeWithTopics);
         StudyTree addedChapters = ParseChapters(catalogFiles, addedBooks);
         StudyTree addedSections = ParseSections(catalogFiles, addedChapters);
-
-        addedSections.Topics.ForEach(topic =>
-        {
-            Console.WriteLine("\n ==== Topic");
-            Console.WriteLine($"name: {topic.Name}");
-            Console.WriteLine($"reference: {topic.Name}");
-            topic.Books.ForEach(book =>
-            {
-                Console.WriteLine("\n === Book");
-                Console.WriteLine($"title: {book.Title}");
-                Console.WriteLine($"authors: {book.Authors}");
-                Console.WriteLine($"page start: {book.PageStart}");
-                Console.WriteLine($"page end: {book.PageEnd}");
-                Console.WriteLine($"reference: {book.Reference}");
-
-                book.Chapters.ForEach(chapter =>
-                        {
-                            Console.WriteLine("\n ==== Chapter");
-                            Console.WriteLine($"title: {chapter.Title}");
-                            Console.WriteLine($"reference: {chapter.Reference}");
-                            Console.WriteLine($"page start: {chapter.PageStart}");
-                            Console.WriteLine($"page end: {chapter.PageEnd}");
-
-                            chapter.Sections.ForEach(section =>
-                            {
-                                Console.WriteLine("\n ==== Section");
-                                Console.WriteLine($"title: {section.Title}");
-                                Console.WriteLine($"page start: {section.PageStart}");
-                                Console.WriteLine($"page exercises start: {section.PageExercisesStart}");
-                                Console.WriteLine($"concepts questions interval start: {section.ConceptQuestionsIntervalStart}");
-                                Console.WriteLine($"concepts questions interval end: {section.ConceptQuestionsIntervalEnd}");
-                                Console.WriteLine($"skills questions interval start: {section.SkillQuestionsIntervalStart}");
-                                Console.WriteLine($"skills questions interval end: {section.SkillQuestionsIntervalEnd}");
-                                Console.WriteLine($"applications questions interval start: {section.ApplicationQuestionsIntervalStart}");
-                                Console.WriteLine($"applications questions interval end: {section.ApplicationQuestionsIntervalEnd}");
-                                Console.WriteLine($"discussion questions interval start: {section.DiscussionQuestionsIntervalStart}");
-                                Console.WriteLine($"discussion questions interval end: {section.DiscussionQuestionsIntervalEnd}");
-                                Console.WriteLine($"page end: {section.PageEnd}");
-                            });
-                        });
-            });
-        });
-        return new StudyTree();
+        return addedSections;
     }
 
     private T DeserializeYaml<T>(string yaml)

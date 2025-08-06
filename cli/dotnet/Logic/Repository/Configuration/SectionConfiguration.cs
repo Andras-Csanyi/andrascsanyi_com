@@ -8,7 +8,7 @@ public class SectionConfiguration : IEntityTypeConfiguration<SectionEntity>
 {
     public void Configure(EntityTypeBuilder<SectionEntity> builder)
     {
-        builder.ToTable("topics");
+        builder.ToTable("sections");
         builder.HasKey(topic => topic.Id);
         builder.Property(p => p.Id).ValueGeneratedOnAdd();
         builder.Property(p => p.Id).HasColumnName("id");
@@ -26,5 +26,10 @@ public class SectionConfiguration : IEntityTypeConfiguration<SectionEntity>
         builder.Property(p => p.DiscussionQuestionsIntervalStart).HasColumnName("discussion_questions_interval_start");
         builder.Property(p => p.DiscussionQuestionsIntervalEnd).HasColumnName("discussion_questions_interval_end");
         builder.Property(p => p.PageEnd).HasColumnName("page_end");
+
+        builder
+            .HasMany(many => many.Exercises)
+            .WithOne(one => one.Section)
+            .HasForeignKey(foreignKey => foreignKey.SectionId);
     }
 }

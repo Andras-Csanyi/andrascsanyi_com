@@ -5,6 +5,7 @@ namespace Exercises.Logic.Repository.Models
         public int Id { get; set; }
         public int IdInTheBook { get; set; }
         public int SectionId { get; set; }
+        public SectionEntity Section { get; set; }
         public double SectionIdInThebook { get; set; }
         public int ChapterId { get; set; }
         public double ChapterIdInTheBook { get; set; }

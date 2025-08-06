@@ -5,18 +5,21 @@ using Microsoft.EntityFrameworkCore;
 using Repository;
 using Repository.Models;
 
-public class SyncFsWithDb
+public class SyncFsWithDb(
+        DbContextOptions<ExercisesContext> dbContextOptions
+        )
 {
-    public async Task Execute(StudyTree studyTree, DbContextOptions<ExercisesContext> dbContextOptions)
+    public async Task Execute(StudyTree studyTree)
     {
-        await SyncTopicsAsync(studyTree, dbContextOptions).ConfigureAwait(false);
-        await SyncBooksAsync(studyTree, dbContextOptions).ConfigureAwait(false);
-        await SyncChaptersAsync(studyTree, dbContextOptions).ConfigureAwait(false);
-        await SyncSectionsAsync(studyTree, dbContextOptions).ConfigureAwait(false);
-        await SyncExercisesAsync(studyTree, dbContextOptions).ConfigureAwait(false);
+        Console.WriteLine("here we are...");
+        await SyncTopicsAsync(studyTree).ConfigureAwait(false);
+        await SyncBooksAsync(studyTree).ConfigureAwait(false);
+        await SyncChaptersAsync(studyTree).ConfigureAwait(false);
+        await SyncSectionsAsync(studyTree).ConfigureAwait(false);
+        await SyncExercisesAsync().ConfigureAwait(false);
     }
 
-    private async Task SyncExercisesAsync(StudyTree studyTree, DbContextOptions<ExercisesContext> dbContextOptions)
+    private async Task SyncExercisesAsync()
     {
         await using ExercisesContext ctx = new(dbContextOptions);
         List<TopicEntity> topics = await ctx.Topics
@@ -92,14 +95,73 @@ public class SyncFsWithDb
                                 await ctx.SaveChangesAsync().ConfigureAwait(false);
                             }
                         }
+
+                        for (int skillExerciseNumber = section.SkillQuestionsIntervalStart;
+                            skillExerciseNumber <= section.SkillQuestionsIntervalEnd;
+                            skillExerciseNumber++)
+                        {
+                            ExerciseEntity? eSkillFound = await ctx.Exercises.FirstOrDefaultAsync(i =>
+                                    i.TopicId == topic.Id
+                                    && i.BookId == book.Id
+                                    && i.ChapterId == chapter.Id
+                                    && i.SectionId == section.Id
+                                    && i.SectionIdInThebook == section.SectionNumber
+                                    && i.ExerciseType == ExerciseType.Skill
+                                    && i.IdInTheBook == skillExerciseNumber)
+                                .ConfigureAwait(false);
+                            if (eSkillFound == null)
+                            {
+                                ExerciseEntity newSkill = new()
+                                {
+                                    IdInTheBook = skillExerciseNumber,
+                                    SectionId = section.Id,
+                                    SectionIdInThebook = section.SectionNumber,
+                                    ChapterId = chapter.Id,
+                                    BookId = book.Id,
+                                    TopicId = topic.Id,
+                                    ExerciseType = ExerciseType.Concept,
+                                };
+                                await ctx.Exercises.AddAsync(newSkill).ConfigureAwait(false);
+                                await ctx.SaveChangesAsync().ConfigureAwait(false);
+                            }
+                        }
+
+                        for (int discussionExerciseNumber = section.DiscussionQuestionsIntervalStart;
+                                discussionExerciseNumber <= section.DiscussionQuestionsIntervalEnd;
+                                discussionExerciseNumber++)
+                        {
+                            ExerciseEntity? eDiscussionFound = await ctx.Exercises.FirstOrDefaultAsync(i =>
+                                    i.TopicId == topic.Id
+                                    && i.BookId == book.Id
+                                    && i.ChapterId == chapter.Id
+                                    && i.SectionId == section.Id
+                                    && i.SectionIdInThebook == section.SectionNumber
+                                    && i.ExerciseType == ExerciseType.Skill
+                                    && i.IdInTheBook == discussionExerciseNumber)
+                                .ConfigureAwait(false);
+                            if (eDiscussionFound == null)
+                            {
+                                ExerciseEntity newSkill = new()
+                                {
+                                    IdInTheBook = discussionExerciseNumber,
+                                    SectionId = section.Id,
+                                    SectionIdInThebook = section.SectionNumber,
+                                    ChapterId = chapter.Id,
+                                    BookId = book.Id,
+                                    TopicId = topic.Id,
+                                    ExerciseType = ExerciseType.Discussion,
+                                };
+                                await ctx.Exercises.AddAsync(newSkill).ConfigureAwait(false);
+                                await ctx.SaveChangesAsync().ConfigureAwait(false);
+                            }
+                        }
                     });
                 });
             });
         });
     }
 
-    private async Task SyncSectionsAsync(StudyTree studyTree,
-        DbContextOptions<ExercisesContext> dbContextOptions)
+    private async Task SyncSectionsAsync(StudyTree studyTree)
     {
         using ExercisesContext ctx = new(dbContextOptions);
         studyTree.Topics.ForEach(async topic =>
@@ -145,8 +207,7 @@ public class SyncFsWithDb
         });
     }
 
-    private async Task SyncChaptersAsync(StudyTree studyTree,
-        DbContextOptions<ExercisesContext> dbContextOptions)
+    private async Task SyncChaptersAsync(StudyTree studyTree)
     {
         using ExercisesContext ctx = new(dbContextOptions);
         studyTree.Topics.ForEach(async topic =>
@@ -177,7 +238,7 @@ public class SyncFsWithDb
         });
     }
 
-    private async Task SyncBooksAsync(StudyTree studyTree, DbContextOptions<ExercisesContext> dbContextOptions)
+    private async Task SyncBooksAsync(StudyTree studyTree)
     {
         using ExercisesContext ctx = new(dbContextOptions);
         studyTree.Topics.ForEach(async topic =>
@@ -209,11 +270,13 @@ public class SyncFsWithDb
         });
     }
 
-    private async Task SyncTopicsAsync(StudyTree studyTree, DbContextOptions<ExercisesContext> dbContextOptions)
+    private async Task SyncTopicsAsync(StudyTree studyTree)
     {
+        Console.WriteLine($"hell yeah.... topic volume: {studyTree.Topics.Count}");
         using ExercisesContext ctx = new(dbContextOptions);
         studyTree.Topics.ForEach(async topic =>
         {
+            Console.WriteLine($"searching... {topic.Name}");
             TopicEntity? existingTopic = await ctx.Topics
                 .FirstOrDefaultAsync(t => t.Name == topic.Name && t.Reference == topic.Reference)
                 .ConfigureAwait(false);
@@ -223,6 +286,7 @@ public class SyncFsWithDb
                 TopicEntity newTopic = new() { Name = topic.Name, Reference = topic.Reference, };
                 await ctx.Topics.AddAsync(newTopic).ConfigureAwait(false);
                 await ctx.SaveChangesAsync().ConfigureAwait(false);
+                Console.WriteLine("writing to db...");
             }
         });
     }
