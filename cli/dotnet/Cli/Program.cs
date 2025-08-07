@@ -7,6 +7,7 @@ using Exercises.Cli.Commands.Generate;
 using Exercises.Cli.Commands.Generate.Book;
 using Exercises.Logic.Controllers.Generate;
 using Exercises.Logic.Repository;
+using Exercises.Logic.Repository.Book;
 using Exercises.Logic.Repository.Topic;
 using Exercises.Logic.Sync;
 using Microsoft.EntityFrameworkCore;
@@ -36,7 +37,11 @@ internal class Program
         // controllers
         builder.Services.AddTransient<GenerateFromBooks>();
 
+        // validators
+        builder.Services.AddTransient<AddNewBookInputValidation>();
+
         // repositories
+        builder.Services.AddTransient<BookRepository>();
         builder.Services.AddTransient<SyncFsWithDb>();
         builder.Services.AddTransient<TopicRepository>();
 

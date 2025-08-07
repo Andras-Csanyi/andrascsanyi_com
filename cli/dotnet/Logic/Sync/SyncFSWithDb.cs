@@ -1,17 +1,18 @@
 namespace Exercises.Logic.Sync;
 
 using CatalogParser.Model;
+using Exercises.Logic.Repository.Book;
 using Microsoft.EntityFrameworkCore;
 using Repository;
 using Repository.Models;
 
 public class SyncFsWithDb(
-        DbContextOptions<ExercisesContext> dbContextOptions
+        DbContextOptions<ExercisesContext> dbContextOptions,
+            BookRepository bookRepository
         )
 {
     public async Task Execute(StudyTree studyTree)
     {
-        Console.WriteLine("here we are...");
         await SyncTopicsAsync(studyTree).ConfigureAwait(false);
         await SyncBooksAsync(studyTree).ConfigureAwait(false);
         await SyncChaptersAsync(studyTree).ConfigureAwait(false);
@@ -21,8 +22,8 @@ public class SyncFsWithDb(
 
     private async Task SyncExercisesAsync()
     {
-        await using ExercisesContext ctx = new(dbContextOptions);
-        List<TopicEntity> topics = await ctx.Topics
+        await using ExercisesContext outsideCtx = new(dbContextOptions);
+        List<TopicEntity> topics = await outsideCtx.Topics
             .Include(topic => topic.Books)
             .ThenInclude(book => book.Chapters)
             .ThenInclude(chapter => chapter.Sections)
@@ -36,6 +37,7 @@ public class SyncFsWithDb(
                 {
                     chapter.Sections.ForEach(async void (section) =>
                     {
+                        await using ExercisesContext ctx = new(dbContextOptions);
                         for (int applicationExerciseNumber = section.ApplicationQuestionsIntervalStart;
                              applicationExerciseNumber <= section.ApplicationQuestionsIntervalEnd;
                              applicationExerciseNumber++)
@@ -163,20 +165,21 @@ public class SyncFsWithDb(
 
     private async Task SyncSectionsAsync(StudyTree studyTree)
     {
-        using ExercisesContext ctx = new(dbContextOptions);
         studyTree.Topics.ForEach(async topic =>
         {
             topic.Books.ForEach(async book =>
             {
                 book.Chapters.ForEach(async chapter =>
                 {
-                    ChapterEntity chapter_in_db = await ctx.Chapters
+                    using ExercisesContext chapterCtx = new(dbContextOptions);
+                    ChapterEntity chapter_in_db = await chapterCtx.Chapters
                         .FirstOrDefaultAsync(c => c.Reference == chapter.Reference)
                         .ConfigureAwait(false);
 
                     chapter.Sections.ForEach(async section =>
                     {
-                        SectionEntity? existingSectionEntity = await ctx.Sections
+                        using ExercisesContext sectionCtx = new(dbContextOptions);
+                        SectionEntity? existingSectionEntity = await sectionCtx.Sections
                             .FirstOrDefaultAsync(s => s.Title == section.Title)
                             .ConfigureAwait(false);
                         if (existingSectionEntity == null)
@@ -198,8 +201,8 @@ public class SyncFsWithDb(
                                 PageEnd = section.PageEnd,
                                 ChapterId = chapter_in_db!.Id,
                             };
-                            await ctx.Sections.AddAsync(newSectionEntity).ConfigureAwait(false);
-                            await ctx.SaveChangesAsync().ConfigureAwait(false);
+                            await sectionCtx.Sections.AddAsync(newSectionEntity).ConfigureAwait(false);
+                            await sectionCtx.SaveChangesAsync().ConfigureAwait(false);
                         }
                     });
                 });
@@ -209,16 +212,17 @@ public class SyncFsWithDb(
 
     private async Task SyncChaptersAsync(StudyTree studyTree)
     {
-        using ExercisesContext ctx = new(dbContextOptions);
         studyTree.Topics.ForEach(async topic =>
         {
             topic.Books.ForEach(async book =>
             {
-                BookEntity book_in_db = await ctx.Books.FirstOrDefaultAsync(b => b.Reference == book.Reference)
+                using ExercisesContext bookCtx = new(dbContextOptions);
+                BookEntity book_in_db = await bookCtx.Books.FirstOrDefaultAsync(b => b.Reference == book.Reference)
                     .ConfigureAwait(false);
                 book.Chapters.ForEach(async chapter =>
                 {
-                    ChapterEntity? existingEntity = await ctx.Chapters
+                    using ExercisesContext chapterCtx = new(dbContextOptions);
+                    ChapterEntity? existingEntity = await chapterCtx.Chapters
                         .FirstOrDefaultAsync(c => c.Reference == chapter.Reference).ConfigureAwait(false);
                     if (existingEntity == null)
                     {
@@ -230,8 +234,8 @@ public class SyncFsWithDb(
                             PageEnd = chapter.PageEnd,
                             BookId = book_in_db!.Id,
                         };
-                        await ctx.Chapters.AddAsync(newEntity).ConfigureAwait(false);
-                        await ctx.SaveChangesAsync().ConfigureAwait(false);
+                        await chapterCtx.Chapters.AddAsync(newEntity).ConfigureAwait(false);
+                        await chapterCtx.SaveChangesAsync().ConfigureAwait(false);
                     }
                 });
             });
@@ -240,32 +244,18 @@ public class SyncFsWithDb(
 
     private async Task SyncBooksAsync(StudyTree studyTree)
     {
-        using ExercisesContext ctx = new(dbContextOptions);
         studyTree.Topics.ForEach(async topic =>
         {
-            TopicEntity topic_in_db = await ctx.Topics
+            using ExercisesContext topicCtx = new(dbContextOptions);
+            TopicEntity topic_in_db = await topicCtx.Topics
                 .FirstOrDefaultAsync(t => t.Name == topic.Name && t.Reference == topic.Reference)
                 .ConfigureAwait(false);
 
             topic.Books.ForEach(async book =>
             {
-                BookEntity? existingBook = await ctx.Books.FirstOrDefaultAsync(b =>
-                        b.Reference == book.Reference)
-                    .ConfigureAwait(false);
-                if (existingBook == null)
-                {
-                    BookEntity newBook = new()
-                    {
-                        Title = book.Title,
-                        Authors = book.Authors,
-                        PageStart = book.PageStart,
-                        PageEnd = book.PageEnd,
-                        Reference = book.Reference,
-                        TopicId = topic_in_db!.Id,
-                    };
-                    await ctx.Books.AddAsync(newBook).ConfigureAwait(false);
-                    await ctx.SaveChangesAsync().ConfigureAwait(false);
-                }
+                var result = await from book in bookRepository.FindBook(book.Reference)
+                                   from _ in bookRepository.AddNewBook(book)
+                                   select Unit.Default;
             });
         });
     }
@@ -273,9 +263,9 @@ public class SyncFsWithDb(
     private async Task SyncTopicsAsync(StudyTree studyTree)
     {
         Console.WriteLine($"hell yeah.... topic volume: {studyTree.Topics.Count}");
-        using ExercisesContext ctx = new(dbContextOptions);
         studyTree.Topics.ForEach(async topic =>
         {
+            using ExercisesContext ctx = new(dbContextOptions);
             Console.WriteLine($"searching... {topic.Name}");
             TopicEntity? existingTopic = await ctx.Topics
                 .FirstOrDefaultAsync(t => t.Name == topic.Name && t.Reference == topic.Reference)
