@@ -1,6 +1,10 @@
 namespace Exercises.Logic.CatalogParser.Model;
 
+using Common;
+using LanguageExt;
+using Repository.Models;
 using YamlDotNet.Serialization;
+using static LanguageExt.Prelude;
 
 public class Section
 {
@@ -41,4 +45,39 @@ public class Section
 
     [YamlMember(Alias = "page_end", ApplyNamingConventions = false)]
     public int PageEnd { get; set; }
+}
+
+public static class SectionExtensions
+{
+    public static Either<ExerciseError, SectionEntity> ToEntity(
+        this Section parsedSection
+    )
+    {
+        try
+        {
+            SectionEntity result = new()
+            {
+                Title = parsedSection.Title,
+                SectionNumber = parsedSection.SectionNumber,
+                PageStart = parsedSection.PageStart,
+                PageExercisesStart = parsedSection.PageExercisesStart,
+                ConceptQuestionsIntervalStart = parsedSection.ConceptQuestionsIntervalStart,
+                ConceptQuestionsIntervalEnd = parsedSection.ConceptQuestionsIntervalEnd,
+                SkillQuestionsIntervalStart = parsedSection.SkillQuestionsIntervalStart,
+                SkillQuestionsIntervalEnd = parsedSection.SkillQuestionsIntervalEnd,
+                ApplicationQuestionsIntervalStart = parsedSection.ApplicationQuestionsIntervalStart,
+                ApplicationQuestionsIntervalEnd = parsedSection.ApplicationQuestionsIntervalEnd,
+                DiscussionQuestionsIntervalStart = parsedSection.DiscussionQuestionsIntervalStart,
+                DiscussionQuestionsIntervalEnd = parsedSection.DiscussionQuestionsIntervalEnd,
+                PageEnd = parsedSection.PageEnd,
+            };
+            return Right(result);
+        }
+        catch (Exception e)
+        {
+            return Left(
+                new ExerciseError(
+                    $"Error while mapping {nameof(Section)} to {nameof(SectionEntity)}. Error: {e.Message}"));
+        }
+    }
 }

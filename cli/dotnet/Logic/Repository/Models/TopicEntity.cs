@@ -1,10 +1,9 @@
-namespace Exercises.Logic.Repository.Models
+namespace Exercises.Logic.Repository.Models;
+
+public class TopicEntity
 {
-    public class TopicEntity
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Reference { get; set; }
-        public List<BookEntity> Books { get; set; }
-    }
+    public long Id { get; set; }
+    public string Name { get; set; }
+    public string Reference { get; set; }
+    public List<BookEntity> Books { get; set; }
 }

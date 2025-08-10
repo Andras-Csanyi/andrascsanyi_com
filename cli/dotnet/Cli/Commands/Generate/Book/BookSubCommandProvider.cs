@@ -1,19 +1,20 @@
 namespace Exercises.Cli.Commands.Generate.Book;
 
 using System.CommandLine;
-using Exercises.Common;
-using Exercises.Logic.Controllers.Generate;
+using Common;
+using Logic.Controllers.Generate;
 
 public class BookSubCommandProvider(
-        GenerateFromBooks generateFromBooks
-        )
+    GenerateFromBooks generateFromBooks
+)
 {
-    public async Task<Command> SetupCommand(Command command)
-    {
-        return await BookSubCommand(command).ConfigureAwait(false);
-    }
+    public Command SetupCommand(
+        Command command
+    ) => BookSubCommand(command);
 
-    private async Task<Command> BookSubCommand(Command command)
+    private Command BookSubCommand(
+        Command command
+    )
     {
         Command bookCommand = new("book", "Generate from the given book.");
         Option<int> skillQuestionVolume = new("--skill")
@@ -40,19 +41,18 @@ public class BookSubCommandProvider(
         };
         bookCommand.Add(discussionQuestionVolume);
 
-        bookCommand.SetAction(async parseResult =>
+        bookCommand.SetAction(parseResult =>
         {
             GenerateBooksCommandParameters parameters = new(
-                   parseResult.GetValue(skillQuestionVolume),
-                   parseResult.GetValue(applicationQuestionVolume),
-                   parseResult.GetValue(conceptQuestionVolume),
-                   parseResult.GetValue(discussionQuestionVolume)
-                   );
+                parseResult.GetValue(skillQuestionVolume),
+                parseResult.GetValue(applicationQuestionVolume),
+                parseResult.GetValue(conceptQuestionVolume),
+                parseResult.GetValue(discussionQuestionVolume)
+            );
 
-            await generateFromBooks.Execute(parameters).ConfigureAwait(false);
+            generateFromBooks.Execute(parameters);
         });
         command.Add(bookCommand);
         return command;
     }
-
 }

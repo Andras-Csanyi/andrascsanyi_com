@@ -1,12 +1,14 @@
 namespace Exercises.Logic.Repository.Topic;
 
-using System.Collections.Generic;
-using Exercises.Logic.Repository.Models;
+using Common;
+using LanguageExt;
 using Microsoft.EntityFrameworkCore;
+using Models;
+using static LanguageExt.Prelude;
 
-public class TopicRepository(
-        DbContextOptions<ExercisesContext> dbContextOptions
-        )
+public partial class TopicRepository(
+    DbContextOptions<ExercisesContext> dbContextOptions
+)
 {
     public async Task<List<TopicEntity>> GetEverything()
     {
@@ -18,5 +20,20 @@ public class TopicRepository(
             .ThenInclude(section => section.Exercises)
             .ToListAsync()
             .ConfigureAwait(false);
+    }
+
+    public Either<ExerciseError, TopicEntity> AddNewTopic(TopicEntity input, ExercisesContext ctx)
+    {
+        try
+        {
+            ctx.Topics.Add(input);
+            ctx.SaveChanges();
+            return Right<ExerciseError, TopicEntity>(input);
+        }
+        catch (Exception e)
+        {
+            return Left<ExerciseError, TopicEntity>(
+                new ExerciseError($"Error happened while creating a new {nameof(TopicEntity)}. Error: {e.Message}"));
+        }
     }
 }

@@ -2,7 +2,7 @@ namespace Exercises.Logic.Repository.Models;
 
 public class SectionEntity
 {
-    public int Id { get; set; }
+    public long Id { get; set; }
     public string? Title { get; set; }
 
     public double SectionNumber { get; set; }
@@ -28,7 +28,7 @@ public class SectionEntity
     public int DiscussionQuestionsIntervalEnd { get; set; }
 
     public int PageEnd { get; set; }
-    public int ChapterId { get; set; }
+    public long ChapterId { get; set; }
     public ChapterEntity Chapter { get; set; }
 
     public List<ExerciseEntity> Exercises { get; set; } = [];

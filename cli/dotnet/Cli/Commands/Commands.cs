@@ -1,16 +1,16 @@
 namespace Exercises.Cli.Commands;
 
 using System.CommandLine;
-using Exercises.Cli.Commands.Generate;
+using Generate;
 
 public class Root(
-        GenerateSubCommandProvider generateSubCommandProvider
-        )
+    GenerateSubCommandProvider generateSubCommandProvider
+)
 {
-    public async Task<RootCommand> BuildCli()
+    public RootCommand BuildCli()
     {
         RootCommand rootCommand = new("Exercises Command Line Tool.");
-        rootCommand = await generateSubCommandProvider.SetupCommand(rootCommand);
+        rootCommand = generateSubCommandProvider.SetupCommand(rootCommand);
         return rootCommand;
     }
 }

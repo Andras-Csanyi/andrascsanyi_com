@@ -1,6 +1,10 @@
 namespace Exercises.Logic.CatalogParser.Model;
 
+using Common;
+using LanguageExt;
+using Repository.Models;
 using YamlDotNet.Serialization;
+using static LanguageExt.Prelude;
 
 public class Chapter
 {
@@ -15,4 +19,26 @@ public class Chapter
     public int PageEnd { get; set; }
 
     public List<Section> Sections { get; set; } = [];
+}
+
+public static class ChapterExtensions
+{
+    public static Either<ExerciseError, ChapterEntity> ToChapterEntity(this Chapter chapter)
+    {
+        try
+        {
+            return Right<ExerciseError, ChapterEntity>(new ChapterEntity
+            {
+                Title = chapter.Title,
+                Reference = chapter.Reference,
+                PageStart = chapter.PageStart,
+                PageEnd = chapter.PageEnd,
+            });
+        }
+        catch (Exception e)
+        {
+            return Left<ExerciseError, ChapterEntity>(new ExerciseError(
+                $"Error happened while mapping {nameof(Chapter)} to {nameof(ChapterEntity)}. Error: {e.Message}"));
+        }
+    }
 }

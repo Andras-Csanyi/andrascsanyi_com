@@ -1,19 +1,20 @@
 namespace Exercises.Cli.Commands.Generate;
 
 using System.CommandLine;
-using Exercises.Cli.Commands.Generate.Book;
+using Book;
 
 public class GenerateSubCommandProvider(
-        BookSubCommandProvider bookSubCommandProvider
-        )
+    BookSubCommandProvider bookSubCommandProvider
+)
 {
-    public async Task<RootCommand> SetupCommand(RootCommand rootCommand)
+    public RootCommand SetupCommand(
+        RootCommand rootCommand
+    )
     {
         Command generateCommand = new("generate", "Generates exercises.");
-        generateCommand = await bookSubCommandProvider.SetupCommand(generateCommand);
+        generateCommand = bookSubCommandProvider.SetupCommand(generateCommand);
 
         rootCommand.Subcommands.Add(generateCommand);
         return rootCommand;
     }
-
 }

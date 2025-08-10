@@ -1,30 +1,28 @@
 namespace Exercises.Logic.Repository.Book;
 
-using Exercises.Logic.Repository.Models;
+using Common;
 using LanguageExt;
-using LanguageExt;
-using Microsoft.EntityFrameworkCore;
+using Models;
 using static LanguageExt.Prelude;
 
 public partial class BookRepository
 {
-    public async Task<Either<RepositoryError, BookEntity>> FindBookAsync(
-            string reference,
-            CancellationToken cancellationToken = default)
+    public Either<ExerciseError, BookEntity> FindByTopicIdAndReference(
+        long topicId,
+        string reference,
+        ExercisesContext dbContext)
     {
-        await using ExercisesContext ctx = new(dbContextOptions);
-
-        BookEntity? existingBook = await ctx.Books
-            .FirstOrDefaultAsync(b => b.Reference == reference)
-            .ConfigureAwait(false);
-
-        if (existingBook == null)
+        try
         {
-            return Left(new RepositoryError(
-                        $"No book found with reference {reference}",
-                        $"No book found with reference {reference}"
-                        ));
+            BookEntity existingBook = dbContext.Books
+                .First(b => b.Reference == reference && b.TopicId == topicId);
+            return Right(existingBook);
         }
-        return Right(existingBook);
+        catch (Exception e)
+        {
+            return Left(new ExerciseError(
+                $"No book found with reference {reference}"
+            ));
+        }
     }
 }
