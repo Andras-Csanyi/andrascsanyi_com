@@ -1,19 +1,17 @@
 namespace Exercises.Logic.Scenarios.Book.Find;
 
 using Common;
-using LanguageExt;
 using Repository;
 using Repository.Book;
 using Repository.Models;
 
-public class FindBookByTopicIdAndReferenceScenario(
+public class FindBookByReferenceScenario(
     BookRepository bookRepository)
 {
     public Either<ExerciseError, Option<BookEntity>> Execute(
-        long topicId,
         string reference,
         ExercisesContext dbContext
     ) =>
-        from r in bookRepository.FindByTopicIdAndReference(topicId, reference, dbContext)
+        from r in bookRepository.FindByReference(reference, dbContext)
         select r;
 }

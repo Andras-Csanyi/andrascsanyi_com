@@ -7,17 +7,20 @@ using static LanguageExt.Prelude;
 
 public partial class BookRepository
 {
-    public Either<ExerciseError, Unit> AddNewBookEntity(BookEntity validatedInput,
-        ExercisesContext dbContext)
+    public Either<ExerciseError, BookEntity> AddNewBookEntity(
+        BookEntity input,
+        ExercisesContext ctx
+    )
     {
         try
         {
-            dbContext.Books.Add(validatedInput);
-            return Right<ExerciseError, Unit>(Unit.Default);
+            ctx.Books.Add(input);
+            ctx.SaveChanges();
+            return Right(input);
         }
         catch (Exception e)
         {
-            return Left<ExerciseError, Unit>(new ExerciseError($"{e.Message}"));
+            return Left(new ExerciseError($"{e.Message}"));
         }
     }
 }

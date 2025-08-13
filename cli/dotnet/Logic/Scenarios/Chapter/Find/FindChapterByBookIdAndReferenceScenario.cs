@@ -10,9 +10,11 @@ public class FindChapterByBookIdAndReferenceScenario(
     ChapterRepository chapterRepository
 )
 {
-    public Either<ExerciseError, ChapterEntity> Execute(long bookId,
+    public Either<ExerciseError, Option<ChapterEntity>> Execute(
+        long bookId,
         string reference,
-        ExercisesContext ctx) =>
+        ExercisesContext ctx
+    ) =>
         from chapterEntity in chapterRepository.FindByBookIdAndReference(bookId, reference, ctx)
         select chapterEntity;
 }

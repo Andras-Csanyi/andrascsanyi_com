@@ -1,10 +1,9 @@
 namespace Exercises.Logic.CatalogParser.Model;
 
 using Common;
-using LanguageExt;
 using Repository.Models;
 using YamlDotNet.Serialization;
-using static LanguageExt.Prelude;
+using static Prelude;
 
 public class Chapter
 {
@@ -18,6 +17,9 @@ public class Chapter
     [YamlMember(Alias = "page_end", ApplyNamingConventions = false)]
     public int PageEnd { get; set; }
 
+    [YamlMember(Alias = "book_reference", ApplyNamingConventions = false)]
+    public string BookReference { get; set; }
+
     public List<Section> Sections { get; set; } = [];
 }
 
@@ -27,18 +29,23 @@ public static class ChapterExtensions
     {
         try
         {
-            return Right<ExerciseError, ChapterEntity>(new ChapterEntity
-            {
-                Title = chapter.Title,
-                Reference = chapter.Reference,
-                PageStart = chapter.PageStart,
-                PageEnd = chapter.PageEnd,
-            });
+            return Right<ExerciseError, ChapterEntity>(
+                new ChapterEntity
+                {
+                    Title = chapter.Title,
+                    Reference = chapter.Reference,
+                    PageStart = chapter.PageStart,
+                    PageEnd = chapter.PageEnd,
+                }
+            );
         }
         catch (Exception e)
         {
-            return Left<ExerciseError, ChapterEntity>(new ExerciseError(
-                $"Error happened while mapping {nameof(Chapter)} to {nameof(ChapterEntity)}. Error: {e.Message}"));
+            return Left<ExerciseError, ChapterEntity>(
+                new ExerciseError(
+                    $"Error happened while mapping {nameof(Chapter)} to {nameof(ChapterEntity)}. Error: {e.Message}"
+                )
+            );
         }
     }
 }

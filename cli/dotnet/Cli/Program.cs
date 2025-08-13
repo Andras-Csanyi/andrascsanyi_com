@@ -40,10 +40,12 @@ internal class Program
             .AddJsonFile("appsettings.json", false, true)
             .AddEnvironmentVariables();
         builder.Services.AddDbContext<ExercisesContext>(options =>
-        {
-            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
-            options.EnableDetailedErrors();
-        });
+            {
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+                options.EnableDetailedErrors();
+                options.EnableSensitiveDataLogging();
+            }
+        );
         builder.Services.AddTransient<FindTopicByNameAndReferenceScenario>();
         builder.Services.AddTransient<FindBookByTopicIdAndReferenceScenario>();
         builder.Services.AddTransient<AddNewTopicScenario>();
@@ -62,6 +64,8 @@ internal class Program
         builder.Services.AddTransient<UpdateOrInsertExerciseScenario>();
         builder.Services.AddTransient<UpdateExerciseScenarioInputValidator>();
         builder.Services.AddTransient<AddExerciseScenarioInputValidator>();
+        builder.Services.AddTransient<FindTopicByNameScenario>();
+        builder.Services.AddTransient<FindBookByReferenceScenario>();
 
         // Add new book scenario
         builder.Services.AddTransient<AddNewBookByTopicIdAndParsedBook>();

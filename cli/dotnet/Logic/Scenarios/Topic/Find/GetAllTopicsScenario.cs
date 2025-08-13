@@ -1,7 +1,6 @@
 namespace Exercises.Logic.Scenarios.Topic.Find;
 
 using Common;
-using LanguageExt;
 using Repository;
 using Repository.Models;
 using Repository.Topic;
@@ -13,6 +12,6 @@ public class GetAllTopicsScenario(
     public Either<ExerciseError, List<TopicEntity>> Execute(
         ExercisesContext ctx
     ) =>
-        from all in repository.GetAll(ctx)
+        from all in repository.FindAll(ctx)
         select all;
 }

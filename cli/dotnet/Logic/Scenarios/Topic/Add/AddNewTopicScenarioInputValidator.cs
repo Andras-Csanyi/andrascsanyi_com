@@ -22,14 +22,18 @@ public class AddNewTopicScenarioInputValidator : AbstractValidator<TopicEntity>
         });
     }
 
-    public Either<ExerciseError, TopicEntity> IsValid(TopicEntity input)
+    public Either<ExerciseError, TopicEntity> IsValid(
+        TopicEntity input
+    )
     {
         ValidationResult? result = Validate(input);
-        if (result.IsValid)
+        if (!result.IsValid)
         {
-            return Right<ExerciseError, TopicEntity>(input);
+            Console.WriteLine($"Invalid topic entity: {result.ToErrorString()}");
+            return Left(new ExerciseError(result.ToErrorString()));
         }
 
-        return Left<ExerciseError, TopicEntity>(new ExerciseError(result.ToErrorString()));
+        Console.WriteLine("Valid topic entity");
+        return Right(input);
     }
 }

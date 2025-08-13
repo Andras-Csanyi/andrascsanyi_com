@@ -10,7 +10,7 @@ public class FindSectionByChapterIdAndSectionNumberScenario(
     SectionRepository sectionRepository
 )
 {
-    public Either<ExerciseError, SectionEntity> Execute(long chapterId,
+    public Either<ExerciseError, Option<SectionEntity>> Execute(long chapterId,
         double sectionNumber,
         ExercisesContext ctx) =>
         sectionRepository.FindSectionByChapterIdAndSectionNumber(chapterId, sectionNumber, ctx);

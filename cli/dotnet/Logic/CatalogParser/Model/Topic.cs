@@ -16,10 +16,13 @@ public class Topic
 
 public static class TopicExtensions
 {
-    public static Either<ExerciseError, TopicEntity> ToTopicEntity(this Topic topic)
+    public static Either<ExerciseError, TopicEntity> ToTopicEntity(
+        this Topic topic
+    )
     {
         try
         {
+            Console.WriteLine($"Mapping Topic: {topic.Name}, {topic.Reference}");
             return Right<ExerciseError, TopicEntity>(new TopicEntity
             {
                 Id = 0, Name = topic.Name, Reference = topic.Reference,

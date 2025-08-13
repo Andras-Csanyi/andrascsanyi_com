@@ -1,6 +1,5 @@
 namespace Exercises.Logic.CatalogParser.Model;
 
-using LanguageExt;
 using Repository.Models;
 using YamlDotNet.Serialization;
 
@@ -18,6 +17,9 @@ public class Book
 
     public string? Reference { get; set; }
 
+    [YamlMember(Alias = "topic_reference", ApplyNamingConventions = false)]
+    public string? TopicReference { get; set; }
+
     public List<Chapter> Chapters { get; set; } = [];
 }
 
@@ -27,14 +29,16 @@ public static class BookExtensions
     {
         try
         {
-            return Option<BookEntity>.Some(new BookEntity
-            {
-                Title = parsedBook.Title,
-                Authors = parsedBook.Authors,
-                PageStart = parsedBook.PageStart,
-                PageEnd = parsedBook.PageEnd,
-                Reference = parsedBook.Reference,
-            });
+            return Option<BookEntity>.Some(
+                new BookEntity
+                {
+                    Title = parsedBook.Title,
+                    Authors = parsedBook.Authors,
+                    PageStart = parsedBook.PageStart,
+                    PageEnd = parsedBook.PageEnd,
+                    Reference = parsedBook.Reference,
+                }
+            );
         }
         catch (Exception e)
         {

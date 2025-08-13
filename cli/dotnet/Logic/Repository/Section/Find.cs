@@ -7,7 +7,7 @@ using static LanguageExt.Prelude;
 
 public partial class SectionRepository
 {
-    public Either<ExerciseError, SectionEntity> FindSectionByChapterIdAndSectionNumber(
+    public Either<ExerciseError, Option<SectionEntity>> FindSectionByChapterIdAndSectionNumber(
         long chapterId,
         double sectionNumber,
         ExercisesContext ctx)
@@ -15,12 +15,13 @@ public partial class SectionRepository
         try
         {
             SectionEntity? target = ctx.Sections
-                .First(w => w.ChapterId == chapterId && w.SectionNumber == sectionNumber);
-            return Right(target);
+                .FirstOrDefault(w => w.ChapterId == chapterId && w.SectionNumber == sectionNumber);
+            return target == null ? None : Some(target);
+
         }
         catch (Exception e)
         {
-            return Left<ExerciseError, SectionEntity>(
+            return Left(
                 new ExerciseError($"Error happened while looking " +
                                   $"for {nameof(SectionEntity)} by " +
                                   $"{nameof(ChapterEntity)}.{nameof(ChapterEntity.Id)} with value: {chapterId} and " +

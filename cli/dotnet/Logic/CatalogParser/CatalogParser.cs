@@ -1,175 +1,250 @@
 namespace Exercises.Logic.CatalogParser;
 
 using System.Text.RegularExpressions;
-using Logic.CatalogParser.Model;
+using Common;
+using Model;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
 public class CatalogParser
 {
-    private readonly IDeserializer _deserializer = new DeserializerBuilder()
+    private static readonly IDeserializer Deserializer = new DeserializerBuilder()
         .WithNamingConvention(CamelCaseNamingConvention.Instance)
         .Build();
 
-    public StudyTree ParseStudyTree()
-    {
-        List<string> catalogFiles = ParseDirectory();
-        StudyTree studyTreeWithTopics = ParseTopics(catalogFiles);
-        StudyTree addedBooks = ParseBooks(catalogFiles, studyTreeWithTopics);
-        StudyTree addedChapters = ParseChapters(catalogFiles, addedBooks);
-        StudyTree addedSections = ParseSections(catalogFiles, addedChapters);
-        return addedSections;
-    }
+    public static Either<ExerciseError, ExerciseRecord> Parse() =>
+        from catalogFiles in ParseDirectory()
+        from exercisesWithTopics in ParseTopics(catalogFiles)
+        from booksAdded in ParseBooks(catalogFiles, exercisesWithTopics)
+        from chaptersAdded in ParseChapters(catalogFiles, booksAdded)
+        from sectionsAdded in ParseSections(catalogFiles, chaptersAdded)
+        select sectionsAdded;
 
-    private T DeserializeYaml<T>(string yaml)
+    private static Either<ExerciseError, T> DeserializeYaml<T>(
+        string yaml
+    )
     {
         try
         {
-            return _deserializer.Deserialize<T>(yaml);
+            T result = Deserializer.Deserialize<T>(yaml);
+            return Right(result);
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Deserialization failed at content: {yaml} with error: {e.Message}, trace: {e.StackTrace}");
-            throw;
+            return Left(
+                new ExerciseError(
+                    $"Deserialization failed at content: {yaml} with error: {e.Message}, trace: {e.StackTrace}"
+                )
+            );
         }
     }
 
-    private string ReadFile(string path)
+    private static Either<ExerciseError, string> ReadFile(
+        string path
+    )
     {
         try
         {
-            return File.ReadAllText(path);
+            string result = File.ReadAllText(path);
+            return Right(result);
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Reading the path: {path} failed with error: {e.Message} and trace: {e.StackTrace}");
-            throw;
+            return Left(
+                new ExerciseError(
+                    $"Reading the path: {path} failed with error: {e.Message} and trace: {e.StackTrace}"
+                )
+            );
         }
     }
 
-    private StudyTree ParseSections(List<string> catalogFile, StudyTree studyTree)
+    private static Either<ExerciseError, ExerciseRecord> ParseSections(
+        List<string> catalogFile,
+        ExerciseRecord exerciseRecord
+    )
     {
-        studyTree.Topics.ForEach(topic =>
-        {
-            topic.Books.ForEach(book =>
-            {
-                book.Chapters.ForEach(chapter =>
+        IEnumerable<string> sectionFiles = from files in catalogFile.Where(f => f.EndsWith("section.yml")).ToList()
+            select files;
+        IEnumerable<Section> parsedSectionFiles = from parsed in toSeq(sectionFiles).FoldWhile(
+                new List<Section>(),
+                (List<Section> state, string path) =>
                 {
-                    catalogFile.Where(file =>
-                    {
-                        string pattern = $"{topic.Reference}.*{book.Reference}.*{chapter.Reference}.*section.yml";
-                        Regex regex = new(pattern, RegexOptions.Compiled);
-                        if (regex.IsMatch(file))
+                    Either<ExerciseError, Section> parsedResult = from readFile in ReadFile(path)
+                        from parsedFile in DeserializeYaml<Section>(readFile)
+                        select parsedFile;
+                    return parsedResult.Match(
+                        Right: rightResult =>
                         {
-                            return true;
-                        }
-                        return false;
-                    })
-                    .ToList()
-                    .ForEach(matchedFile =>
-                    {
-                        string yaml = ReadFile(matchedFile);
-                        chapter.Sections.Add(DeserializeYaml<Section>(yaml));
-                    });
-                });
-            });
-        });
-        return studyTree;
+                            state.Add(rightResult);
+                            return state;
+                        },
+                        Left: _ => state
+                    );
+                },
+                _ => true
+            )
+            select parsed;
+        return exerciseRecord with { Sections = parsedSectionFiles, };
     }
 
-    private StudyTree ParseChapters(List<string> catalogFiles, StudyTree studyTree)
+    private static Either<ExerciseError, ExerciseRecord> ParseChapters(
+        List<string> catalogFiles,
+        ExerciseRecord exerciseRecord
+    )
     {
-        studyTree.Topics.ForEach(topic =>
-        {
-            topic.Books.ForEach(book =>
-            {
-                catalogFiles.Where(file =>
+        IEnumerable<string> filePaths = from files in catalogFiles.Where(file =>
                 {
-                    string pattern = $"{topic.Reference}.*{book.Reference}.*chapter.yml";
+                    string pattern = $"*chapter.yml";
                     Regex regex = new(pattern, RegexOptions.Compiled);
-                    if (regex.IsMatch(file))
-                    {
-                        return true;
-                    }
-                    return false;
-                })
-                .ToList()
-                .ForEach(matchedFile =>
-                {
-                    string yaml = ReadFile(matchedFile);
-                    book.Chapters.Add(DeserializeYaml<Chapter>(yaml));
-
-                });
-            });
-        });
-        return studyTree;
-
-    }
-
-    private StudyTree ParseBooks(List<string> catalogFiles, StudyTree studyTree)
-    {
-        Console.WriteLine($"study tree size: {studyTree.Topics.Count}");
-        studyTree.Topics.ForEach(topic =>
-        {
-            catalogFiles.Where(file =>
-            {
-                string pattern = $"{topic.Reference}.*book.yml";
-                Regex regex = new(pattern, RegexOptions.Compiled);
-                if (regex.IsMatch(file))
-                {
-                    return true;
+                    return regex.IsMatch(file);
                 }
-                return false;
-            })
-            .ToList()
-            .ForEach(matchedFile =>
-            {
-                string yaml = ReadFile(matchedFile);
-                topic.Books.Add(DeserializeYaml<Book>(yaml));
-            });
-        });
-        return studyTree;
-    }
-
-    private StudyTree ParseTopics(List<string> catalogFiles)
-    {
-        StudyTree studyTree = new();
-        studyTree.Topics = catalogFiles.Where(catalogFile => catalogFile.EndsWith("topic.yml"))
-                .ToList()
-                .Select(matchedFile =>
+            )
+            select files;
+        IEnumerable<Chapter> parsedChapters = from file in toSeq(filePaths).FoldWhile(
+                new List<Chapter>(),
+                (List<Chapter> state, string filePath) =>
                 {
-                    string yaml = ReadFile(matchedFile);
-                    return DeserializeYaml<Topic>(yaml);
-                })
-                .ToList();
-        return studyTree;
+                    Either<ExerciseError, Chapter> parsedResult = from readFile in ReadFile(filePath)
+                        from parsedFile in DeserializeYaml<Chapter>(readFile)
+                        select parsedFile;
+                    return parsedResult.Match(
+                        Right: rightResult =>
+                        {
+                            state.Add(rightResult);
+                            return state;
+                        },
+                        Left: _ => state
+                    );
+                },
+                _ => true
+            )
+            select file;
+        return exerciseRecord with { Chapters = parsedChapters, };
     }
 
-
-    private List<string> ParseDirectory()
+    private static Either<ExerciseError, ExerciseRecord> ParseBooks(
+        List<string> catalogFiles,
+        ExerciseRecord exerciseRecord
+    )
     {
-        string currDirectory = Directory.GetCurrentDirectory();
-        string baseDirectory = GoNLevelsUp(currDirectory, 2);
-        string bookDirectory = $"{baseDirectory}/docs/book";
-        return ScanDirectoryForCatalogFiles(bookDirectory);
+        IEnumerable<string> bookPathList = from bookFilePathList in catalogFiles.Where(file =>
+                {
+                    string pattern = $".*book.yml";
+                    Regex regex = new(pattern, RegexOptions.Compiled);
+                    return regex.IsMatch(file);
+                }
+            ).ToList()
+            select bookFilePathList;
+        IEnumerable<Book> parsedBooks = from books in toSeq(bookPathList).FoldWhile(
+                new List<Book>(),
+                (List<Book> state, string filePath) =>
+                {
+                    Either<ExerciseError, Book> result = from readFile in ReadFile(filePath)
+                        from parsedFile in DeserializeYaml<Book>(readFile)
+                        select parsedFile;
+                    return result.Match(
+                        Right: rightResult =>
+                        {
+                            state.Add(rightResult);
+                            return state;
+                        },
+                        Left: _ => state
+                    );
+                },
+                _ => true
+            )
+            select books;
+        return exerciseRecord with { Books = parsedBooks, };
     }
 
-    private List<string> ScanDirectoryForCatalogFiles(string bookDirectory) =>
-        Directory.EnumerateFiles(bookDirectory, "*.y*ml", SearchOption.AllDirectories)
-            .Where(file => file.EndsWith(".yml", StringComparison.OrdinalIgnoreCase) ||
-                           file.EndsWith(".yaml", StringComparison.OrdinalIgnoreCase))
-            .Select(Path.GetFullPath)
-            .ToList();
-
-    private string GoNLevelsUp(string currentDirectory, int level)
+    private static Either<ExerciseError, ExerciseRecord> ParseTopics(
+        List<string> catalogFiles
+    )
     {
-        string normalizedPath = Path.GetFullPath(currentDirectory);
-        DirectoryInfo directory = new(normalizedPath);
-        for (int i = 1; i <= level; i++)
+        IEnumerable<string> res = from list in toSeq(catalogFiles).Filter(file => file.EndsWith("topic.yml")).ToList()
+            select list;
+        IEnumerable<Topic> parsedFilesResult = from parsedFiles in toSeq(res).FoldWhile(
+                new List<Topic>(),
+                (List<Topic> state, string filePath) =>
+                {
+                    Either<ExerciseError, Topic> result = from readFile in ReadFile(filePath)
+                        from parsedFile in DeserializeYaml<Topic>(readFile)
+                        select parsedFile;
+                    return result.Match(
+                        Right: right =>
+                        {
+                            state.Add(right);
+                            return state;
+                        },
+                        Left: _ => state
+                    );
+                },
+                _ => true
+            )
+            select parsedFiles;
+        ExerciseRecord exerciseModel = new() { Topics = parsedFilesResult, };
+        return exerciseModel;
+    }
+
+    private static Either<ExerciseError, List<string>> ParseDirectory() =>
+        from currentDirectory in GetCurrentDirectory()
+        from baseDirectory in GoNLevelsUp(currentDirectory, 2)
+        let bookDirectory = $"{baseDirectory}/docs/book"
+        from catalogFiles in ScanDirectoryForCatalogFiles(bookDirectory)
+        select catalogFiles;
+
+    private static Either<ExerciseError, string> GetCurrentDirectory()
+    {
+        try
         {
-            directory = directory.Parent;
+            string currentDirectory = Directory.GetCurrentDirectory();
+            return Right(currentDirectory);
         }
+        catch (Exception e)
+        {
+            return Left(new ExerciseError(e.Message));
+        }
+    }
 
-        return directory.FullName;
+    private static Either<ExerciseError, List<string>> ScanDirectoryForCatalogFiles(
+        string bookDirectory
+    )
+    {
+        try
+        {
+            List<string> result = Directory.EnumerateFiles(bookDirectory, "*.y*ml", SearchOption.AllDirectories)
+                .Where(file => file.EndsWith(".yml", StringComparison.OrdinalIgnoreCase) ||
+                               file.EndsWith(".yaml", StringComparison.OrdinalIgnoreCase)
+                )
+                .Select(Path.GetFullPath)
+                .ToList();
+            return Right(result);
+        }
+        catch (Exception e)
+        {
+            return Left(new ExerciseError(e.Message));
+        }
+    }
+
+    private static Either<ExerciseError, string> GoNLevelsUp(
+        string currentDirectory,
+        int level
+    )
+    {
+        try
+        {
+            string normalizedPath = Path.GetFullPath(currentDirectory);
+            DirectoryInfo directory = new(normalizedPath);
+            for (int i = 1; i <= level; i++)
+            {
+                directory = directory.Parent;
+            }
+
+            return Right(directory.FullName);
+        }
+        catch (Exception e)
+        {
+            return Left(new ExerciseError(e.Message));
+        }
     }
 }

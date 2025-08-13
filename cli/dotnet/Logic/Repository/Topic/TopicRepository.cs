@@ -22,17 +22,22 @@ public partial class TopicRepository(
             .ConfigureAwait(false);
     }
 
-    public Either<ExerciseError, TopicEntity> AddNewTopic(TopicEntity input, ExercisesContext ctx)
+    public Either<ExerciseError, TopicEntity> AddNewTopic(
+        TopicEntity input,
+        ExercisesContext ctx
+    )
     {
         try
         {
             ctx.Topics.Add(input);
             ctx.SaveChanges();
-            return Right<ExerciseError, TopicEntity>(input);
+            Console.WriteLine($"topic added! ID: {input.Id}");
+            return Right(input);
         }
         catch (Exception e)
         {
-            return Left<ExerciseError, TopicEntity>(
+            Console.WriteLine($"Error in repository: {e.Message}");
+            return Left(
                 new ExerciseError($"Error happened while creating a new {nameof(TopicEntity)}. Error: {e.Message}"));
         }
     }

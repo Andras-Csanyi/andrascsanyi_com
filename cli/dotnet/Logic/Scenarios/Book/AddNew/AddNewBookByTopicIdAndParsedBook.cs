@@ -13,13 +13,20 @@ public class AddNewBookByTopicIdAndParsedBook(
     AddNewBookScenarioInputValidator validator
 )
 {
-    public Either<ExerciseError, Unit> Execute(long topicId, Book parsedBook, ExercisesContext dbContext) =>
+    public Either<ExerciseError, BookEntity> Execute(
+        long topicId,
+        Book parsedBook,
+        ExercisesContext dbContext
+    ) =>
         from mappedInput in MapToBookEntity(parsedBook, topicId)
         from validatedInput in ValidateInputEntity(mappedInput)
-        from _ in SaveNewEntity(validatedInput, dbContext)
-        select Unit.Default;
+        from recordedEntity in SaveNewEntity(validatedInput, dbContext)
+        select recordedEntity;
 
-    private Either<ExerciseError, BookEntity> MapToBookEntity(Book parsedBook, long topicId) =>
+    private Either<ExerciseError, BookEntity> MapToBookEntity(
+        Book parsedBook,
+        long topicId
+    ) =>
         parsedBook.ToBookEntity().Match(
             val =>
             {
@@ -28,9 +35,15 @@ public class AddNewBookByTopicIdAndParsedBook(
             },
             () => Left<ExerciseError, BookEntity>(new ExerciseError("Failed mapping")));
 
-    private Either<ExerciseError, Unit> SaveNewEntity(BookEntity validatedInput, ExercisesContext context) =>
-        bookRepository.AddNewBookEntity(validatedInput, context);
+    private Either<ExerciseError, BookEntity> SaveNewEntity(
+        BookEntity validatedInput,
+        ExercisesContext context
+    ) =>
+        from result in bookRepository.AddNewBookEntity(validatedInput, context)
+        select result;
 
-    private Either<ExerciseError, BookEntity> ValidateInputEntity(BookEntity mappedInput) =>
+    private Either<ExerciseError, BookEntity> ValidateInputEntity(
+        BookEntity mappedInput
+    ) =>
         validator.IsValid(mappedInput);
 }
