@@ -6,21 +6,21 @@ using Repository.Models;
 using Repository.Topic;
 using static Prelude;
 
-public class FindTopicByNameScenario(
+public class FindTopicByReferenceScenario(
     TopicRepository topicRepository)
 {
     public Either<ExerciseError, Option<TopicEntity>> Execute(
-        string name,
+        string reference,
         ExercisesContext dbContext
     )
     {
-        if (string.IsNullOrWhiteSpace(name)
-            || string.IsNullOrEmpty(name))
+        if (string.IsNullOrWhiteSpace(reference)
+            || string.IsNullOrEmpty(reference))
         {
             return Left(new ExerciseError($"Either name or reference wasn't provided."));
         }
 
-        return from r in topicRepository.FindByName(name, dbContext)
+        return from r in topicRepository.FindByReference(reference, dbContext)
             select r;
     }
 }

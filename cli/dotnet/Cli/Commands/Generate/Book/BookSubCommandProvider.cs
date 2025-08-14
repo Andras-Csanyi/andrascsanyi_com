@@ -2,10 +2,10 @@ namespace Exercises.Cli.Commands.Generate.Book;
 
 using System.CommandLine;
 using Common;
-using Logic.Controllers.Generate;
+using Logic.Scenarios.Generate;
 
 public class BookSubCommandProvider(
-    GenerateFromBooks generateFromBooks
+    GenerateFromBooksScenario generateFromBooksScenario
 )
 {
     public Command SetupCommand(
@@ -17,6 +17,11 @@ public class BookSubCommandProvider(
     )
     {
         Command bookCommand = new("book", "Generate from the given book.");
+        Option<string> books = new("--books")
+        {
+            Description = "The books to generate from by their reference.", Required = true,
+        };
+        bookCommand.Add(books);
         Option<int> skillQuestionVolume = new("--skill")
         {
             Description = "How many skill questions will be included in the result test.",
@@ -42,16 +47,18 @@ public class BookSubCommandProvider(
         bookCommand.Add(discussionQuestionVolume);
 
         bookCommand.SetAction(parseResult =>
-        {
-            GenerateBooksCommandParameters parameters = new(
-                parseResult.GetValue(skillQuestionVolume),
-                parseResult.GetValue(applicationQuestionVolume),
-                parseResult.GetValue(conceptQuestionVolume),
-                parseResult.GetValue(discussionQuestionVolume)
-            );
+            {
+                GenerateFromBooksScenarioParameters parameters = new(
+                    parseResult.GetValue(skillQuestionVolume),
+                    parseResult.GetValue(applicationQuestionVolume),
+                    parseResult.GetValue(conceptQuestionVolume),
+                    parseResult.GetValue(discussionQuestionVolume),
+                    parseResult.GetValue(books)!
+                );
 
-            generateFromBooks.Execute(parameters);
-        });
+                generateFromBooksScenario.Execute(parameters);
+            }
+        );
         command.Add(bookCommand);
         return command;
     }

@@ -1,6 +1,5 @@
 namespace Exercises.Logic.CatalogParser;
 
-using System.Text.RegularExpressions;
 using Common;
 using Model;
 using YamlDotNet.Serialization;
@@ -92,15 +91,10 @@ public class CatalogParser
         ExerciseRecord exerciseRecord
     )
     {
-        IEnumerable<string> filePaths = from files in catalogFiles.Where(file =>
-                {
-                    string pattern = $"*chapter.yml";
-                    Regex regex = new(pattern, RegexOptions.Compiled);
-                    return regex.IsMatch(file);
-                }
-            )
+        IEnumerable<string> filePaths = from files in catalogFiles.Where(file => file.EndsWith("chapter.yml")).ToList()
             select files;
-        IEnumerable<Chapter> parsedChapters = from file in toSeq(filePaths).FoldWhile(
+        IEnumerable<Chapter> parsedChapters =
+            from file in toSeq(filePaths).FoldWhile(
                 new List<Chapter>(),
                 (List<Chapter> state, string filePath) =>
                 {
@@ -127,13 +121,8 @@ public class CatalogParser
         ExerciseRecord exerciseRecord
     )
     {
-        IEnumerable<string> bookPathList = from bookFilePathList in catalogFiles.Where(file =>
-                {
-                    string pattern = $".*book.yml";
-                    Regex regex = new(pattern, RegexOptions.Compiled);
-                    return regex.IsMatch(file);
-                }
-            ).ToList()
+        IEnumerable<string> bookPathList =
+            from bookFilePathList in catalogFiles.Where(file => file.EndsWith("book.yml")).ToList()
             select bookFilePathList;
         IEnumerable<Book> parsedBooks = from books in toSeq(bookPathList).FoldWhile(
                 new List<Book>(),
@@ -143,9 +132,13 @@ public class CatalogParser
                         from parsedFile in DeserializeYaml<Book>(readFile)
                         select parsedFile;
                     return result.Match(
-                        Right: rightResult =>
+                        Right: yolo =>
                         {
-                            state.Add(rightResult);
+                            Console.WriteLine(
+                                $"=== parsed book: title: {yolo.Title}, topic_reference: {yolo.TopicReference}," +
+                                $" reference: {yolo.Reference}"
+                            );
+                            state.Add(yolo);
                             return state;
                         },
                         Left: _ => state
@@ -173,6 +166,7 @@ public class CatalogParser
                     return result.Match(
                         Right: right =>
                         {
+                            Console.WriteLine($"=== parsed topic: name: {right.Name}, reference: {right.Reference}");
                             state.Add(right);
                             return state;
                         },

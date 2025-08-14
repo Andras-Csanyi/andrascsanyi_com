@@ -4,7 +4,6 @@ using System.CommandLine;
 using Commands;
 using Commands.Generate;
 using Commands.Generate.Book;
-using Logic.Controllers.Generate;
 using Logic.Repository;
 using Logic.Repository.Book;
 using Logic.Repository.Chapter;
@@ -18,6 +17,7 @@ using Logic.Scenarios.Chapter.Add;
 using Logic.Scenarios.Chapter.Find;
 using Logic.Scenarios.Chapter.Update;
 using Logic.Scenarios.Exercise.UpdateOrInsert;
+using Logic.Scenarios.Generate;
 using Logic.Scenarios.Section.Add;
 using Logic.Scenarios.Section.Find;
 using Logic.Scenarios.Topic.Add;
@@ -64,8 +64,11 @@ internal class Program
         builder.Services.AddTransient<UpdateOrInsertExerciseScenario>();
         builder.Services.AddTransient<UpdateExerciseScenarioInputValidator>();
         builder.Services.AddTransient<AddExerciseScenarioInputValidator>();
-        builder.Services.AddTransient<FindTopicByNameScenario>();
+        builder.Services.AddTransient<FindTopicByReferenceScenario>();
         builder.Services.AddTransient<FindBookByReferenceScenario>();
+        builder.Services.AddTransient<GenerateFromBooksScenario>();
+        builder.Services.AddTransient<FindChapterByReferenceScenario>();
+        builder.Services.AddTransient<GenerateFromBooksScenario>();
 
         // Add new book scenario
         builder.Services.AddTransient<AddNewBookByTopicIdAndParsedBook>();
@@ -75,9 +78,6 @@ internal class Program
         builder.Services.AddTransient<Root>();
         builder.Services.AddTransient<BookSubCommandProvider>();
         builder.Services.AddTransient<GenerateSubCommandProvider>();
-
-        // controllers
-        builder.Services.AddTransient<GenerateFromBooks>();
 
         // repositories
         builder.Services.AddTransient<BookRepository>();

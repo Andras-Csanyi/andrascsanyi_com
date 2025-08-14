@@ -23,6 +23,7 @@ public class SyncFsWithDb(
     FindTopicByNameAndReferenceScenario findTopicByNameAndReferenceScenario,
     FindBookByTopicIdAndReferenceScenario findBookByTopicIdAndReferenceScenario,
     AddNewBookByTopicIdAndParsedBook addNewBookByTopicIdAndParsedBook,
+    FindChapterByReferenceScenario findChapterByReferenceScenario,
     AddNewTopicScenario addNewTopicScenario,
     UpdateBookScenario updateBookScenario,
     FindChapterByBookIdAndReferenceScenario findChapterByBookIdAndReferenceScenario,
@@ -32,30 +33,40 @@ public class SyncFsWithDb(
     FindSectionByChapterIdAndSectionNumberScenario findSectionByChapterIdAndSectionNumberScenario,
     AddNewSectionScenario addNewSectionScenario,
     GetAllTopicsScenario getAllTopicsScenario,
-    FindTopicByNameScenario findTopicByNameScenario,
+    FindTopicByReferenceScenario findTopicByReferenceScenario,
     UpdateOrInsertExerciseScenario updateOrInsertExerciseScenario
 )
 {
-    public void Execute(
+    public Either<ExerciseError, Unit> Execute(
         ExerciseRecord exerciseRecord
     )
     {
         using ExercisesContext ctx = new(dbContextOptions);
         IDbContextTransaction transaction = ctx.Database.BeginTransaction();
         Either<ExerciseError, Unit> result = from syncTopicsResult in SyncTopics(exerciseRecord, ctx)
+                .Do((_) => { Console.WriteLine("=== Topic synced."); })
             from syncBooksResult in SyncBooks(exerciseRecord, ctx)
+                .Do((_) => { Console.WriteLine("=== Books synced."); })
             from syncChaptersResult in SyncChapters(exerciseRecord, ctx)
+                .Do((_) => { Console.WriteLine("=== Chapters synced."); })
             from syncSectionsResult in SyncSections(exerciseRecord, ctx)
+                .Do((_) => { Console.WriteLine("=== Sections synced."); })
             from syncExercisesResult in SyncExercises(ctx)
             select syncExercisesResult;
-        result.IfLeft(() =>
+        return result.Match(
+            nope =>
             {
-                Console.WriteLine("transaction rollbacked");
+                Console.WriteLine($"transaction rollbacked: {nope.Message}");
                 transaction.Rollback();
+                return Unit.Default;
+            },
+            yup =>
+            {
+                Console.WriteLine("transaction completed");
+                transaction.Commit();
                 return Unit.Default;
             }
         );
-        transaction.Commit();
     }
 
     private Either<ExerciseError, Unit> SyncChapters(
@@ -232,52 +243,20 @@ public class SyncFsWithDb(
         return Either<ExerciseError, Unit>.Right(Unit.Default);
     }
 
-    private Either<ExerciseError, long> GetParsedTopicId(
-        string name,
-        string reference,
-        ExercisesContext ctx
-    ) =>
-        from foundItemOption in findTopicByNameAndReferenceScenario.Execute(
-            name,
-            reference,
-            ctx
-        )
-        from foundItem in foundItemOption.ToEither(() => new ExerciseError(
-                $"There is no {nameof(TopicEntity)} with name: {name} and reference: {reference}."
-            )
-        )
-        select foundItem.Id;
-
-    private Either<ExerciseError, long> GetParsedBookId(
-        long topicId,
-        string reference,
-        ExercisesContext ctx
-    )
-        => from foundItemOption in findBookByTopicIdAndReferenceScenario.Execute(
-                topicId,
-                reference,
-                ctx
-            )
-            from foundItem in foundItemOption.ToEither(() => new ExerciseError(
-                    $"There is no {nameof(BookEntity)} with topicId: {topicId} and reference: {reference}."
-                )
-            )
-            select foundItem.Id;
-
-    private Either<ExerciseError, long> GetParsedChapterId(
-        long bookId,
-        string reference,
-        ExercisesContext ctx
-    ) => from foundItemOption in findChapterByBookIdAndReferenceScenario.Execute(bookId, reference, ctx)
-        from foundItem in foundItemOption.ToEither(() => new ExerciseError($""))
-        select foundItem.Id;
-
-    private static Either<ExerciseError, Unit> SyncSections(
+    private Either<ExerciseError, Unit> SyncSections(
         ExerciseRecord exerciseRecord,
         ExercisesContext ctx
     ) => toSeq(exerciseRecord.Sections).FoldWhile(
         Either<ExerciseError, Unit>.Right(Unit.Default),
-        (state, parsedSection) => { },
+        (state, parsedSection) =>
+        {
+            return from chapterFound in findChapterByReferenceScenario.Execute(parsedSection.ChapterReference, ctx)
+                from chapter in chapterFound.ToEither(() =>
+                    new ExerciseError($"Something is wrong with the chapter by reference")
+                )
+                from createdSection in addNewSectionScenario.Execute(parsedSection, chapter.Id, ctx)
+                select Unit.Default;
+        },
         parsedTopicState => parsedTopicState.State.IsRight
     );
 
@@ -289,9 +268,9 @@ public class SyncFsWithDb(
             Either<ExerciseError, Unit>.Right(Unit.Default),
             (state, singleBook) =>
             {
-                return from topicInDb in findTopicByNameScenario.Execute(singleBook.TopicReference, ctx)
+                return from topicInDb in findTopicByReferenceScenario.Execute(singleBook.TopicReference, ctx)
                     from topicEntity in topicInDb.ToEither(() =>
-                        new ExerciseError($"No topic with topic name {singleBook.TopicReference}")
+                        new ExerciseError($"No topic with topic reference {singleBook.TopicReference}")
                     )
                     from bookFindingResult in findBookByTopicIdAndReferenceScenario.Execute(
                         topicEntity.Id,
@@ -299,13 +278,13 @@ public class SyncFsWithDb(
                         ctx
                     )
                     from _ in bookFindingResult.Match(
-                        _ => Unit.Default,
+                        _ => Right(Unit.Default),
                         () => from result in addNewBookByTopicIdAndParsedBook.Execute(
                                 topicEntity.Id,
                                 singleBook,
                                 ctx
                             )
-                            select Unit.Default
+                            select Right(Unit.Default)
                     )
                     select Unit.Default;
             },

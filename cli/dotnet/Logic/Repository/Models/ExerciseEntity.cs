@@ -8,9 +8,12 @@ public class ExerciseEntity
     public SectionEntity Section { get; set; }
     public double SectionIdInThebook { get; set; }
     public long ChapterId { get; set; }
+    public ChapterEntity Chapter { get; set; }
     public double ChapterIdInTheBook { get; set; }
     public long BookId { get; set; }
+    public BookEntity Book { get; set; }
     public long TopicId { get; set; }
+    public TopicEntity Topic { get; set; }
     public ExerciseType ExerciseType { get; set; }
 }
 

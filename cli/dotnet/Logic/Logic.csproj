@@ -22,10 +22,16 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.8" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+        <PackageReference Include="Scriban" Version="6.2.1" />
         <PackageReference Include="YamlDotNet" Version="16.3.0" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Common\Common.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="Generators\LaTeX\exercise.sbn">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

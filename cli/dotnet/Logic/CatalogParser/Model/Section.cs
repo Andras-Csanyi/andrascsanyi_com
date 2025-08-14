@@ -1,10 +1,9 @@
 namespace Exercises.Logic.CatalogParser.Model;
 
 using Common;
-using LanguageExt;
 using Repository.Models;
 using YamlDotNet.Serialization;
-using static LanguageExt.Prelude;
+using static Prelude;
 
 public class Section
 {
@@ -45,6 +44,9 @@ public class Section
 
     [YamlMember(Alias = "page_end", ApplyNamingConventions = false)]
     public int PageEnd { get; set; }
+
+    [YamlMember(Alias = "chapter_reference", ApplyNamingConventions = false)]
+    public string ChapterReference { get; set; }
 }
 
 public static class SectionExtensions
@@ -77,7 +79,9 @@ public static class SectionExtensions
         {
             return Left(
                 new ExerciseError(
-                    $"Error while mapping {nameof(Section)} to {nameof(SectionEntity)}. Error: {e.Message}"));
+                    $"Error while mapping {nameof(Section)} to {nameof(SectionEntity)}. Error: {e.Message}"
+                )
+            );
         }
     }
 }

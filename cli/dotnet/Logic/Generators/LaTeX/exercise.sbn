@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\begin{document}
+
+{{ for s in data }}
+
+    {{ s | object.values }}
+    {{ s | object.keys }}
+    {{ s.section | object.values }}
+    {{ s.section | object.keys }}
+    {{ s.chapter | object.values }}
+    {{ s.chapter | object.keys }}
+
+   \paragraph{}
+   \begin{tabularx}{1\textwidth}{
+           p{\dimexpr0.5\textwidth\relax}
+           p{\dimexpr0.5\textwidth\relax}
+       }
+       \toprule
+       Book: & {{ s.book.title }}
+       \\
+       \midrule
+       Section: & {{ s.section.section_number }} {{ s.section.title }}
+       \\
+       \midrule
+       Chapter: & {{ s.chapter.id }} {{ s.chapter.title }}
+       \\
+       \midrule
+       Page: & {{ s.section.page_exercises_start }}
+       \\
+       \midrule
+       Question number: & {{ s.question_number_in_the_book }}
+       \\
+       \midrule
+       Question type: & {{ s.question_type }}
+       \\
+       \bottomrule
+   \end{tabularx}
+
+{{ end }}
+
+
+\end{document}
