@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>changelog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ce3cd9752fa19540e204c10d26179311.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Main</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./space_colonisation.html"> 
+<span class="menu-text">Space Colonisation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./aerospace.html"> 
+<span class="menu-text">Aerospace</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./mathematics.html"> 
+<span class="menu-text">Mathematics</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">0.27.0 (2025-07-19)</a>
+  <ul class="collapse">
+  <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features">Features</a></li>
+  </ul></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">0.26.0 (2025-06-21)</a>
+  <ul class="collapse">
+  <li><a href="#features-1" id="toc-features-1" class="nav-link" data-scroll-target="#features-1">Features</a></li>
+  </ul></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">0.25.0 (2025-06-20)</a>
+  <ul class="collapse">
+  <li><a href="#features-2" id="toc-features-2" class="nav-link" data-scroll-target="#features-2">Features</a></li>
+  </ul></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">0.24.0 (2025-06-19)</a>
+  <ul class="collapse">
+  <li><a href="#features-3" id="toc-features-3" class="nav-link" data-scroll-target="#features-3">Features</a></li>
+  </ul></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">0.23.0 (2025-06-14)</a>
+  <ul class="collapse">
+  <li><a href="#features-4" id="toc-features-4" class="nav-link" data-scroll-target="#features-4">Features</a></li>
+  </ul></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">0.22.0 (2025-06-04)</a>
+  <ul class="collapse">
+  <li><a href="#features-5" id="toc-features-5" class="nav-link" data-scroll-target="#features-5">Features</a></li>
+  </ul></li>
+  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6">0.21.0 (2025-05-12)</a>
+  <ul class="collapse">
+  <li><a href="#features-6" id="toc-features-6" class="nav-link" data-scroll-target="#features-6">Features</a></li>
+  </ul></li>
+  <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7">0.20.0 (2025-04-26)</a>
+  <ul class="collapse">
+  <li><a href="#features-7" id="toc-features-7" class="nav-link" data-scroll-target="#features-7">Features</a></li>
+  </ul></li>
+  <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8">0.19.0 (2025-04-26)</a>
+  <ul class="collapse">
+  <li><a href="#features-8" id="toc-features-8" class="nav-link" data-scroll-target="#features-8">Features</a></li>
+  <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9">0.18.5 (2025-04-24)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes" id="toc-bug-fixes" class="nav-link" data-scroll-target="#bug-fixes">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-10" id="toc-section-10" class="nav-link" data-scroll-target="#section-10">0.18.4 (2025-04-20)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-1" id="toc-bug-fixes-1" class="nav-link" data-scroll-target="#bug-fixes-1">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-11" id="toc-section-11" class="nav-link" data-scroll-target="#section-11">0.18.3 (2025-04-20)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-2" id="toc-bug-fixes-2" class="nav-link" data-scroll-target="#bug-fixes-2">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-12" id="toc-section-12" class="nav-link" data-scroll-target="#section-12">0.18.2 (2025-04-20)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-3" id="toc-bug-fixes-3" class="nav-link" data-scroll-target="#bug-fixes-3">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-13" id="toc-section-13" class="nav-link" data-scroll-target="#section-13">0.18.1 (2025-04-19)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-4" id="toc-bug-fixes-4" class="nav-link" data-scroll-target="#bug-fixes-4">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-14" id="toc-section-14" class="nav-link" data-scroll-target="#section-14">0.18.0 (2025-01-19)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-5" id="toc-bug-fixes-5" class="nav-link" data-scroll-target="#bug-fixes-5">Bug Fixes</a></li>
+  <li><a href="#features-9" id="toc-features-9" class="nav-link" data-scroll-target="#features-9">Features</a></li>
+  <li><a href="#section-15" id="toc-section-15" class="nav-link" data-scroll-target="#section-15">0.17.2 (2024-11-24)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-6" id="toc-bug-fixes-6" class="nav-link" data-scroll-target="#bug-fixes-6">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-16" id="toc-section-16" class="nav-link" data-scroll-target="#section-16">0.17.1 (2024-11-24)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-7" id="toc-bug-fixes-7" class="nav-link" data-scroll-target="#bug-fixes-7">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-17" id="toc-section-17" class="nav-link" data-scroll-target="#section-17">0.17.0 (2024-11-24)</a>
+  <ul class="collapse">
+  <li><a href="#features-10" id="toc-features-10" class="nav-link" data-scroll-target="#features-10">Features</a></li>
+  <li><a href="#section-18" id="toc-section-18" class="nav-link" data-scroll-target="#section-18">0.16.4 (2024-11-24)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-8" id="toc-bug-fixes-8" class="nav-link" data-scroll-target="#bug-fixes-8">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-19" id="toc-section-19" class="nav-link" data-scroll-target="#section-19">0.16.3 (2024-11-24)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-9" id="toc-bug-fixes-9" class="nav-link" data-scroll-target="#bug-fixes-9">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-20" id="toc-section-20" class="nav-link" data-scroll-target="#section-20">0.16.2 (2024-11-24)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-10" id="toc-bug-fixes-10" class="nav-link" data-scroll-target="#bug-fixes-10">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-21" id="toc-section-21" class="nav-link" data-scroll-target="#section-21">0.16.1 (2024-11-24)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-11" id="toc-bug-fixes-11" class="nav-link" data-scroll-target="#bug-fixes-11">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-22" id="toc-section-22" class="nav-link" data-scroll-target="#section-22">0.16.0 (2024-11-24)</a>
+  <ul class="collapse">
+  <li><a href="#features-11" id="toc-features-11" class="nav-link" data-scroll-target="#features-11">Features</a></li>
+  <li><a href="#section-23" id="toc-section-23" class="nav-link" data-scroll-target="#section-23">0.15.1 (2024-11-17)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-12" id="toc-bug-fixes-12" class="nav-link" data-scroll-target="#bug-fixes-12">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-24" id="toc-section-24" class="nav-link" data-scroll-target="#section-24">0.15.0 (2024-11-17)</a>
+  <ul class="collapse">
+  <li><a href="#features-12" id="toc-features-12" class="nav-link" data-scroll-target="#features-12">Features</a></li>
+  </ul></li>
+  <li><a href="#section-25" id="toc-section-25" class="nav-link" data-scroll-target="#section-25">0.14.0 (2024-11-05)</a>
+  <ul class="collapse">
+  <li><a href="#features-13" id="toc-features-13" class="nav-link" data-scroll-target="#features-13">Features</a></li>
+  <li><a href="#section-26" id="toc-section-26" class="nav-link" data-scroll-target="#section-26">0.13.4 (2024-10-27)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-13" id="toc-bug-fixes-13" class="nav-link" data-scroll-target="#bug-fixes-13">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-27" id="toc-section-27" class="nav-link" data-scroll-target="#section-27">0.13.3 (2024-10-27)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-14" id="toc-bug-fixes-14" class="nav-link" data-scroll-target="#bug-fixes-14">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-28" id="toc-section-28" class="nav-link" data-scroll-target="#section-28">0.13.2 (2024-10-27)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-15" id="toc-bug-fixes-15" class="nav-link" data-scroll-target="#bug-fixes-15">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-29" id="toc-section-29" class="nav-link" data-scroll-target="#section-29">0.13.1 (2024-10-27)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-16" id="toc-bug-fixes-16" class="nav-link" data-scroll-target="#bug-fixes-16">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-30" id="toc-section-30" class="nav-link" data-scroll-target="#section-30">0.13.0 (2024-10-27)</a>
+  <ul class="collapse">
+  <li><a href="#features-14" id="toc-features-14" class="nav-link" data-scroll-target="#features-14">Features</a></li>
+  <li><a href="#section-31" id="toc-section-31" class="nav-link" data-scroll-target="#section-31">0.12.2 (2024-10-27)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-17" id="toc-bug-fixes-17" class="nav-link" data-scroll-target="#bug-fixes-17">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-32" id="toc-section-32" class="nav-link" data-scroll-target="#section-32">0.12.1 (2024-10-26)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-18" id="toc-bug-fixes-18" class="nav-link" data-scroll-target="#bug-fixes-18">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-33" id="toc-section-33" class="nav-link" data-scroll-target="#section-33">0.12.0 (2024-10-26)</a>
+  <ul class="collapse">
+  <li><a href="#features-15" id="toc-features-15" class="nav-link" data-scroll-target="#features-15">Features</a></li>
+  </ul></li>
+  <li><a href="#section-34" id="toc-section-34" class="nav-link" data-scroll-target="#section-34">0.11.0 (2024-10-26)</a>
+  <ul class="collapse">
+  <li><a href="#features-16" id="toc-features-16" class="nav-link" data-scroll-target="#features-16">Features</a></li>
+  <li><a href="#section-35" id="toc-section-35" class="nav-link" data-scroll-target="#section-35">0.10.1 (2024-10-26)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-19" id="toc-bug-fixes-19" class="nav-link" data-scroll-target="#bug-fixes-19">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-36" id="toc-section-36" class="nav-link" data-scroll-target="#section-36">0.10.0 (2024-10-26)</a>
+  <ul class="collapse">
+  <li><a href="#features-17" id="toc-features-17" class="nav-link" data-scroll-target="#features-17">Features</a></li>
+  </ul></li>
+  <li><a href="#section-37" id="toc-section-37" class="nav-link" data-scroll-target="#section-37">0.9.0 (2024-04-15)</a>
+  <ul class="collapse">
+  <li><a href="#features-18" id="toc-features-18" class="nav-link" data-scroll-target="#features-18">Features</a></li>
+  <li><a href="#section-38" id="toc-section-38" class="nav-link" data-scroll-target="#section-38">0.8.2 (2024-04-14)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-20" id="toc-bug-fixes-20" class="nav-link" data-scroll-target="#bug-fixes-20">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-39" id="toc-section-39" class="nav-link" data-scroll-target="#section-39">0.8.1 (2024-04-14)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-21" id="toc-bug-fixes-21" class="nav-link" data-scroll-target="#bug-fixes-21">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-40" id="toc-section-40" class="nav-link" data-scroll-target="#section-40">0.8.0 (2024-04-14)</a>
+  <ul class="collapse">
+  <li><a href="#features-19" id="toc-features-19" class="nav-link" data-scroll-target="#features-19">Features</a></li>
+  </ul></li>
+  <li><a href="#section-41" id="toc-section-41" class="nav-link" data-scroll-target="#section-41">0.7.0 (2024-03-31)</a>
+  <ul class="collapse">
+  <li><a href="#features-20" id="toc-features-20" class="nav-link" data-scroll-target="#features-20">Features</a></li>
+  <li><a href="#section-42" id="toc-section-42" class="nav-link" data-scroll-target="#section-42">0.6.5 (2024-02-12)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-22" id="toc-bug-fixes-22" class="nav-link" data-scroll-target="#bug-fixes-22">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-43" id="toc-section-43" class="nav-link" data-scroll-target="#section-43">0.6.4 (2024-02-08)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-23" id="toc-bug-fixes-23" class="nav-link" data-scroll-target="#bug-fixes-23">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-44" id="toc-section-44" class="nav-link" data-scroll-target="#section-44">0.6.3 (2024-02-08)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-24" id="toc-bug-fixes-24" class="nav-link" data-scroll-target="#bug-fixes-24">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-45" id="toc-section-45" class="nav-link" data-scroll-target="#section-45">0.6.2 (2024-02-08)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-25" id="toc-bug-fixes-25" class="nav-link" data-scroll-target="#bug-fixes-25">Bug Fixes</a></li>
+  </ul></li>
+  <li><a href="#section-46" id="toc-section-46" class="nav-link" data-scroll-target="#section-46">0.6.1 (2024-02-08)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-26" id="toc-bug-fixes-26" class="nav-link" data-scroll-target="#bug-fixes-26">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-47" id="toc-section-47" class="nav-link" data-scroll-target="#section-47">0.6.0 (2024-02-07)</a>
+  <ul class="collapse">
+  <li><a href="#features-21" id="toc-features-21" class="nav-link" data-scroll-target="#features-21">Features</a></li>
+  </ul></li>
+  <li><a href="#section-48" id="toc-section-48" class="nav-link" data-scroll-target="#section-48">0.5.0 (2023-11-24)</a>
+  <ul class="collapse">
+  <li><a href="#features-22" id="toc-features-22" class="nav-link" data-scroll-target="#features-22">Features</a></li>
+  <li><a href="#section-49" id="toc-section-49" class="nav-link" data-scroll-target="#section-49">0.4.1 (2023-11-22)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-27" id="toc-bug-fixes-27" class="nav-link" data-scroll-target="#bug-fixes-27">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-50" id="toc-section-50" class="nav-link" data-scroll-target="#section-50">0.4.0 (2023-11-22)</a>
+  <ul class="collapse">
+  <li><a href="#features-23" id="toc-features-23" class="nav-link" data-scroll-target="#features-23">Features</a></li>
+  </ul></li>
+  <li><a href="#section-51" id="toc-section-51" class="nav-link" data-scroll-target="#section-51">0.3.0 (2023-11-18)</a>
+  <ul class="collapse">
+  <li><a href="#features-24" id="toc-features-24" class="nav-link" data-scroll-target="#features-24">Features</a></li>
+  </ul></li>
+  <li><a href="#section-52" id="toc-section-52" class="nav-link" data-scroll-target="#section-52">0.2.0 (2023-11-16)</a>
+  <ul class="collapse">
+  <li><a href="#features-25" id="toc-features-25" class="nav-link" data-scroll-target="#features-25">Features</a></li>
+  <li><a href="#section-53" id="toc-section-53" class="nav-link" data-scroll-target="#section-53">0.1.1 (2023-11-16)</a>
+  <ul class="collapse">
+  <li><a href="#bug-fixes-28" id="toc-bug-fixes-28" class="nav-link" data-scroll-target="#bug-fixes-28">Bug Fixes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#section-54" id="toc-section-54" class="nav-link" data-scroll-target="#section-54">0.1.0 (2023-11-16)</a>
+  <ul class="collapse">
+  <li><a href="#features-26" id="toc-features-26" class="nav-link" data-scroll-target="#features-26">Features</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="section" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.26.0...0.27.0">0.27.0</a> (2025-07-19)</h1>
+<section id="features" class="level3">
+<h3 class="anchored" data-anchor-id="features">Features</h3>
+<ul>
+<li>adding basic exercises cli (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/75">#75</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/64dd1743734de34efff17e2289c31368a7d72483">64dd174</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-1" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.25.0...0.26.0">0.26.0</a> (2025-06-21)</h1>
+<section id="features-1" class="level3">
+<h3 class="anchored" data-anchor-id="features-1">Features</h3>
+<ul>
+<li>anki cards (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/74">#74</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/fe629a4475698acf2221092f780a803bfd39e85b">fe629a4</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-2" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.24.0...0.25.0">0.25.0</a> (2025-06-20)</h1>
+<section id="features-2" class="level3">
+<h3 class="anchored" data-anchor-id="features-2">Features</h3>
+<ul>
+<li>anki cards - complex numbers (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/73">#73</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/9c3c192cefd43cc473fca1ec99f00b9adbe6d1d2">9c3c192</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-3" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.23.0...0.24.0">0.24.0</a> (2025-06-19)</h1>
+<section id="features-3" class="level3">
+<h3 class="anchored" data-anchor-id="features-3">Features</h3>
+<ul>
+<li>anki cards (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/72">#72</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/29145559e21f242883ae77450fbd962da640554b">2914555</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-4" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.22.0...0.23.0">0.23.0</a> (2025-06-14)</h1>
+<section id="features-4" class="level3">
+<h3 class="anchored" data-anchor-id="features-4">Features</h3>
+<ul>
+<li>real numbers related content of the book (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/71">#71</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/28700a2735b7dc8335f8affbe6756e94c2824d91">28700a2</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-5" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.21.0...0.22.0">0.22.0</a> (2025-06-04)</h1>
+<section id="features-5" class="level3">
+<h3 class="anchored" data-anchor-id="features-5">Features</h3>
+<ul>
+<li>study plan (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/70">#70</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/9a5ecc2b8635bfbb5a97b928482f19eaa9ed6828">9a5ecc2</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-6" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.20.0...0.21.0">0.21.0</a> (2025-05-12)</h1>
+<section id="features-6" class="level3">
+<h3 class="anchored" data-anchor-id="features-6">Features</h3>
+<ul>
+<li>introducing the book and removing sections (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/68">#68</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/226dc52d8e83b89a7394b2a547a7b121b246add2">226dc52</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-7" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.19.0...0.20.0">0.20.0</a> (2025-04-26)</h1>
+<section id="features-7" class="level3">
+<h3 class="anchored" data-anchor-id="features-7">Features</h3>
+<ul>
+<li>real numbers (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/67">#67</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/808f762799c0a0b5c4b9c767836ce032a6636e24">808f762</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-8" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.5...0.19.0">0.19.0</a> (2025-04-26)</h1>
+<section id="features-8" class="level3">
+<h3 class="anchored" data-anchor-id="features-8">Features</h3>
+<ul>
+<li>first page about the math function (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/66">#66</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/addf0bf4f11b202e2b282fb0bd6c344b7e404e33">addf0bf</a>)</li>
+</ul>
+</section>
+<section id="section-9" class="level2">
+<h2 class="anchored" data-anchor-id="section-9"><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.4...0.18.5">0.18.5</a> (2025-04-24)</h2>
+<section id="bug-fixes" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>main page changes (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/65">#65</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/c9fde09295b461a5d789947bf998d0f710e8b422">c9fde09</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-10" class="level2">
+<h2 class="anchored" data-anchor-id="section-10"><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.3...0.18.4">0.18.4</a> (2025-04-20)</h2>
+<section id="bug-fixes-1" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-1">Bug Fixes</h3>
+<ul>
+<li>changes (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/64">#64</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/8dc0f17305ac0c615289673f55043ea6bc7acfd8">8dc0f17</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-11" class="level2">
+<h2 class="anchored" data-anchor-id="section-11"><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.2...0.18.3">0.18.3</a> (2025-04-20)</h2>
+<section id="bug-fixes-2" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-2">Bug Fixes</h3>
+<ul>
+<li>gh pages (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/63">#63</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/16781462d6f8f02d39ed98d08b8df300ba35a743">1678146</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-12" class="level2">
+<h2 class="anchored" data-anchor-id="section-12"><a href="https://github.com/Andras-Csanyi/andrascsanyi_com/compare/0.18.1...0.18.2">0.18.2</a> (2025-04-20)</h2>
+<section id="bug-fixes-3" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-3">Bug Fixes</h3>
+<ul>
+<li>github pages deploy (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/issues/62">#62</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi_com/commit/6cf40567a1e39bfa18d090c74ad9822936d6ced1">6cf4056</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-13" class="level2">
+<h2 class="anchored" data-anchor-id="section-13"><a href="https://github.com/Andras-Csanyi/andrascsanyi.com/compare/0.18.0...0.18.1">0.18.1</a> (2025-04-19)</h2>
+<section id="bug-fixes-4" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-4">Bug Fixes</h3>
+<ul>
+<li>rework (<a href="https://github.com/Andras-Csanyi/andrascsanyi.com/issues/61">#61</a>) (<a href="https://github.com/Andras-Csanyi/andrascsanyi.com/commit/062d8ac54c5d0b7318e8e180607aa60016f2194d">062d8ac</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-14" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.17.2...0.18.0">0.18.0</a> (2025-01-19)</h1>
+<section id="bug-fixes-5" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-5">Bug Fixes</h3>
+<ul>
+<li>link fix <a href="https://github.com/Andras-Csanyi/software_engineering/issues/60">#60</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/eab82b5cee7b94a0b27a8dcadf4ee2db7a1723fe">eab82b5</a>)</li>
+</ul>
+</section>
+<section id="features-9" class="level3">
+<h3 class="anchored" data-anchor-id="features-9">Features</h3>
+<ul>
+<li>potato lang parser first version <a href="https://github.com/Andras-Csanyi/software_engineering/issues/59">#59</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/3fb377b7c3af0e091c71af6d1dc909193c26ba48">3fb377b</a>)</li>
+</ul>
+</section>
+<section id="section-15" class="level2">
+<h2 class="anchored" data-anchor-id="section-15"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.17.1...0.17.2">0.17.2</a> (2024-11-24)</h2>
+<section id="bug-fixes-6" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-6">Bug Fixes</h3>
+<ul>
+<li>article changes <a href="https://github.com/Andras-Csanyi/software_engineering/issues/58">#58</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/45e1a3eeba939e6027d754645506d4ae7c53fd23">45e1a3e</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-16" class="level2">
+<h2 class="anchored" data-anchor-id="section-16"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.17.0...0.17.1">0.17.1</a> (2024-11-24)</h2>
+<section id="bug-fixes-7" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-7">Bug Fixes</h3>
+<ul>
+<li>article <a href="https://github.com/Andras-Csanyi/software_engineering/issues/57">#57</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/d8721aa8f55b78d6f7640cfdbc0f374b36eeb067">d8721aa</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-17" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.16.4...0.17.0">0.17.0</a> (2024-11-24)</h1>
+<section id="features-10" class="level3">
+<h3 class="anchored" data-anchor-id="features-10">Features</h3>
+<ul>
+<li>PotatoLang baby steps article (<a href="https://github.com/Andras-Csanyi/software_engineering/issues/56">#56</a>) (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/a5e29acdd067cc2850e890102b5a28adf2a41017">a5e29ac</a>)</li>
+</ul>
+</section>
+<section id="section-18" class="level2">
+<h2 class="anchored" data-anchor-id="section-18"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.16.3...0.16.4">0.16.4</a> (2024-11-24)</h2>
+<section id="bug-fixes-8" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-8">Bug Fixes</h3>
+<ul>
+<li>article changes <a href="https://github.com/Andras-Csanyi/software_engineering/issues/55">#55</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/bbba040d39ce51b0e9d0e82a3b831752d1483ede">bbba040</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-19" class="level2">
+<h2 class="anchored" data-anchor-id="section-19"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.16.2...0.16.3">0.16.3</a> (2024-11-24)</h2>
+<section id="bug-fixes-9" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-9">Bug Fixes</h3>
+<ul>
+<li>article changes <a href="https://github.com/Andras-Csanyi/software_engineering/issues/54">#54</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/c1c139dd7be586afdbef56d64110d2220797834a">c1c139d</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-20" class="level2">
+<h2 class="anchored" data-anchor-id="section-20"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.16.1...0.16.2">0.16.2</a> (2024-11-24)</h2>
+<section id="bug-fixes-10" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-10">Bug Fixes</h3>
+<ul>
+<li>article fixes <a href="https://github.com/Andras-Csanyi/software_engineering/issues/53">#53</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/4a869d488bd3904ffae6905310bb47451649616d">4a869d4</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-21" class="level2">
+<h2 class="anchored" data-anchor-id="section-21"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.16.0...0.16.1">0.16.1</a> (2024-11-24)</h2>
+<section id="bug-fixes-11" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-11">Bug Fixes</h3>
+<ul>
+<li>article fixes <a href="https://github.com/Andras-Csanyi/software_engineering/issues/52">#52</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/e06b14f02d81fc8b4a36b821a98d45c4ae6e5a82">e06b14f</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-22" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.15.1...0.16.0">0.16.0</a> (2024-11-24)</h1>
+<section id="features-11" class="level3">
+<h3 class="anchored" data-anchor-id="features-11">Features</h3>
+<ul>
+<li>Because it sucks - article <a href="https://github.com/Andras-Csanyi/software_engineering/issues/51">#51</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/f0c2d9560f1c88b5495bc935463194bca8cae618">f0c2d95</a>)</li>
+</ul>
+</section>
+<section id="section-23" class="level2">
+<h2 class="anchored" data-anchor-id="section-23"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.15.0...0.15.1">0.15.1</a> (2024-11-17)</h2>
+<section id="bug-fixes-12" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-12">Bug Fixes</h3>
+<ul>
+<li>article fixes <a href="https://github.com/Andras-Csanyi/software_engineering/issues/50">#50</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/09c92c546716a8dbe062565ece6138bc9b764a9d">09c92c5</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-24" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.14.0...0.15.0">0.15.0</a> (2024-11-17)</h1>
+<section id="features-12" class="level3">
+<h3 class="anchored" data-anchor-id="features-12">Features</h3>
+<ul>
+<li>Living in the LLM hype article (<a href="https://github.com/Andras-Csanyi/software_engineering/issues/49">#49</a>) (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/88b192601e089273817751873b3217b8133ea69c">88b1926</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-25" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.13.4...0.14.0">0.14.0</a> (2024-11-05)</h1>
+<section id="features-13" class="level3">
+<h3 class="anchored" data-anchor-id="features-13">Features</h3>
+<ul>
+<li>DynamicSizeArray add and get method and the article about it (<a href="https://github.com/Andras-Csanyi/software_engineering/issues/48">#48</a>) (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/0bf5106d1200c1145de0307fd9067d27ac302a33">0bf5106</a>)</li>
+</ul>
+</section>
+<section id="section-26" class="level2">
+<h2 class="anchored" data-anchor-id="section-26"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.13.3...0.13.4">0.13.4</a> (2024-10-27)</h2>
+<section id="bug-fixes-13" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-13">Bug Fixes</h3>
+<ul>
+<li>fixing shit <a href="https://github.com/Andras-Csanyi/software_engineering/issues/47">#47</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/41b1969e11e82fc6e02ab76ad79faf7a050d8381">41b1969</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-27" class="level2">
+<h2 class="anchored" data-anchor-id="section-27"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.13.2...0.13.3">0.13.3</a> (2024-10-27)</h2>
+<section id="bug-fixes-14" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-14">Bug Fixes</h3>
+<ul>
+<li>fixing shit <a href="https://github.com/Andras-Csanyi/software_engineering/issues/46">#46</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/1cded2056680df7f1794e0f293f421a41951f727">1cded20</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-28" class="level2">
+<h2 class="anchored" data-anchor-id="section-28"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.13.1...0.13.2">0.13.2</a> (2024-10-27)</h2>
+<section id="bug-fixes-15" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-15">Bug Fixes</h3>
+<ul>
+<li>fixing shit <a href="https://github.com/Andras-Csanyi/software_engineering/issues/45">#45</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/1b0ee286eef7bdb98e647ec987369715add5e40b">1b0ee28</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-29" class="level2">
+<h2 class="anchored" data-anchor-id="section-29"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.13.0...0.13.1">0.13.1</a> (2024-10-27)</h2>
+<section id="bug-fixes-16" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-16">Bug Fixes</h3>
+<ul>
+<li>fixing stuff <a href="https://github.com/Andras-Csanyi/software_engineering/issues/44">#44</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/75424f44de2c4932cd7797a9478a4c13bba92fdb">75424f4</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-30" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.12.2...0.13.0">0.13.0</a> (2024-10-27)</h1>
+<section id="features-14" class="level3">
+<h3 class="anchored" data-anchor-id="features-14">Features</h3>
+<ul>
+<li>java atomic article <a href="https://github.com/Andras-Csanyi/software_engineering/issues/43">#43</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/38aead6ae362caf811c2d4ae8ec08a3a585e65e2">38aead6</a>)</li>
+</ul>
+</section>
+<section id="section-31" class="level2">
+<h2 class="anchored" data-anchor-id="section-31"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.12.1...0.12.2">0.12.2</a> (2024-10-27)</h2>
+<section id="bug-fixes-17" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-17">Bug Fixes</h3>
+<ul>
+<li>link fix <a href="https://github.com/Andras-Csanyi/software_engineering/issues/42">#42</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/0fbc655878f321d01f886bc0431946bcb9574759">0fbc655</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-32" class="level2">
+<h2 class="anchored" data-anchor-id="section-32"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.12.0...0.12.1">0.12.1</a> (2024-10-26)</h2>
+<section id="bug-fixes-18" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-18">Bug Fixes</h3>
+<ul>
+<li>context fixes <a href="https://github.com/Andras-Csanyi/software_engineering/issues/38">#38</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/1eab35337888a23f6f63d3bddbd5fcab859a6907">1eab353</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-33" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.11.0...0.12.0">0.12.0</a> (2024-10-26)</h1>
+<section id="features-15" class="level3">
+<h3 class="anchored" data-anchor-id="features-15">Features</h3>
+<ul>
+<li>implementation of a dynamic size array article <a href="https://github.com/Andras-Csanyi/software_engineering/issues/37">#37</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/789e4fb775c28cb72a0f42300b98e554383fbe6f">789e4fb</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-34" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.10.1...0.11.0">0.11.0</a> (2024-10-26)</h1>
+<section id="features-16" class="level3">
+<h3 class="anchored" data-anchor-id="features-16">Features</h3>
+<ul>
+<li>Starting With NeoVim Article <a href="https://github.com/Andras-Csanyi/software_engineering/issues/36">#36</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/bd1c887ffb06d5493a9c64aaf350ef2d45528f04">bd1c887</a>)</li>
+</ul>
+</section>
+<section id="section-35" class="level2">
+<h2 class="anchored" data-anchor-id="section-35"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.10.0...0.10.1">0.10.1</a> (2024-10-26)</h2>
+<section id="bug-fixes-19" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-19">Bug Fixes</h3>
+<ul>
+<li>url fix <a href="https://github.com/Andras-Csanyi/software_engineering/issues/35">#35</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/30d32f5eb8aa3e2a72d14baff57ffe82425c6008">30d32f5</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-36" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.9.0...0.10.0">0.10.0</a> (2024-10-26)</h1>
+<section id="features-17" class="level3">
+<h3 class="anchored" data-anchor-id="features-17">Features</h3>
+<ul>
+<li>the first blog entry <a href="https://github.com/Andras-Csanyi/software_engineering/issues/34">#34</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/fc95b639a53581277564f570f684bf70b4409ab2">fc95b63</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-37" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.8.2...0.9.0">0.9.0</a> (2024-04-15)</h1>
+<section id="features-18" class="level3">
+<h3 class="anchored" data-anchor-id="features-18">Features</h3>
+<ul>
+<li>supplier c sharp <a href="https://github.com/Andras-Csanyi/software_engineering/issues/21">#21</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/4962d91400372536afa14133a29cfc078fdf3f6b">4962d91</a>)</li>
+</ul>
+</section>
+<section id="section-38" class="level2">
+<h2 class="anchored" data-anchor-id="section-38"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.8.1...0.8.2">0.8.2</a> (2024-04-14)</h2>
+<section id="bug-fixes-20" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-20">Bug Fixes</h3>
+<ul>
+<li>code snippet <a href="https://github.com/Andras-Csanyi/software_engineering/issues/20">#20</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/0ba13949c23052eeec4bfd4ca5865f6451634623">0ba1394</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-39" class="level2">
+<h2 class="anchored" data-anchor-id="section-39"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.8.0...0.8.1">0.8.1</a> (2024-04-14)</h2>
+<section id="bug-fixes-21" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-21">Bug Fixes</h3>
+<ul>
+<li><strong>java:</strong> fixing menu <a href="https://github.com/Andras-Csanyi/software_engineering/issues/19">#19</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/d7c6759dbfeae8e0769aae1bfc9d828204696199">d7c6759</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-40" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.7.0...0.8.0">0.8.0</a> (2024-04-14)</h1>
+<section id="features-19" class="level3">
+<h3 class="anchored" data-anchor-id="features-19">Features</h3>
+<ul>
+<li><strong>java:</strong> functional programming - supplier <a href="https://github.com/Andras-Csanyi/software_engineering/issues/18">#18</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/6350ed5353f45ce71b526c1a1917b09d6194396c">6350ed5</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-41" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.6.5...0.7.0">0.7.0</a> (2024-03-31)</h1>
+<section id="features-20" class="level3">
+<h3 class="anchored" data-anchor-id="features-20">Features</h3>
+<ul>
+<li>array list <a href="https://github.com/Andras-Csanyi/software_engineering/issues/16">#16</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/c3c581e1218c89cb762b04e82b32ad663569e37f">c3c581e</a>)</li>
+<li>arraylist, dsa introduction (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/886ba49aa8c6e6ab07e92f423249c7795fbcf19d">886ba49</a>)</li>
+</ul>
+</section>
+<section id="section-42" class="level2">
+<h2 class="anchored" data-anchor-id="section-42"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.6.4...0.6.5">0.6.5</a> (2024-02-12)</h2>
+<section id="bug-fixes-22" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-22">Bug Fixes</h3>
+<ul>
+<li>rename docs folder to software_engineering <a href="https://github.com/Andras-Csanyi/software_engineering/issues/15">#15</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/f4f36d1e5b1c0e9fd1f6e8efbb0492122f4f713f">f4f36d1</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-43" class="level2">
+<h2 class="anchored" data-anchor-id="section-43"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.6.3...0.6.4">0.6.4</a> (2024-02-08)</h2>
+<section id="bug-fixes-23" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-23">Bug Fixes</h3>
+<ul>
+<li>embedded video link <a href="https://github.com/Andras-Csanyi/software_engineering/issues/14">#14</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/5589a31ee0beade06e880aba24afe230041fdaa2">5589a31</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-44" class="level2">
+<h2 class="anchored" data-anchor-id="section-44"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.6.2...0.6.3">0.6.3</a> (2024-02-08)</h2>
+<section id="bug-fixes-24" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-24">Bug Fixes</h3>
+<ul>
+<li>multiple fixes <a href="https://github.com/Andras-Csanyi/software_engineering/issues/13">#13</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/9c7aa9b3a249c398010d80718aa6d9dba7705b4c">9c7aa9b</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-45" class="level2">
+<h2 class="anchored" data-anchor-id="section-45"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.6.1...0.6.2">0.6.2</a> (2024-02-08)</h2>
+<section id="bug-fixes-25" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-25">Bug Fixes</h3>
+<ul>
+<li>blog test <a href="https://github.com/Andras-Csanyi/software_engineering/issues/12">#12</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/c8bd6a90bdbd96925fa1e01d1c6db8cd5a7dc6a9">c8bd6a9</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-46" class="level2">
+<h2 class="anchored" data-anchor-id="section-46"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.6.0...0.6.1">0.6.1</a> (2024-02-08)</h2>
+<section id="bug-fixes-26" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-26">Bug Fixes</h3>
+<ul>
+<li>images <a href="https://github.com/Andras-Csanyi/software_engineering/issues/11">#11</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/8bb6622ce14de3a253c08f7b79f2ddb1ae3751dc">8bb6622</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-47" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.5.0...0.6.0">0.6.0</a> (2024-02-07)</h1>
+<section id="features-21" class="level3">
+<h3 class="anchored" data-anchor-id="features-21">Features</h3>
+<ul>
+<li><strong>array:</strong> array drawings <a href="https://github.com/Andras-Csanyi/software_engineering/issues/10">#10</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/08dfc6f2610b58ab9d2f94829fd7a18c78289e46">08dfc6f</a>)</li>
+<li>examples <a href="https://github.com/Andras-Csanyi/software_engineering/issues/9">#9</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/3cf0bcca18630bb040ff42e62c63071809cb80d5">3cf0bcc</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-48" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.4.1...0.5.0">0.5.0</a> (2023-11-24)</h1>
+<section id="features-22" class="level3">
+<h3 class="anchored" data-anchor-id="features-22">Features</h3>
+<ul>
+<li>intro <a href="https://github.com/Andras-Csanyi/software_engineering/issues/8">#8</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/10c3037505d8a8d7db1bd93b1cf7a9bbafba5439">10c3037</a>)</li>
+</ul>
+</section>
+<section id="section-49" class="level2">
+<h2 class="anchored" data-anchor-id="section-49"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.4.0...0.4.1">0.4.1</a> (2023-11-22)</h2>
+<section id="bug-fixes-27" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-27">Bug Fixes</h3>
+<ul>
+<li>adding stuff <a href="https://github.com/Andras-Csanyi/software_engineering/issues/7">#7</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/2a48c3b3be1f987716d274e292b9ae29b28cfaf1">2a48c3b</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-50" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.3.0...0.4.0">0.4.0</a> (2023-11-22)</h1>
+<section id="features-23" class="level3">
+<h3 class="anchored" data-anchor-id="features-23">Features</h3>
+<ul>
+<li>binary search sample code <a href="https://github.com/Andras-Csanyi/software_engineering/issues/6">#6</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/884a3fcbe0bad3cc153cc83d179b504f8b837872">884a3fc</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-51" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.2.0...0.3.0">0.3.0</a> (2023-11-18)</h1>
+<section id="features-24" class="level3">
+<h3 class="anchored" data-anchor-id="features-24">Features</h3>
+<ul>
+<li>new content <a href="https://github.com/Andras-Csanyi/software_engineering/issues/5">#5</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/8b3bc7b406fde198a3dfbbcd5c6582cd41290f9a">8b3bc7b</a>)</li>
+</ul>
+</section>
+</section>
+<section id="section-52" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.1.1...0.2.0">0.2.0</a> (2023-11-16)</h1>
+<section id="features-25" class="level3">
+<h3 class="anchored" data-anchor-id="features-25">Features</h3>
+<ul>
+<li>adding initial table of contents <a href="https://github.com/Andras-Csanyi/software_engineering/issues/4">#4</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/b8d05537f528a5ed95d2ea37a285dfb50b427211">b8d0553</a>)</li>
+</ul>
+</section>
+<section id="section-53" class="level2">
+<h2 class="anchored" data-anchor-id="section-53"><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.1.0...0.1.1">0.1.1</a> (2023-11-16)</h2>
+<section id="bug-fixes-28" class="level3">
+<h3 class="anchored" data-anchor-id="bug-fixes-28">Bug Fixes</h3>
+<ul>
+<li><strong>docs:</strong> path <a href="https://github.com/Andras-Csanyi/software_engineering/issues/2">#2</a> (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/46f520507bb1c3c5d32805771647736d55dfa6a2">46f5205</a>)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="section-54" class="level1">
+<h1><a href="https://github.com/Andras-Csanyi/software_engineering/compare/0.0.0...0.1.0">0.1.0</a> (2023-11-16)</h1>
+<section id="features-26" class="level3">
+<h3 class="anchored" data-anchor-id="features-26">Features</h3>
+<ul>
+<li>first (<a href="https://github.com/Andras-Csanyi/software_engineering/commit/6403cefdf0fd54be8c42073c55432b2b2c9c0235">6403cef</a>)</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/andrascsanyi\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
