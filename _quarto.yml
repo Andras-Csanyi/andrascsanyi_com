@@ -1,0 +1,66 @@
+project:
+  type: website
+
+website:
+  # title: "andrascsanyi.com"
+  navbar:
+    backgroung: primary
+    search: true
+    left:
+      - href: index.qmd
+        text: "Main"
+      - href: space_colonisation.qmd
+        text: "Space Colonisation"
+      - href: aerospace.qmd
+        text: "Aerospace"
+      - href: mathematics.qmd
+        text: "Mathematics"
+      - href: blog.qmd
+        text: "Blog"
+      - href: about.qmd
+        text: "About"
+
+  sidebar:
+    - title: "Space Colonisation"
+      style: "docked"
+      background: light
+      contents:
+        - space_colonisation.qmd
+        - space_colonisation/moon.qmd
+        - space_colonisation/economics_of_space.qmd
+
+    - title: "Aerospace"
+      style: "docked"
+      background: light
+      contents:
+        - aerospace.qmd
+        - aerospace/topics.qmd
+
+    - title: "Mathematics"
+      style: "docked"
+      background: light
+      contents:
+        - mathematics.qmd
+        - mathematics/engineering_math.qmd
+
+    - title: "Blog"
+      style: "docked"
+      background: light
+      contents:
+        - blog.qmd
+        - blog/2026-01-03/index.qmd
+
+    - title: "Computer Science"
+      style: "docked"
+      background: light
+      contents:
+        - computer_science.qmd
+        - computer_science/data_structures.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
