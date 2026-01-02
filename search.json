@@ -1,12 +1,13 @@
 [
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
+    "objectID": "space_colonisation/economics_of_space.html",
+    "href": "space_colonisation/economics_of_space.html",
+    "title": "Ecomomics of Space",
     "section": "",
-    "text": "yapping like there is no tomorrow",
+    "text": "Economics of Space\nsome stuff comes here\n\n\nResources\nresources related stuff",
     "crumbs": [
-      "Blog"
+      "Space Colonisation",
+      "Ecomomics of Space"
     ]
   },
   {
@@ -20,228 +21,24 @@
     ]
   },
   {
-    "objectID": "space_colonisation/moon.html",
-    "href": "space_colonisation/moon.html",
-    "title": "Moon",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "Moon",
+    "text": "yapping like there is no tomorrow",
     "crumbs": [
-      "Space Colonisation",
-      "Moon"
+      "Blog"
     ]
   },
   {
-    "objectID": "CHANGELOG.html",
-    "href": "CHANGELOG.html",
-    "title": "0.27.0 (2025-07-19)",
+    "objectID": "aerospace/topics.html",
+    "href": "aerospace/topics.html",
+    "title": "Topics where astrodynamics, aerodynamics and GNC overlap",
     "section": "",
-    "text": "adding basic exercises cli (#75) (64dd174)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-9",
-    "href": "CHANGELOG.html#section-9",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.18.5 (2025-04-24)",
-    "text": "0.18.5 (2025-04-24)\n\nBug Fixes\n\nmain page changes (#65) (c9fde09)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-10",
-    "href": "CHANGELOG.html#section-10",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.18.4 (2025-04-20)",
-    "text": "0.18.4 (2025-04-20)\n\nBug Fixes\n\nchanges (#64) (8dc0f17)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-11",
-    "href": "CHANGELOG.html#section-11",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.18.3 (2025-04-20)",
-    "text": "0.18.3 (2025-04-20)\n\nBug Fixes\n\ngh pages (#63) (1678146)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-12",
-    "href": "CHANGELOG.html#section-12",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.18.2 (2025-04-20)",
-    "text": "0.18.2 (2025-04-20)\n\nBug Fixes\n\ngithub pages deploy (#62) (6cf4056)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-13",
-    "href": "CHANGELOG.html#section-13",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.18.1 (2025-04-19)",
-    "text": "0.18.1 (2025-04-19)\n\nBug Fixes\n\nrework (#61) (062d8ac)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-15",
-    "href": "CHANGELOG.html#section-15",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.17.2 (2024-11-24)",
-    "text": "0.17.2 (2024-11-24)\n\nBug Fixes\n\narticle changes #58 (45e1a3e)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-16",
-    "href": "CHANGELOG.html#section-16",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.17.1 (2024-11-24)",
-    "text": "0.17.1 (2024-11-24)\n\nBug Fixes\n\narticle #57 (d8721aa)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-18",
-    "href": "CHANGELOG.html#section-18",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.16.4 (2024-11-24)",
-    "text": "0.16.4 (2024-11-24)\n\nBug Fixes\n\narticle changes #55 (bbba040)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-19",
-    "href": "CHANGELOG.html#section-19",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.16.3 (2024-11-24)",
-    "text": "0.16.3 (2024-11-24)\n\nBug Fixes\n\narticle changes #54 (c1c139d)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-20",
-    "href": "CHANGELOG.html#section-20",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.16.2 (2024-11-24)",
-    "text": "0.16.2 (2024-11-24)\n\nBug Fixes\n\narticle fixes #53 (4a869d4)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-21",
-    "href": "CHANGELOG.html#section-21",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.16.1 (2024-11-24)",
-    "text": "0.16.1 (2024-11-24)\n\nBug Fixes\n\narticle fixes #52 (e06b14f)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-23",
-    "href": "CHANGELOG.html#section-23",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.15.1 (2024-11-17)",
-    "text": "0.15.1 (2024-11-17)\n\nBug Fixes\n\narticle fixes #50 (09c92c5)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-26",
-    "href": "CHANGELOG.html#section-26",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.13.4 (2024-10-27)",
-    "text": "0.13.4 (2024-10-27)\n\nBug Fixes\n\nfixing shit #47 (41b1969)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-27",
-    "href": "CHANGELOG.html#section-27",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.13.3 (2024-10-27)",
-    "text": "0.13.3 (2024-10-27)\n\nBug Fixes\n\nfixing shit #46 (1cded20)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-28",
-    "href": "CHANGELOG.html#section-28",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.13.2 (2024-10-27)",
-    "text": "0.13.2 (2024-10-27)\n\nBug Fixes\n\nfixing shit #45 (1b0ee28)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-29",
-    "href": "CHANGELOG.html#section-29",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.13.1 (2024-10-27)",
-    "text": "0.13.1 (2024-10-27)\n\nBug Fixes\n\nfixing stuff #44 (75424f4)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-31",
-    "href": "CHANGELOG.html#section-31",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.12.2 (2024-10-27)",
-    "text": "0.12.2 (2024-10-27)\n\nBug Fixes\n\nlink fix #42 (0fbc655)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-32",
-    "href": "CHANGELOG.html#section-32",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.12.1 (2024-10-26)",
-    "text": "0.12.1 (2024-10-26)\n\nBug Fixes\n\ncontext fixes #38 (1eab353)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-35",
-    "href": "CHANGELOG.html#section-35",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.10.1 (2024-10-26)",
-    "text": "0.10.1 (2024-10-26)\n\nBug Fixes\n\nurl fix #35 (30d32f5)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-38",
-    "href": "CHANGELOG.html#section-38",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.8.2 (2024-04-14)",
-    "text": "0.8.2 (2024-04-14)\n\nBug Fixes\n\ncode snippet #20 (0ba1394)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-39",
-    "href": "CHANGELOG.html#section-39",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.8.1 (2024-04-14)",
-    "text": "0.8.1 (2024-04-14)\n\nBug Fixes\n\njava: fixing menu #19 (d7c6759)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-42",
-    "href": "CHANGELOG.html#section-42",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.6.5 (2024-02-12)",
-    "text": "0.6.5 (2024-02-12)\n\nBug Fixes\n\nrename docs folder to software_engineering #15 (f4f36d1)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-43",
-    "href": "CHANGELOG.html#section-43",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.6.4 (2024-02-08)",
-    "text": "0.6.4 (2024-02-08)\n\nBug Fixes\n\nembedded video link #14 (5589a31)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-44",
-    "href": "CHANGELOG.html#section-44",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.6.3 (2024-02-08)",
-    "text": "0.6.3 (2024-02-08)\n\nBug Fixes\n\nmultiple fixes #13 (9c7aa9b)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-45",
-    "href": "CHANGELOG.html#section-45",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.6.2 (2024-02-08)",
-    "text": "0.6.2 (2024-02-08)\n\nBug Fixes\n\nblog test #12 (c8bd6a9)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-46",
-    "href": "CHANGELOG.html#section-46",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.6.1 (2024-02-08)",
-    "text": "0.6.1 (2024-02-08)\n\nBug Fixes\n\nimages #11 (8bb6622)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-49",
-    "href": "CHANGELOG.html#section-49",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.4.1 (2023-11-22)",
-    "text": "0.4.1 (2023-11-22)\n\nBug Fixes\n\nadding stuff #7 (2a48c3b)"
-  },
-  {
-    "objectID": "CHANGELOG.html#section-53",
-    "href": "CHANGELOG.html#section-53",
-    "title": "0.27.0 (2025-07-19)",
-    "section": "0.1.1 (2023-11-16)",
-    "text": "0.1.1 (2023-11-16)\n\nBug Fixes\n\ndocs: path #2 (46f5205)"
-  },
-  {
-    "objectID": "space_colonisation/economics_of_space.html",
-    "href": "space_colonisation/economics_of_space.html",
-    "title": "Ecomomics of Space",
-    "section": "",
-    "text": "Economics of Space\nsome stuff comes here\n\n\nResources\nresources related stuff",
+    "text": "Topics",
     "crumbs": [
-      "Space Colonisation",
-      "Ecomomics of Space"
+      "Aerospace",
+      "Topics where astrodynamics, aerodynamics and GNC overlap"
     ]
   },
   {
@@ -256,14 +53,14 @@
     ]
   },
   {
-    "objectID": "aerospace/topics.html",
-    "href": "aerospace/topics.html",
-    "title": "Topics where astrodynamics, aerodynamics and GNC overlap",
+    "objectID": "space_colonisation/moon.html",
+    "href": "space_colonisation/moon.html",
+    "title": "Moon",
     "section": "",
-    "text": "Topics",
+    "text": "Moon",
     "crumbs": [
-      "Aerospace",
-      "Topics where astrodynamics, aerodynamics and GNC overlap"
+      "Space Colonisation",
+      "Moon"
     ]
   }
 ]

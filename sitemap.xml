@@ -1,51 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://andrascsanyi.com/blog.html</loc>
-    <lastmod>2026-01-02T18:00:29.975Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andrascsanyi.com/space_colonisation.html</loc>
-    <lastmod>2026-01-02T17:45:44.509Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andrascsanyi.com/about.html</loc>
-    <lastmod>2026-01-02T18:04:28.851Z</lastmod>
+    <loc>https://andrascsanyi.com/space_colonisation/economics_of_space.html</loc>
+    <lastmod>2026-01-02T18:32:42.373Z</lastmod>
   </url>
   <url>
     <loc>https://andrascsanyi.com/aerospace.html</loc>
-    <lastmod>2026-01-02T17:55:56.547Z</lastmod>
+    <lastmod>2026-01-02T18:32:42.372Z</lastmod>
   </url>
   <url>
-    <loc>https://andrascsanyi.com/space_colonisation/moon.html</loc>
-    <lastmod>2026-01-02T17:47:12.633Z</lastmod>
+    <loc>https://andrascsanyi.com/space_colonisation.html</loc>
+    <lastmod>2026-01-02T18:32:42.373Z</lastmod>
   </url>
   <url>
-    <loc>https://andrascsanyi.com/CHANGELOG.html</loc>
-    <lastmod>2025-07-19T11:10:10.289Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andrascsanyi.com/mathematics.html</loc>
-    <lastmod>2026-01-02T17:36:50.017Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andrascsanyi.com/space_colonisation/economics_of_space.html</loc>
-    <lastmod>2026-01-02T18:08:55.342Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andrascsanyi.com/computer_science/data_structures.html</loc>
-    <lastmod>2026-01-02T18:03:59.455Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andrascsanyi.com/mathematics/engineering_math.html</loc>
-    <lastmod>2026-01-02T17:58:43.994Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andrascsanyi.com/aerospace/topics.html</loc>
-    <lastmod>2026-01-02T17:57:21.467Z</lastmod>
+    <loc>https://andrascsanyi.com/blog.html</loc>
+    <lastmod>2026-01-02T18:32:42.372Z</lastmod>
   </url>
   <url>
     <loc>https://andrascsanyi.com/computer_science.html</loc>
-    <lastmod>2026-01-02T18:03:39.939Z</lastmod>
+    <lastmod>2026-01-02T18:32:42.373Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andrascsanyi.com/aerospace/topics.html</loc>
+    <lastmod>2026-01-02T18:32:42.372Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andrascsanyi.com/computer_science/data_structures.html</loc>
+    <lastmod>2026-01-02T18:32:42.373Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andrascsanyi.com/mathematics.html</loc>
+    <lastmod>2026-01-02T18:32:42.373Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andrascsanyi.com/about.html</loc>
+    <lastmod>2026-01-02T18:32:42.372Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andrascsanyi.com/mathematics/engineering_math.html</loc>
+    <lastmod>2026-01-02T18:32:42.373Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andrascsanyi.com/space_colonisation/moon.html</loc>
+    <lastmod>2026-01-02T18:32:42.373Z</lastmod>
   </url>
 </urlset>
