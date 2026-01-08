@@ -1,4 +1,8 @@
 ---
 title: "Blog"
+listing:
+  contents: blog
+  sort: "date desc"
+  type: grid
+  categories: true
 ---
-yapping like there is no tomorrow

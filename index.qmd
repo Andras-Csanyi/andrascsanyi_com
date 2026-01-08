@@ -1,3 +1,6 @@
 ---
-title: "Stuff in descending order"
+title: "Stuff"
 ---
+
+- [My stance on AI in software engineering](blog/2026-01-08/index.qmd)
+
