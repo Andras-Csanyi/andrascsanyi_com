@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Hello Blog</title>
+<title>My stance on AI in software engineering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -102,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Mathematics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../blog.html" aria-current="page"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -115,49 +115,30 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog/2026-01-03/index.html">Hello Blog</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../blog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blog</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../blog/2026-01-03/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Hello Blog</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-code-is-a-black-box" id="toc-the-code-is-a-black-box" class="nav-link active" data-scroll-target="#the-code-is-a-black-box">The code is a black box</a></li>
+  <li><a href="#the-code-is-a-white-box" id="toc-the-code-is-a-white-box" class="nav-link" data-scroll-target="#the-code-is-a-white-box">The code is a white box</a></li>
+  <li><a href="#the-balance" id="toc-the-balance" class="nav-link" data-scroll-target="#the-balance">The balance</a></li>
+  <li><a href="#my-two-cents" id="toc-my-two-cents" class="nav-link" data-scroll-target="#my-two-cents">My two cents</a></li>
+  <li><a href="#software-engineering-is-a-chaotic-system" id="toc-software-engineering-is-a-chaotic-system" class="nav-link" data-scroll-target="#software-engineering-is-a-chaotic-system">Software Engineering is a chaotic system</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Hello Blog</h1>
+<h1 class="title">My stance on AI in software engineering</h1>
 </div>
 
 
@@ -174,8 +155,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>The content below is the result of spending a long time contemplating AI tools in software engineering. It was a difficult process for me, to be honest, but at this point I’m confident I’ll find my modus operandi in this world.</p>
+<section id="the-code-is-a-black-box" class="level1">
+<h1>The code is a black box</h1>
+<p>There is an attitude that treats code as a black box. I don’t care about the code; I care about the API. The API, in this context, means exactly what it sounds like: a surface for communicating with the code, without knowing anything under the hood—not even a single detail.</p>
+<p>The goal of this attitude is to create a system—a collection of APIs—where the sum of their behaviors satisfies the system’s requirements. A good example is any project with BDD tests. BDD describes the behavior of the system and ignores its inner workings entirely.</p>
+<p>Since the code itself isn’t important, no maintenance concerns—like clean code principles—are considered. None at all. Whenever there’s a bug or a new feature, the code is regenerated by AI agents or whatever tool is in vogue. It’s like compile-time generation based on templates.</p>
+<p>The main driver seems to be: “We’re building a system, we design the system, and we think in C4 diagrams.”</p>
+<p>There are lots of open questions, and I’ll list a few:</p>
+<ul>
+<li>What does this method look like when multiple developers are working together?</li>
+<li>How do you split the system into smaller chunks that AI agents can manage?</li>
+<li>How do you debug? You probably won’t just roll back to the previous version… assuming the previous version was correct.</li>
+</ul>
+<p>There are consequences of this attitude:</p>
+<ul>
+<li>no insights into the code</li>
+<li>we don’t know how big performance or any other non-functional characteristics is lost in this process since we don’t know the details of the black box we have.</li>
+<li>if you work long time in this realm you’ll loose skills and knowledge</li>
+<li>a developer is no more than a sheepherder of AI agents</li>
+<li>mechanical sympathy with the system, code and computers is totally lost</li>
+</ul>
+<p>This attitude reminds me of the saying about masonry: “If I place the bricks from left to right on top of each other, that’s a wall. If I place them forward on the ground, that’s a walkway.” If you know anything about masonry, you realize this is an extreme oversimplification that leads nowhere. But this is the world we’re living in.</p>
+<p>This is absolute prompt engineering in the following sense:</p>
+<ul>
+<li>System breakdown is aligned with the AI agents’ parameters that most likely yield the highest ROI (successful code generation, no bugs, etc.). As of now system breakdown is a free-style exercise since human coginition has enough plasticity.</li>
+<li>Prompts are fine-tuned to the specific model.</li>
+<li>Prompts live in the code repository, and the engineer knows exactly when two prompts collide—perhaps even developing mechanical sympathy with the AI agents.</li>
+</ul>
+</section>
+<section id="the-code-is-a-white-box" class="level1">
+<h1>The code is a white box</h1>
+<p>This is what I call software engineering. Finding a delicate, well-tuned balance in a chaotic system full of dichotomies. Engineering requires the knowledge to dive deep into a problem space and find better solutions. It demands deep and thorough understanding of what is happening and why. A good engineer has mechanical sympathy with the system and the programming languages they use.</p>
+<p>I care what the code does—and how it does it. I fine-tune it. I fix it. I care about how easily the next person will understand it. I put care into it. I’m a well-behaved corporate ant, so I apply coding standards and clean code practices. I’ll add funny, meaningful comments to show how much suffering this part of the code caused, reassuring the next poor soul that the problem isn’t them—it’s something else.</p>
+<p>The white-box attitude includes the black-box one. That’s obvious.</p>
+</section>
+<section id="the-balance" class="level1">
+<h1>The balance</h1>
+<p>The picture isn’t black and white. However, recent posts on X suggest that only the black-box attitude exists—and that it’s the only way.</p>
+<p>Every role requires a balance of these attitudes. The real question is whether you can figure out the right balance for the environment you’re working in.</p>
+</section>
+<section id="my-two-cents" class="level1">
+<h1>My two cents</h1>
+<p>I see value in the black-box attitude; moreover, my job includes a lot of it. We use extensive A/B testing (we call it experimentation), and an experiment needs to be slightly better than an MVP—just good enough to survive while it’s running. This is 100% black box. The code must ship quickly because we need data on what works and what doesn’t.</p>
+<p>Once we have the results, the implementation’s value changes: we invest care in the code. It gets proper tests, documentation, monitoring, and more. This is the white-box attitude.</p>
+<p>I consider myself a software engineer, with strong emphasis on the “engineer.” I’m proud of what I know, what I build, and how I take care of the things I’m responsible for. I struggle when I have to do things below my level. AI coding feels like I cannot demonstrate my skills. Many times it feels like I am not allowed to do it. This means to me that “we are ok with the slop”. This is a difficult situation for me. I work and study hard to maintain and extend my knowledge.</p>
+<p>I have strong mechanical sympathy with the systems I work on and the programming languages I use. When I write code, my brain speaks the language directly. I can’t identify where the translation from human thought to code happens. I read a requirement, I see the code, I see how it changes and what shape it will take. During this process, I evaluate several versions against my team’s coding practices.</p>
+<p>But there’s more!</p>
+<p>When I write code, I feel my overall knowledge sloshing back and forth like high-quality, dense, oily French cognac in a glass. There’s no smell. (If there is a smell, that wasn’t me—someone else farted. If I did it, you’d be dead.) I see my knowledge breathing, growing, or strengthening every day I write code. My knowledge is exercised, maintained, and protected from fading. I’m happy.</p>
+<p>It’s obvious where I stand, but daily reality is different. One has to switch attitudes and feed them with the right content.</p>
+<p>From now on, I’m going to practice the black-box approach more to keep my skillset robust. But I’ll also do deep dives to maintain and extend my knowledge. There’s a personal project—the one that drew me into software engineering—where I can do this. I’ll do it because there’s always a point where shit hits the fan, no AI agents will save you, and you need someone to fix it.</p>
+</section>
+<section id="software-engineering-is-a-chaotic-system" class="level1">
+<h1>Software Engineering is a chaotic system</h1>
+<p>If you know anything about dynamical systems, you know that chaos means extreme sensitivity to initial conditions. These initial conditions—or input parameters (easier to grasp, less math-y)—are often ignored. Until the shit hits the fan. There’s also the “we’ll cross that bridge when we get there” attitude. But this ignores the fact that, as you approach the bridge, the list of viable solutions shrinks. In the end, you’re left choosing between “shit,” “very shit,” and “super shit”—all dilemmas.</p>
+<p>I’m a person who can’t ignore the input parameters of software engineering. This is why I am an engineer. I see the complexity. I love complexity. I am not afraid of complexity. I thrive on complexity. My brain sees it as a living, breathing thing, and I’m truly afraid of what happens when we remove the “engineering care”—the white-box attitude—from it.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
