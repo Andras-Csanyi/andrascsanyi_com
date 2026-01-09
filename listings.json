@@ -1,7 +1,15 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/blog/2026-01-09/index.html",
+      "/blog/2026-01-08/index.html"
+    ]
+  },
+  {
     "listing": "/blog.html",
     "items": [
+      "/blog/2026-01-09/index.html",
       "/blog/2026-01-08/index.html"
     ]
   }
