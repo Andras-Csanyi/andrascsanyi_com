@@ -1,5 +1,13 @@
 ---
 title: "My stance on AI in software engineering"
+description: "This is the way"
+author: "András Csányi"
+date: "2026-01-08"
+date-modified: "2026-01-08"
+image: "thumbnail.png"
+categories:
+  - AI
+  - Software Engineering
 ---
 
 The content below is the result of spending a long time contemplating AI tools in software engineering.
