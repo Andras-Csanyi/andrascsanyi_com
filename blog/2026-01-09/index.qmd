@@ -1,0 +1,124 @@
+---
+title: "My topics in Aerospace Engineering"
+description: "Aerospace Engineering is a huge field and one has to find the topics."
+author: "András Csányi"
+date: "2026-01-09"
+date-modified: "2026-01-09"
+image: "thumbnail.jpeg"
+categories:
+  - Aerospace Engineering
+  - Space Colonisation
+  - Aerodynamics
+  - Astrodynamics
+  - GNC
+  - PDE
+  - Mathematics
+---
+
+Aerospace engineering is a beast.
+Maybe the last remaining engineering discipline that still embraces so many massive domains: aerodynamics,
+astrodynamics, GNC, propulsion and all the advanced engineering mathematics.
+It’s overwhelming.
+The solution is to find the topic**s** that suits you and gives enough **happiness**, success and 
+passion to keep you going.
+I think there is no other way to achieve something meaningful in this field.
+After almost a year of reading and exploring aerospace engineering as a field of science,
+I believe I have found **my** topics.
+ 
+**Aerodynamics**, **astrodynamics** and **GNC**.
+When I define the problem spaces they cover, I arrive at:
+ - atmospheric re-entry,
+ - satellites / megaconstellations in Low **Planetary** Orbit (or around small bodies),
+ - spacecraft landing.
+
+Besides these serious, industry-relevant topics, my inner child still dreams about:
+
+ - modelling **any** phenomenon mathematically — even chaotic ones like human communication — 
+   and not to mention the elegant (and probably impossible) concept of psychohistory,
+ - and not only epic, but also tactically and strategically sound sound
+   **dogfights and battles in space**.
+
+I can have dreams, can't I?
+ 
+# Aerodynamics
+This is where it all began. As a young teenager I devoured a monthly
+aviation/military tech magazine called *Top Gun*.
+There was an article about the development of the F-18 Hornet and the
+fact that its wing was designed using mathematical models. 
+I still clearly remember asking myself: **“How?”**
+That same question has haunted me — in different forms — for the past 30 years.
+When I learned software engineering, one of my recurring (somewhat naive but infinitely motivating) questions was:
+how much compute (code, CPU, memory…) is actually needed to model airflow and turbulence?
+Into this fertile mental soil landed the Theodore von Kármán biography.
+Unfortunately it doesn't go deep into the mathematical modelling — but it remains
+the book I open when I need a boost.
+ 
+Last year I read [Boyd](https://www.amazon.nl/-/en/Robert-Coram-ebook/dp/B00FORA54A?crid=2LD9CBAFPDT7D) — the book about 
+[Colonel John Boyd](https://en.wikipedia.org/wiki/John_Boyd_(military_strategist)), father of the 
+[OODA loop](https://grokipedia.com/page/OODA_loop) and
+spiritual father of the F-15/16/18 family — and his 
+[energy-maneuverability theory](https://en.wikipedia.org/wiki/Energy%E2%80%93maneuverability_theory) based on
+thermodynamics, which became foundational for modern dogfighting.
+For me, this is where mechanical sympathy builds a bridge between the physical world and numbers.
+Pure, hardcore engineering. It genuinely gives me chills.
+ 
+Another reason aerodynamics keeps teasing me: it is widely considered one of the most
+mathematically and computationally demanding fields in engineering.
+ 
+The daydreamer in me still wants a hobby project:
+building my personal “dream fighter” concept, or running local CFD simulations on an F-15/F-16 model I own
+just to deepen that mechanical sympathy. And spin up the beauty in 
+[DCS](https://www.digitalcombatsimulator.com/en/) and just fly.
+ 
+# Astrodynamics
+ 
+For me, the most captivating scenes in any sci-fi movie are always the ones showing flight in space.
+How does it **actually** work? What are the real physical constraints?
+I want enough knowledge to imagine why the hull starts rattling during landing — and to **feel** it.
+Yes — mechanical sympathy again.
+ 
+Then two experiences hit me almost simultaneously:
+ 
+- [The Expanse](https://m.imdb.com/title/tt3230854/) miniseries landed with its high-fidelity space operations
+- [Elite: Dangerous](https://www.elitedangerous.com) was released with its “Flight Assist Off” mode that actually simulates real orbital & attitude physics
+ 
+I didn’t realise it at the time, but my brain was screaming for answers.
+That hunger eventually crystallised into the romantic (and very difficult) dream of **dogfight in space**.
+ 
+From a serious industry perspective, astrodynamics is simply “how do we actually get there?” 
+— which is fascinating in itself, even though it imposes very strict limits
+on the space opera dreams in my head.
+ 
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/XuqEX1PnG9I?si=8cduy5ZY5s_eNIu-" 
+title="YouTube video player" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Check [Isinona's channel](https://www.youtube.com/@Isinona) for more!
+
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/WeQ9p2OQRI0?si=9pEo_n760m3MYbq2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+# GNC
+ 
+Looks like the most boring of the three at first glance — yet in reality it sits at the very heart
+of everything.
+It is the essence of engineering mathematics: **control**.
+“What input must I give to achieve this desired output?”
+It’s about feedback loops — and even though it may sound dry, it is an extraordinarily beautiful field.
+ 
+I’ve mentioned mechanical sympathy several times already.
+**GNC is mechanical sympathy taken to its highest level.**
+It demands that you understand a system so intimately that you can identify the smallest, most efficient input needed to make it behave exactly as desired.
+In other words: you become the Master of Puppets, the Man Behind the Curtain — except there is no evil scheme, only elegant physics.
+ 
+This is where mathematics steps in and whispers: [*Dynamical Systems*](https://en.wikipedia.org/wiki/Dynamical_system).
+Control is about (a) cleverly exploiting already-known stable points and (b) discovering and stabilising
+new ones inside chaotic systems — building architecture out of chaos.
+This  is why I want to be able to model **anything** mathematically.
+ 
+This is my master plan.
+ 
+All three topics will get their own, more detailed blog entries in the future.
+For that clarification process I plan to use AI tools heavily — they excel at summarising enormous amounts of literature and giving useful pointers.
+The result will be topic overviews + curated lists of the most important/relevant papers and textbooks in each sub-segment.
