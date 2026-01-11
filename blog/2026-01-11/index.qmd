@@ -1,0 +1,13 @@
+
+---
+title: "Execution speed in Math"
+author: "András Csányi"
+date: "2026-01-11"
+date-modified: "2026-01-11"
+image: "../x.thumbnail.png"
+categories:
+  - X posts
+  - Mathematics
+---
+[![](x.post.png)](https://x.com/csanyi_andras/status/2010321943434547670){target="_blank"}
+
