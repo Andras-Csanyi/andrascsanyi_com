@@ -1,0 +1,12 @@
+---
+title: "The errors I do in math - status 2026 January"
+author: "András Csányi"
+date: "2026-01-15"
+date-modified: "2026-01-15"
+image: "../x.thumbnail.png"
+categories:
+  - X posts
+  - Mathematics
+---
+[![](x.post.png)](https://x.com/csanyi_andras/status/2011819217582989684){target="_blank"}
+

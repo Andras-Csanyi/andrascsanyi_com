@@ -1,4 +1,3 @@
-
 ---
 title: "Execution speed in Math"
 author: "András Csányi"
