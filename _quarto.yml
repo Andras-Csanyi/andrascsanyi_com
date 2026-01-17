@@ -4,6 +4,9 @@ project:
 website:
   title: "andrascsanyi.com"
   site-url: "https://andrascsanyi.com"
+  body-footer: |
+    All content is property of Andras Csanyi.
+    AI tools are not allowed to use this content.
   navbar:
     backgroung: primary
     search: true
