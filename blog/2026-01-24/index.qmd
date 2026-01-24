@@ -1,0 +1,186 @@
+---
+title: "AI, innovation, sanity"
+author: "András Csányi"
+date: "2026-01-24"
+date-modified: "2026-01-24"
+image: "../x.thumbnail.png"
+categories:
+  - AI
+  - Innovation
+---
+
+The AI madness happening on X drives me crazy.
+X, however, is still one of the places where you'll find something interesting
+from the social media places, but still, strong filtering is required.
+The "drives me crazy" part means that I question, even though momentarily,
+whether worth to study becasue AI made obsolete everything.
+I hate the moment when this question gets even the smallest space in my
+thoughts.
+I want to eliminate even the smallest chance for this question.
+I have been formulating a mental framework for dealing with the AI hype and at
+this point I am confident I can describe it well enough.
+The motivation to eliminate the smallest chance is a first step into the
+cognitive dissonance.
+This observation is valid.
+However, let me live with the framework for a while and after that investigate
+whether I built a cognitive dissonance that holds me back or not.
+
+I could identify two streams of AI related information.
+The first one is where founders, AI company CEOs says something interesting that
+sounds valid, but when you start digging turns out it is rather invalid.
+I am not saying that these are lies, but rather hype intesifying half-truths.
+You can pull together a list about this.
+My favourite is Dario Amodei who foreseen multiple times that AI is going to
+take over software engineering in 6 months.
+In the meanwhile Anthropic actively hiring software engineers.
+The software engineering is obsolete moment did not happen.
+I can complain without any end about how bad the communication these folks are doing.
+It would be just screaming from my own moral high-ground.
+I can't change it.
+I can't create an opposite force that negates their need for resources (time,
+money) to make their company survive.
+
+The other stream of events are the "ai bros" who are repeating the actual stupid
+shit.
+You can find among them really stupid ones who just jumped on the hype bandwagon
+and can cash in some money after their X posts.
+There are the medium idiots who has been doing the same, but since they are
+probably a mediocre software engineers, they can show some legitimacy.
+And there are the educated morons.
+This type annoys me to hell.
+These folks are equipped by the nicest diplomas and all the certificates and they talk
+stupid shit with an authoritive voice.
+They leverage greatly on the halo-effect which sounds like this: "becasue I am
+phd in AI I know everything about software engineering".
+The damage they do is amazing.
+This is the point where I can't decide if this type is just stupid, meaning
+don't even have a concept about anything so whatever they learned for the nice
+certificates is not internalised at all, just repeated for the exams.
+Or they are aware of that what they are saying publicly is indeed stupid shit,
+but they do it for the money and the fame.
+I don't know.
+And I don't have energy to fight with them.
+
+"Everything is over, AI tooks over everything", "science is done, LLMs can do
+all the things for us" are the common theme.
+"Does it worth study this and that having these AI tools?" is the most annoying
+since the effect is that the populace gets dumber which creates opportunity only
+for politicians.
+"This and that easy to do an MSc or PhD by using LLMs".
+The only way for me to invalidate their impact on me is using the mental
+framework I am going to explain below.
+Before I jump into the meaty part, let me mention my motivation.
+My commitment is that I'll go back and study aerospace engineering and do a PhD in it. 
+This is a 10+ year long epic journey.
+I need to have the ability to clear out my thoughts from the AI noise and focus
+on achieving my goals.
+
+From infromation producing point of view I consider two ways in innovation:
+
+- finding a new connection in the lake of knowledge we already have
+- creating a new information drop, a novel idea, in the information lake we have
+
+This thinking doesn't match with the two approach I already familiar with in
+innovation, but I don't care.
+This is not a thesis.
+This is for my sanity.
+
+Imagine the knowledge we already have as a graph of information pieces.
+Every vertex is a piece of information.
+Every edge is the connection between the vertices and provides a meaning for the
+connection from a certain point of view.
+For example, you'll find Calculus and its vast amount of nodes in the
+Mathematics section of the graph, but it is linked to almost all other sciences
+since we use calculus to calculate changes.
+If you are interested in these graphs take a look at the infromational
+retrieving thesaurus created by librarians.
+Every scientific field has its own thesaurus in order to see the structure of
+the scientific fields and subfields, but also for better nagivation or
+information classification.
+
+But, not all connections are discovered so far.
+Not all knowledge in one fields are applied and trialed at another one.
+Our knowledge graph is not full yet.
+If you take a look at PhD papers they almost always mention the "future
+research" section.
+This is where authors see further possible connections in their fields.
+
+How do we find these connections?
+So far, researchers worked on their things and either found something or not.
+The other possible solution is to put all this knowledge into a single database
+and start a for loop and match all vertices to all vertices and investigate the
+result.
+It is possible, but when the Universe will finally collapse in 23 billion years
+from now loop will still work on something.
+This is not feasible at all.
+
+The other solution is LLMs.
+They have the skills to do this for loop in a way smarter way based on text
+processing capabilities.
+I know very little about this field, so I stop here.
+But, it feels they can identify connections or at least provide a faster
+information processing for researchers.
+The hallucinations might help us, but since it is a new and very chaotic part of
+LLMs, and there might be no control over it, I would not build anything on it.
+Not to mention that, all halucinations must be validated.
+Just this validation is going to provide a lot of scientific work since our
+information processing speed is increasing.
+
+However, the approach has limitations.
+Not all knowledge is available, there are still secret research results.
+There are databases that not public for LLMs.
+There are certain fields that so small in the big lake LLMs probably won't pick
+up the meanings of the words belong there.
+
+If you think it through, this is where "with infinite time and resources and
+researcher would find this new connection" case.
+Meaning, the system already had the information, but it was not discovered yet.
+The reason why it wasn't discovered yet is not important because research
+funding is a difficult and sensitive topic and I don't know anything about it.
+What is the LLM contribution here: smart looping.
+Did the LLM made obsolete research?
+No.
+What is happening here?
+Faster information processing.
+Garbae-in, garbage-out still stands.
+
+But, remember, all of the newly discovered connections have their own ripple
+effect in the graph.
+It can be a bang or nothing.
+
+The other form of innovation when we systematically extend the knowledge graph.
+We spend time and resources to create and formulate new, novel ideas.
+This process is where the human brain and thinking are unbeaten.
+We have the ability to understand multiple concepts in deep detail, put them
+together and find differences and synergies and abstract it out and create
+something novel.
+Computers cannot do this.
+While studying and picking up the so-called intuition - this is used in
+mathematics - or in other words: mechanical sympathy - this is almost the same
+but comes from software engineering - our brain develops a plasticity to juggle
+information structures. 
+I am not sure if this process is described or discovered fully by philosophers.
+This and the natural language are the ultimate chaos and I don't know if we ever
+have the ability to control it.
+Imagine that you keep in your mind the graph of one science's concept and you
+merge this with another two due to a hint. 
+What are the rules of the mergings the knowledge graphs?
+Based on what rules we can do it?
+What vertex connections cause explosion in thoughts, what connections cause
+inhibition or nothing?
+What are the input parameters for these in the certain case?
+These questions are simple, but the answer for them is infinite variability.
+Do you think that machines ever will be able to model this?
+Model includes predictability and using it for our own advantage.
+
+To see clearly if the mentioned "AI discovered this and that" is a novel idea I
+just need to ask the question: "Does the new discovery requrie an experiment and
+validation against reality? Is it beyond the model's training? Can we identify
+what input information caused this new idea?"
+If the answers for these questions are "yes", start packing SkyNet is here.
+If not, GIGO still stands.
+
+Overall, studying is not a wasted time.
+I personally want to look into the Universe's Void and see how it turns into
+partial differential equations.
+I am not satisfied with the beauty of the Void.
